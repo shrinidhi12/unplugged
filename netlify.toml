@@ -1,0 +1,6 @@
+[build]
+  command = "npm run build"
+
+# The official Next.js runtime is auto-installed by Netlify; no plugin block needed.
+# Environment variables (DATABASE_URL, RESEND_API_KEY, EMAIL_FROM, NEXT_PUBLIC_BASE_URL)
+# are configured in the Netlify site settings / `netlify env:set`.

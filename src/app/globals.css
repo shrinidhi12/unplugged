@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+@theme {
+  /* Risograph palette — off-white stock, two spot inks */
+  --color-paper: #f2ecdd;
+  --color-paper-2: #e8e1cd;
+  --color-card: #f8f3e7;
+  --color-ink: #17182a; /* near-navy black text */
+  --color-ink-soft: #565566;
+  --color-line: #d6cdb4; /* quiet divider */
+  --color-blue: #2637c9; /* primary ink */
+  --color-blue-dark: #1d2b9f;
+  --color-pink: #ff4f8b; /* secondary ink */
+
+  /* Back-compat: old accent tokens now resolve to riso blue */
+  --color-clay: #2637c9;
+  --color-clay-dark: #1d2b9f;
+
+  --font-display: var(--font-archivo-black), "Arial Black", sans-serif;
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Display headings: heavy grotesque */
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* Hero headline: blue ink with an off-register pink shadow (the riso signature) */
+.u-hl {
+  font-family: var(--font-display);
+  color: var(--color-blue);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-shadow: 2.5px 2.5px 0 var(--color-pink);
+}
+
+/* Uppercase pink label */
+.eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--color-pink);
+}
+
+/* Halftone dot field — decorative, masked to fade out */
+.halftone {
+  background-image: radial-gradient(var(--color-pink) 1.5px, transparent 1.7px);
+  background-size: 8px 8px;
+  opacity: 0.3;
+  -webkit-mask-image: linear-gradient(200deg, #000 0 40%, transparent 66%);
+  mask-image: linear-gradient(200deg, #000 0 40%, transparent 66%);
+}
+
+/* ---- Components (square corners, bold ink, offset shadows) ---- */
+
+.btn {
+  display: inline-block;
+  background: var(--color-blue);
+  color: var(--color-card);
+  font-weight: 700;
+  border: 2px solid var(--color-ink);
+  border-radius: 0;
+  padding: 0.7rem 1.4rem;
+  box-shadow: 4px 4px 0 var(--color-pink);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+.btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 6px 6px 0 var(--color-pink);
+}
+.btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--color-pink);
+}
+.btn:disabled {
+  opacity: 0.5;
+}
+
+.btn-sm {
+  padding: 0.5rem 0.9rem;
+  font-size: 0.875rem;
+  box-shadow: 3px 3px 0 var(--color-pink);
+}
+
+.btn-outline {
+  display: inline-block;
+  background: transparent;
+  color: var(--color-blue);
+  font-weight: 700;
+  border: 2px solid var(--color-blue);
+  border-radius: 0;
+  padding: 0.7rem 1.4rem;
+  transition: background 0.1s ease, color 0.1s ease;
+}
+.btn-outline:hover {
+  background: var(--color-blue);
+  color: var(--color-card);
+}
+
+.field {
+  width: 100%;
+  background: var(--color-card);
+  border: 2px solid var(--color-ink);
+  border-radius: 0;
+  padding: 0.5rem 0.7rem;
+  font-size: 15px;
+  outline: none;
+}
+.field:focus {
+  border-color: var(--color-blue);
+  box-shadow: 0 0 0 3px rgba(255, 79, 139, 0.3);
+}
+
+.card {
+  background: var(--color-card);
+  border: 2px solid var(--color-ink);
+  border-radius: 0;
+}
+
+/* Leaflet: match the flat, bordered aesthetic */
+.leaflet-container {
+  font-family: var(--font-sans);
+  background: var(--color-paper-2);
+}
+.unplugged-pin {
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.25));
+}
