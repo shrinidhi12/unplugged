@@ -4,7 +4,7 @@ import { formatEventDate, formatEventTime } from "@/lib/datetime";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = "An invitation on Unplugged";
+export const alt = "An invitation on Unplugg Me";
 
 export default async function OpengraphImage({
   params,
@@ -14,7 +14,7 @@ export default async function OpengraphImage({
   const { slug } = await params;
   const event = await getEvent(slug).catch(() => null);
 
-  const title = event?.title ?? "Unplugged";
+  const title = event?.title ?? "Unplugg Me";
   const date = event ? formatEventDate(event) : "";
   const time = event ? formatEventTime(event) : null;
   const place = event
@@ -46,7 +46,7 @@ export default async function OpengraphImage({
             fontWeight: 700,
           }}
         >
-          Unplugged · You&apos;re invited
+          Unplugg Me · You&apos;re invited
         </div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>

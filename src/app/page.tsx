@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main className="flex-1">
       <header className="mx-auto flex max-w-3xl items-center justify-between px-6 py-6">
-        <span className="font-display text-xl text-blue">Unplugged</span>
+        <span className="font-display text-xl text-blue">Unplugg Me</span>
         <Link href="/create" className="btn btn-sm">
           Create an event
         </Link>
@@ -60,7 +60,7 @@ export default function Home() {
       </section>
 
       <footer className="mx-auto max-w-3xl px-6 py-10 text-sm text-ink-soft">
-        Unplugged — the event is the medium.
+        Unplugg Me — the event is the medium.
       </footer>
     </main>
   );

@@ -10,7 +10,7 @@ import EditEventForm from "@/components/EditEventForm";
 import type { Rsvp } from "@/db/schema";
 
 export const metadata: Metadata = {
-  title: "Manage your event · Unplugged",
+  title: "Manage your event · Unplugg Me",
   robots: { index: false, follow: false },
 };
 
@@ -40,7 +40,7 @@ export default async function ManagePage({ params, searchParams }: Props) {
     <main className="mx-auto w-full max-w-2xl flex-1 px-6 py-10">
       <div className="mb-8 flex items-center justify-between">
         <Link href="/" className="font-display text-lg text-blue">
-          Unplugged
+          Unplugg Me
         </Link>
         <span className="eyebrow">Host view</span>
       </div>

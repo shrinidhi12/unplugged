@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Unplugged — phone-free events",
-    short_name: "Unplugged",
+    name: "Unplugg Me — phone-free events",
+    short_name: "Unplugg Me",
     description:
       "A free, phone-free way to host and find events — get off big tech and into public space.",
     start_url: "/",

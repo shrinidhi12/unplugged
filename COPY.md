@@ -1,4 +1,4 @@
-# Unplugged — Website Copy
+# Unplugg Me — Website Copy
 
 All user-facing text on the site, in one place, so you can edit the words without
 digging through code.
@@ -14,9 +14,9 @@ etc.) — leave the braces in place, edit the words around them.
 
 ## Global / brand
 
-- **Wordmark:** Unplugged
+- **Wordmark:** Unplugg Me
 - **Tagline:** A forever-free events platform
-- **Browser tab title (home):** Unplugged — phone-free events
+- **Browser tab title (home):** Unplugg Me — phone-free events
 - **Site description (SEO / link previews):** A free resource to get off big tech and into public space
 
 _Source: `src/app/layout.tsx`, `src/app/manifest.ts`_
@@ -37,9 +37,9 @@ _Source: `src/app/page.tsx`_
 
 - **01 — Plan the event:** Date, time, a place on the map, a line about what it is.
 - **02 — Organize your community:** Send event links and collect RSVPs. Fully compatible with dumbphones.
-- **03 — Get into public space:** Host the event -- and don't forget to turn off your phone!
+- **03 — Get into public space:** Host the event — and don't forget to turn off your phone!
 
-- **Footer:** Unplugged — the event is the medium.
+- **Footer:** Unplugg Me — the event is the medium.
 
 ---
 
@@ -60,7 +60,7 @@ _Source: `src/app/create/page.tsx`, `src/components/CreateForm.tsx`, `src/compon
 - **Description label:** A line about it (optional)
   - _Placeholder:_ What to bring, the vibe, the door code…
 - **Place label:** Place _(required)_
-  - _Placeholder:_ e.g. Dolores Park, or my place
+  - _Placeholder:_ e.g. Tompkins Square Park, or my place
 - **Map label:** Pin it on the map
 - **Map search placeholder:** Search an address or place…
 - **Map search button:** Find
@@ -95,7 +95,7 @@ _Source: `src/app/e/[slug]/page.tsx`_
 - **Eyebrow:** You're invited
 - **Canceled banner:** The host has called this event off.
 - **Map link:** Open in Google Maps →
-- **Footer:** Made with Unplugged — a forever-free events platform. Make your own →
+- **Footer:** Made with Unplugg Me — a forever-free events platform. Make your own →
 
 ### RSVP form (on the splash page)
 
@@ -188,7 +188,7 @@ _Source: `src/app/not-found.tsx`_
 
 _Source: `src/app/e/[slug]/opengraph-image.tsx`_
 
-- **Eyebrow:** Unplugged · You're invited
+- **Eyebrow:** Unplugg Me · You're invited
 - **Title:** {event title}
 - **When:** {date · time}
 - **Where:** {place}
@@ -200,7 +200,7 @@ _Source: `src/app/e/[slug]/opengraph-image.tsx`_
 
 _Source: `src/lib/email.ts`_
 
-Every email footer reads: **Sent with Unplugged — a forever-free events platform.**
+Every email footer reads: **Sent with Unplugg Me — a forever-free events platform.**
 
 ### 1. Host manage link (sent to the host when they create an event)
 
@@ -240,6 +240,6 @@ Every email footer reads: **Sent with Unplugged — a forever-free events platfo
 
 _Source: `src/app/manifest.ts`_
 
-- **Full name:** Unplugged — phone-free events
-- **Short name:** Unplugged
+- **Full name:** Unplugg Me — phone-free events
+- **Short name:** Unplugg Me
 - **Description:** A free, phone-free way to host and find events — get off big tech and into public space.

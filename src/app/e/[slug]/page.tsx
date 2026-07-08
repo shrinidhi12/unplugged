@@ -13,7 +13,7 @@ type Props = { params: Promise<{ slug: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const event = await getEvent(slug).catch(() => null);
-  if (!event) return { title: "Event not found · Unplugged" };
+  if (!event) return { title: "Event not found · Unplugg Me" };
 
   const date = formatEventDate(event);
   const time = formatEventTime(event);
@@ -23,13 +23,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     : when;
 
   return {
-    title: `${event.title} · Unplugged`,
+    title: `${event.title} · Unplugg Me`,
     description,
     openGraph: {
       title: event.title,
       description,
       url: splashUrl(slug),
-      siteName: "Unplugged",
+      siteName: "Unplugg Me",
       type: "website",
     },
     twitter: { card: "summary_large_image", title: event.title, description },
@@ -52,7 +52,7 @@ export default async function SplashPage({ params }: Props) {
     <main className="mx-auto w-full max-w-xl flex-1 px-6 py-10">
       <div className="mb-8 flex items-center justify-between">
         <Link href="/" className="font-display text-lg font-semibold">
-          Unplugged
+          Unplugg Me
         </Link>
         <span className="eyebrow">You&apos;re invited</span>
       </div>
@@ -112,7 +112,7 @@ export default async function SplashPage({ params }: Props) {
       <footer className="mt-10 border-t border-line pt-6 text-sm text-ink-soft">
         Made with{" "}
         <Link href="/" className="text-clay hover:underline">
-          Unplugged
+          Unplugg Me
         </Link>{" "}
         — a forever-free events platform.{" "}
         <Link href="/create" className="text-clay hover:underline">

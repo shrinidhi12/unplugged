@@ -1,4 +1,4 @@
-# Unplugged
+# Unplugg Me
 
 **A forever-free, phone-free events platform.** Host and find events for your friends
 and the public — a dead-simple way to invite people to real-life things. No accounts,
@@ -42,10 +42,10 @@ Without `RESEND_API_KEY`, emails are logged to the console instead of sent — h
 |---|---|
 | `DATABASE_URL` | Neon Postgres connection string |
 | `RESEND_API_KEY` | Resend API key (blank in dev → emails log to console) |
-| `EMAIL_FROM` | From address, e.g. `Unplugged <hello@unplugg.me>` |
+| `EMAIL_FROM` | From address, e.g. `Unplugg Me <hello@unplugg.me>` |
 | `NEXT_PUBLIC_BASE_URL` | Base URL for links/emails (`http://localhost:3000` in dev) |
 
 ## License
 
 [AGPL-3.0-or-later](LICENSE). If you run a modified version as a network service, you
-must release your source. That's intentional — it keeps Unplugged open.
+must release your source. That's intentional — it keeps Unplugg Me open.

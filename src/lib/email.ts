@@ -8,7 +8,7 @@ const resend = process.env.RESEND_API_KEY
   ? new Resend(process.env.RESEND_API_KEY)
   : null;
 
-const FROM = process.env.EMAIL_FROM ?? "Unplugged <onboarding@resend.dev>";
+const FROM = process.env.EMAIL_FROM ?? "Unplugg Me <onboarding@resend.dev>";
 
 async function send(opts: {
   to: string;
@@ -50,11 +50,11 @@ function whenLine(event: Event): string {
 
 function shell(title: string, body: string): string {
   return `<div style="font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:520px;margin:0 auto;color:#2b2622;line-height:1.6">
-  <div style="font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#c65d3b;font-weight:600">Unplugged</div>
+  <div style="font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#c65d3b;font-weight:600">Unplugg Me</div>
   <h1 style="font-size:22px;margin:12px 0 4px">${title}</h1>
   ${body}
   <hr style="border:none;border-top:1px solid #eae2d6;margin:28px 0 12px" />
-  <div style="font-size:12px;color:#8a8178">Sent with Unplugged — a forever-free events platform.</div>
+  <div style="font-size:12px;color:#8a8178">Sent with Unplugg Me — a forever-free events platform.</div>
 </div>`;
 }
 

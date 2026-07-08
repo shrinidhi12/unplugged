@@ -88,7 +88,7 @@ export default function CreateForm() {
           id="locationName"
           name="locationName"
           required
-          placeholder="e.g. Dolores Park, or my place"
+          placeholder="e.g. Tompkins Square Park, or my place"
           className="field"
         />
       </div>

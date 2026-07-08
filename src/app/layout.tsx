@@ -15,7 +15,7 @@ const archivoBlack = Archivo_Black({
 });
 
 export const metadata: Metadata = {
-  title: "Unplugged — phone-free events",
+  title: "Unplugg Me — phone-free events",
   description:
     "A free resource to get off big tech and into public space.",
 };

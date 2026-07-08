@@ -38,7 +38,7 @@ export function buildEventIcs(event: Event, splashUrl: string): string {
   const lines = [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
-    "PRODID:-//Unplugged//Events//EN",
+    "PRODID:-//Unplugg Me//Events//EN",
     "CALSCALE:GREGORIAN",
     "METHOD:PUBLISH",
     "BEGIN:VEVENT",

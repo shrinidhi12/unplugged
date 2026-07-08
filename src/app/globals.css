@@ -130,11 +130,7 @@ body {
   border-radius: 0;
 }
 
-/* Leaflet: match the flat, bordered aesthetic */
-.leaflet-container {
-  font-family: var(--font-sans);
-  background: var(--color-paper-2);
-}
-.unplugged-pin {
-  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.25));
+/* MapLibre: keep the attribution/controls unobtrusive */
+.maplibregl-ctrl-attrib {
+  font-size: 10px;
 }

@@ -1,32 +1,38 @@
 "use client";
 
-import { MapContainer, TileLayer, Marker } from "react-leaflet";
-import L from "leaflet";
-import "leaflet/dist/leaflet.css";
-
-const pinIcon = L.divIcon({
-  className: "unplugged-pin",
-  html: `<svg width="30" height="40" viewBox="0 0 30 40" xmlns="http://www.w3.org/2000/svg"><path d="M15 0C6.7 0 0 6.7 0 15c0 10.5 13 23.5 14 24.4a1.5 1.5 0 0 0 2 0C17 38.5 30 25.5 30 15 30 6.7 23.3 0 15 0z" fill="#c65d3b"/><circle cx="15" cy="15" r="5.5" fill="#fffdf9"/></svg>`,
-  iconSize: [30, 40],
-  iconAnchor: [15, 40],
-});
+import { useEffect, useRef } from "react";
+import maplibregl from "maplibre-gl";
+import "maplibre-gl/dist/maplibre-gl.css";
+import { MAP_STYLE, makePinElement } from "@/lib/map";
 
 export default function MapView({ lat, lng }: { lat: number; lng: number }) {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const mapRef = useRef<maplibregl.Map | null>(null);
+
+  useEffect(() => {
+    if (mapRef.current || !containerRef.current) return;
+    const map = new maplibregl.Map({
+      container: containerRef.current,
+      style: MAP_STYLE,
+      center: [lng, lat],
+      zoom: 14,
+      interactive: false,
+      attributionControl: { compact: true },
+    });
+    new maplibregl.Marker({ element: makePinElement(), anchor: "bottom" })
+      .setLngLat([lng, lat])
+      .addTo(map);
+    mapRef.current = map;
+    return () => {
+      map.remove();
+      mapRef.current = null;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lat, lng]);
+
   return (
     <div className="overflow-hidden border-2 border-ink">
-      <MapContainer
-        center={[lat, lng]}
-        zoom={15}
-        style={{ height: 220, width: "100%" }}
-        scrollWheelZoom={false}
-        dragging={false}
-        doubleClickZoom={false}
-        zoomControl={false}
-        attributionControl={false}
-      >
-        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-        <Marker position={[lat, lng]} icon={pinIcon} />
-      </MapContainer>
+      <div ref={containerRef} style={{ height: 220, width: "100%" }} />
     </div>
   );
 }

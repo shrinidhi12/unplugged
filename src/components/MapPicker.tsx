@@ -1,39 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import maplibregl from "maplibre-gl";
+import "maplibre-gl/dist/maplibre-gl.css";
 import {
-  MapContainer,
-  TileLayer,
-  Marker,
-  useMapEvents,
-  useMap,
-} from "react-leaflet";
-import L from "leaflet";
-import "leaflet/dist/leaflet.css";
-
-const pinIcon = L.divIcon({
-  className: "unplugged-pin",
-  html: `<svg width="30" height="40" viewBox="0 0 30 40" xmlns="http://www.w3.org/2000/svg"><path d="M15 0C6.7 0 0 6.7 0 15c0 10.5 13 23.5 14 24.4a1.5 1.5 0 0 0 2 0C17 38.5 30 25.5 30 15 30 6.7 23.3 0 15 0z" fill="#c65d3b"/><circle cx="15" cy="15" r="5.5" fill="#fffdf9"/></svg>`,
-  iconSize: [30, 40],
-  iconAnchor: [15, 40],
-});
+  MAP_STYLE,
+  NYC_CENTER,
+  CITY_ZOOM,
+  PIN_ZOOM,
+  makePinElement,
+} from "@/lib/map";
 
 type LatLng = { lat: number; lng: number };
-
-function ClickToPlace({ onPick }: { onPick: (p: LatLng) => void }) {
-  useMapEvents({
-    click(e) {
-      onPick({ lat: e.latlng.lat, lng: e.latlng.lng });
-    },
-  });
-  return null;
-}
-
-function Recenter({ center }: { center: LatLng }) {
-  const map = useMap();
-  map.setView([center.lat, center.lng], map.getZoom(), { animate: true });
-  return null;
-}
 
 export default function MapPicker({
   value,
@@ -44,9 +22,70 @@ export default function MapPicker({
   onChange: (p: LatLng) => void;
   onAddress?: (address: string) => void;
 }) {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const mapRef = useRef<maplibregl.Map | null>(null);
+  const markerRef = useRef<maplibregl.Marker | null>(null);
+  const onChangeRef = useRef(onChange);
+  onChangeRef.current = onChange;
+
   const [query, setQuery] = useState("");
   const [searching, setSearching] = useState(false);
-  const center: LatLng = value ?? { lat: 37.7749, lng: -122.4194 };
+
+  // Initialize the map once.
+  useEffect(() => {
+    if (mapRef.current || !containerRef.current) return;
+    const map = new maplibregl.Map({
+      container: containerRef.current,
+      style: MAP_STYLE,
+      center: value ? [value.lng, value.lat] : [NYC_CENTER.lng, NYC_CENTER.lat],
+      zoom: value ? PIN_ZOOM : CITY_ZOOM,
+      attributionControl: { compact: true },
+    });
+    map.addControl(
+      new maplibregl.NavigationControl({ showCompass: false }),
+      "top-right"
+    );
+    map.on("click", (e) => {
+      onChangeRef.current({ lat: e.lngLat.lat, lng: e.lngLat.lng });
+    });
+    mapRef.current = map;
+    return () => {
+      map.remove();
+      mapRef.current = null;
+      markerRef.current = null;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Keep the marker in sync with `value`.
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) return;
+
+    if (!value) {
+      markerRef.current?.remove();
+      markerRef.current = null;
+      return;
+    }
+
+    if (!markerRef.current) {
+      const marker = new maplibregl.Marker({
+        element: makePinElement(),
+        draggable: true,
+        anchor: "bottom",
+      })
+        .setLngLat([value.lng, value.lat])
+        .addTo(map);
+      marker.on("dragend", () => {
+        const ll = marker.getLngLat();
+        onChangeRef.current({ lat: ll.lat, lng: ll.lng });
+      });
+      markerRef.current = marker;
+    } else {
+      markerRef.current.setLngLat([value.lng, value.lat]);
+    }
+    map.easeTo({ center: [value.lng, value.lat], duration: 400 });
+  }, [value?.lat, value?.lng]);
 
   async function search() {
     if (!query.trim()) return;
@@ -64,11 +103,13 @@ export default function MapPicker({
         display_name: string;
       }>;
       if (data[0]) {
-        onChange({ lat: Number(data[0].lat), lng: Number(data[0].lon) });
+        const p = { lat: Number(data[0].lat), lng: Number(data[0].lon) };
+        mapRef.current?.flyTo({ center: [p.lng, p.lat], zoom: PIN_ZOOM });
+        onChange(p);
         onAddress?.(data[0].display_name);
       }
     } catch {
-      // Search is best-effort; ignore failures.
+      /* search is best-effort */
     } finally {
       setSearching(false);
     }
@@ -100,35 +141,7 @@ export default function MapPicker({
         </button>
       </div>
       <div className="overflow-hidden border-2 border-ink">
-        <MapContainer
-          center={[center.lat, center.lng]}
-          zoom={13}
-          style={{ height: 260, width: "100%" }}
-          scrollWheelZoom={false}
-        >
-          <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-          <ClickToPlace onPick={onChange} />
-          {value && (
-            <>
-              <Recenter center={value} />
-              <Marker
-                position={[value.lat, value.lng]}
-                icon={pinIcon}
-                draggable
-                eventHandlers={{
-                  dragend: (e) => {
-                    const m = e.target as L.Marker;
-                    const ll = m.getLatLng();
-                    onChange({ lat: ll.lat, lng: ll.lng });
-                  },
-                }}
-              />
-            </>
-          )}
-        </MapContainer>
+        <div ref={containerRef} style={{ height: 260, width: "100%" }} />
       </div>
       <p className="text-xs text-ink-soft">
         Tap the map to drop a pin, or drag it to fine-tune.
