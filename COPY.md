@@ -15,9 +15,9 @@ etc.) — leave the braces in place, edit the words around them.
 ## Global / brand
 
 - **Wordmark:** Unplugg Me
-- **Tagline:** A forever-free events platform
-- **Browser tab title (home):** Unplugg Me — phone-free events
-- **Site description (SEO / link previews):** A free resource to get off big tech and into public space
+- **Tagline:** A community events platform
+- **Browser tab title (home):** Unplugg Me 
+- **Site description (SEO / link previews):** Social infrastructure outside big tech
 
 _Source: `src/app/layout.tsx`, `src/app/manifest.ts`_
 
@@ -28,18 +28,18 @@ _Source: `src/app/layout.tsx`, `src/app/manifest.ts`_
 _Source: `src/app/page.tsx`_
 
 - **Nav link (top right):** Create an event
-- **Eyebrow:** Phone-free events · free forever
-- **Headline:** Host and find events for your friends and the public.
-- **Sub-headline:** A simple way to organize events.
+- **Eyebrow:** Social infrastructure outside big tech
+- **Headline:** Host and find events for your community
+- **Sub-headline:** A simple way to host events
 - **Primary button:** Create an event →
 
 **How it works:**
 
-- **01 — Plan the event:** Date, time, a place on the map, a line about what it is.
-- **02 — Organize your community:** Send event links and collect RSVPs. Fully compatible with dumbphones.
-- **03 — Get into public space:** Host the event — and don't forget to turn off your phone!
+- **01 — Plan the event
+- **02 — Invite others
+- **03 — Hang up, hang out :)
 
-- **Footer:** Unplugg Me — the event is the medium.
+- **Footer:** The event is the medium
 
 ---
 
@@ -48,19 +48,19 @@ _Source: `src/app/page.tsx`_
 _Source: `src/app/create/page.tsx`, `src/components/CreateForm.tsx`, `src/components/MapPicker.tsx`_
 
 - **Page title:** Create an event
-- **Page subtitle:** No account needed and fully dumb-phone compatible
+- **Page subtitle:** (No account needed)
 
 **Form fields:**
 
 - **Title label:** What's the plan?
-  - _Placeholder:_ Rooftop dinner, board game night, morning hike…
+  - _Placeholder:_ Something silly
 - **Date label:** Date
 - **Time label:** Time
 - **Timezone helper:** Times shown in {timezone}.
-- **Description label:** A line about it (optional)
-  - _Placeholder:_ What to bring, the vibe, the door code…
+- **Description label:** Describe the event
+  - _Placeholder:_ Put important details your guests need to know here
 - **Place label:** Place _(required)_
-  - _Placeholder:_ e.g. Tompkins Square Park, or my place
+  - _Placeholder:_ e.g. Tompkins Square Park??
 - **Map label:** Pin it on the map
 - **Map search placeholder:** Search an address or place…
 - **Map search button:** Find
@@ -92,10 +92,10 @@ _Validation source: `src/app/actions.ts`_
 
 _Source: `src/app/e/[slug]/page.tsx`_
 
-- **Eyebrow:** You're invited
-- **Canceled banner:** The host has called this event off.
-- **Map link:** Open in Google Maps →
-- **Footer:** Made with Unplugg Me — a forever-free events platform. Make your own →
+- **Eyebrow:** You're invited!
+- **Canceled banner:** The host has called this event off. Stay tuned for new details...
+- **Map link:** Open in Maps app →
+- **Footer:** Made with Unplugg Me — a free events platform. Host your own events! →
 
 ### RSVP form (on the splash page)
 
@@ -116,7 +116,7 @@ _Source: `src/components/RsvpForm.tsx`_
 **After you say you're in:**
 
 - **Heading:** You're in.
-- **Body:** We've sent a confirmation and a calendar invite to your inbox. See you there{, all N of you}.
+- **Body:** We've sent a confirmation and a calendar invite to your inbox. See you there!
 
 **After you decline:**
 
@@ -137,7 +137,7 @@ _Source: `src/components/RsvpForm.tsx`_
 _Source: `src/app/e/[slug]/manage/[token]/page.tsx`, `src/components/ShareLink.tsx`, `src/components/EditEventForm.tsx`_
 
 - **Eyebrow:** Host view
-- **Just-created banner:** Your event is live. We've emailed you this link too — bookmark it, it's the only way back in.
+- **Just-created banner:** Your event is live. We've emailed you this link too. Bookmark it! It's the only way back in.
 
 **Share section:**
 

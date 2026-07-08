@@ -47,8 +47,8 @@ export default async function ManagePage({ params, searchParams }: Props) {
 
       {created && (
         <div className="mb-6 border-2 border-blue bg-blue/10 px-4 py-3 text-sm">
-          Your event is live. We&apos;ve emailed you this link too — bookmark it,
-          it&apos;s the only way back in.
+          Your event is live. We&apos;ve emailed you this link too. Bookmark it!
+          It&apos;s the only way back in.
         </div>
       )}
 

@@ -18,7 +18,7 @@ export default function RsvpForm({ slug }: { slug: string }) {
             <div className="u-hl text-3xl">You&apos;re in.</div>
             <p className="mt-3 text-ink-soft">
               We&apos;ve sent a confirmation and a calendar invite to your inbox.
-              See you there{party > 1 ? `, all ${party} of you` : ""}.
+              See you there!
             </p>
           </>
         ) : (
@@ -36,6 +36,15 @@ export default function RsvpForm({ slug }: { slug: string }) {
   return (
     <form action={formAction} className="card p-6">
       <input type="hidden" name="slug" value={slug} />
+      {/* Honeypot: hidden from humans, catches bots that fill every field. */}
+      <input
+        type="text"
+        name="company"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="absolute -left-[9999px] h-0 w-0 opacity-0"
+      />
       <h2 className="font-display text-xl">Are you coming?</h2>
       <p className="mt-1 text-sm text-ink-soft">
         Just your name and email — no account. Only the host sees your reply.

@@ -10,6 +10,21 @@ const resend = process.env.RESEND_API_KEY
 
 const FROM = process.env.EMAIL_FROM ?? "Unplugg Me <onboarding@resend.dev>";
 
+/**
+ * Escape user-controlled text before interpolating it into email HTML.
+ * Guest-supplied fields (RSVP name/note) land in the host's inbox and host
+ * fields (title/description) land in guests' inboxes, so every dynamic value
+ * that isn't our own trusted markup must be run through this.
+ */
+function esc(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 async function send(opts: {
   to: string;
   subject: string;
@@ -67,8 +82,8 @@ export async function sendHostManageLink(event: Event) {
   const manage = manageUrl(event.id, event.editToken);
   const splash = splashUrl(event.id);
   const html = shell(
-    `Your event is live: ${event.title}`,
-    `<p>All set — <strong>${event.title}</strong> is on for ${whenLine(event)}.</p>
+    `Your event is live: ${esc(event.title)}`,
+    `<p>All set — <strong>${esc(event.title)}</strong> is on for ${whenLine(event)}.</p>
      <p style="margin:20px 0">${button(manage, "Manage your event")}</p>
      <p style="font-size:14px;color:#6b6459">This link is your only way back in to see who's coming and edit the details. Keep it to yourself.</p>
      <p style="font-size:14px">Invite people by sharing this link:<br/><a href="${splash}" style="color:#c65d3b">${splash}</a></p>`
@@ -85,11 +100,11 @@ export async function sendGuestConfirmation(event: Event, rsvp: Rsvp) {
   const ics = buildEventIcs(event, splash);
   const plus = rsvp.partySize > 1 ? ` (+${rsvp.partySize - 1})` : "";
   const html = shell(
-    `You're in: ${event.title}`,
+    `You're in: ${esc(event.title)}`,
     `<p>See you there${plus ? `, and your +${rsvp.partySize - 1}` : ""}.</p>
      <p><strong>${whenLine(event)}</strong>${
        event.locationName || event.address
-         ? `<br/>${[event.locationName, event.address].filter(Boolean).join(", ")}`
+         ? `<br/>${esc([event.locationName, event.address].filter(Boolean).join(", "))}`
          : ""
      }</p>
      <p style="margin:20px 0">${button(splash, "See the details")}</p>
@@ -113,9 +128,9 @@ export async function sendHostRsvpNotice(event: Event, rsvp: Rsvp) {
   const verb = rsvp.status === "going" ? "is in" : "can't make it";
   const plus = rsvp.status === "going" && rsvp.partySize > 1 ? ` (+${rsvp.partySize - 1})` : "";
   const html = shell(
-    `${rsvp.name} ${verb}${plus}`,
-    `<p><strong>${rsvp.name}</strong> ${verb}${plus} for <strong>${event.title}</strong>.</p>
-     ${rsvp.note ? `<p style="font-size:14px;color:#6b6459">"${rsvp.note}"</p>` : ""}
+    `${esc(rsvp.name)} ${verb}${plus}`,
+    `<p><strong>${esc(rsvp.name)}</strong> ${verb}${plus} for <strong>${esc(event.title)}</strong>.</p>
+     ${rsvp.note ? `<p style="font-size:14px;color:#6b6459">"${esc(rsvp.note)}"</p>` : ""}
      <p style="margin:20px 0">${button(manage, "See your guest list")}</p>`
   );
   const text = `${rsvp.name} ${verb}${plus} for "${event.title}".${
@@ -132,8 +147,8 @@ export async function sendHostRsvpNotice(event: Event, rsvp: Rsvp) {
 /** Emailed to all "going" guests if the host cancels. */
 export async function sendCancellationNotice(event: Event, guestEmail: string) {
   const html = shell(
-    `Canceled: ${event.title}`,
-    `<p>Sorry — <strong>${event.title}</strong> (${whenLine(event)}) has been called off by the host.</p>`
+    `Canceled: ${esc(event.title)}`,
+    `<p>Sorry — <strong>${esc(event.title)}</strong> (${whenLine(event)}) has been called off by the host.</p>`
   );
   const text = `"${event.title}" (${whenLine(event)}) has been called off by the host.`;
   await send({ to: guestEmail, subject: `Canceled: ${event.title}`, html, text });

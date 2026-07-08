@@ -2,10 +2,11 @@
 
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
-import { and, eq } from "drizzle-orm";
+import { and, eq, gte, sql } from "drizzle-orm";
 import { getDb } from "@/db";
 import { events, rsvps } from "@/db/schema";
 import { newSlug, newEditToken, newId } from "@/lib/slug";
+import { allow, clientIp } from "@/lib/ratelimit";
 import {
   sendHostManageLink,
   sendGuestConfirmation,
@@ -21,6 +22,12 @@ export type FormState = {
 };
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+// A tripped honeypot means a bot filled a field humans never see. We reject
+// without saying why, so scripts can't tell they've been caught.
+const SPAM_MSG = "Something went wrong. Please try again.";
+const RATE_MSG =
+  "You're going a little fast. Give it a minute and try again.";
 
 function str(formData: FormData, key: string): string {
   return (formData.get(key) ?? "").toString().trim();
@@ -54,10 +61,26 @@ export async function createEvent(
   if (!EMAIL_RE.test(hostEmail))
     return { error: "Add a real email — that's where your host link goes." };
 
-  const id = newSlug();
-  const editToken = newEditToken();
+  // Bot friction (free, no infra): honeypot field.
+  if (str(formData, "company")) return { error: SPAM_MSG };
+
+  // Real limit (Upstash, if configured): cap events per IP.
+  if (!(await allow("create", await clientIp(), 8, "1 h")))
+    return { error: RATE_MSG };
 
   const db = getDb();
+
+  // DB fallback cap (works even without Upstash): no more than 8 events per
+  // host email per hour, so one address can't be used to blast invites.
+  const since = new Date(Date.now() - 60 * 60 * 1000);
+  const [recent] = await db
+    .select({ n: sql<number>`count(*)::int` })
+    .from(events)
+    .where(and(eq(events.hostEmail, hostEmail), gte(events.createdAt, since)));
+  if (recent && recent.n >= 8) return { error: RATE_MSG };
+
+  const id = newSlug();
+  const editToken = newEditToken();
   const [event] = await db
     .insert(events)
     .values({
@@ -90,7 +113,7 @@ export async function submitRsvp(
 ): Promise<FormState> {
   const slug = str(formData, "slug");
   const name = str(formData, "name");
-  const email = str(formData, "email");
+  const email = str(formData, "email").toLowerCase();
   const statusRaw = str(formData, "status");
   const status = statusRaw === "cant" ? "cant" : "going";
   const partySize = Math.min(
@@ -102,23 +125,42 @@ export async function submitRsvp(
   if (!name) return { error: "Add your name." };
   if (!EMAIL_RE.test(email)) return { error: "Add a real email." };
 
+  // Bot friction (free, no infra): honeypot field.
+  if (str(formData, "company")) return { error: SPAM_MSG };
+
+  // Real limit (Upstash, if configured): cap RSVPs per IP.
+  if (!(await allow("rsvp", await clientIp(), 20, "1 h")))
+    return { error: RATE_MSG };
+
   const db = getDb();
   const [event] = await db.select().from(events).where(eq(events.id, slug));
   if (!event) return { error: "This event no longer exists." };
   if (event.canceledAt) return { error: "This event has been canceled." };
 
-  const [rsvp] = await db
-    .insert(rsvps)
-    .values({
-      id: newId(),
-      eventId: slug,
-      name,
-      email,
-      status,
-      partySize: status === "going" ? partySize : 1,
-      note: note || null,
-    })
-    .returning();
+  const values = {
+    name,
+    status,
+    partySize: status === "going" ? partySize : 1,
+    note: note || null,
+  } satisfies Partial<typeof rsvps.$inferInsert>;
+
+  // Upsert by (event, email): a guest updating their reply edits their row
+  // instead of piling up new ones — better UX, and caps rows per event.
+  const [existing] = await db
+    .select({ id: rsvps.id })
+    .from(rsvps)
+    .where(and(eq(rsvps.eventId, slug), eq(rsvps.email, email)));
+
+  const [rsvp] = existing
+    ? await db
+        .update(rsvps)
+        .set(values)
+        .where(eq(rsvps.id, existing.id))
+        .returning()
+    : await db
+        .insert(rsvps)
+        .values({ id: newId(), eventId: slug, email, ...values })
+        .returning();
 
   if (status === "going") {
     await sendGuestConfirmation(event, rsvp);

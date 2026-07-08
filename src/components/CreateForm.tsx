@@ -33,6 +33,15 @@ export default function CreateForm() {
 
   return (
     <form action={formAction} className="space-y-6">
+      {/* Honeypot: hidden from humans, catches bots that fill every field. */}
+      <input
+        type="text"
+        name="company"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="absolute -left-[9999px] h-0 w-0 opacity-0"
+      />
       <input type="hidden" name="timezone" value={tz} />
       <input type="hidden" name="lat" value={pin?.lat ?? ""} />
       <input type="hidden" name="lng" value={pin?.lng ?? ""} />
@@ -45,7 +54,7 @@ export default function CreateForm() {
           id="title"
           name="title"
           required
-          placeholder="Rooftop dinner, board game night, morning hike…"
+          placeholder="Something silly"
           className="field"
         />
       </div>
@@ -68,14 +77,13 @@ export default function CreateForm() {
 
       <div>
         <label className={label} htmlFor="description">
-          A line about it{" "}
-          <span className="font-normal text-ink-soft">(optional)</span>
+          Describe the event
         </label>
         <textarea
           id="description"
           name="description"
           rows={3}
-          placeholder="What to bring, the vibe, the door code…"
+          placeholder="Put important details your guests need to know here"
           className="field"
         />
       </div>
@@ -88,7 +96,7 @@ export default function CreateForm() {
           id="locationName"
           name="locationName"
           required
-          placeholder="e.g. Tompkins Square Park, or my place"
+          placeholder="e.g. Tompkins Square Park??"
           className="field"
         />
       </div>

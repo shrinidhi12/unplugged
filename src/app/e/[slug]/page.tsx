@@ -54,12 +54,12 @@ export default async function SplashPage({ params }: Props) {
         <Link href="/" className="font-display text-lg font-semibold">
           Unplugg Me
         </Link>
-        <span className="eyebrow">You&apos;re invited</span>
+        <span className="eyebrow">You&apos;re invited!</span>
       </div>
 
       {canceled && (
         <div className="mb-6 border-2 border-pink bg-pink/10 px-4 py-3 text-sm font-medium">
-          The host has called this event off.
+          The host has called this event off. Stay tuned for new details...
         </div>
       )}
 
@@ -89,7 +89,7 @@ export default async function SplashPage({ params }: Props) {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 text-sm font-medium text-clay hover:text-clay-dark"
               >
-                Open in Google Maps →
+                Open in Maps app →
               </a>
             )}
           </div>
@@ -102,7 +102,7 @@ export default async function SplashPage({ params }: Props) {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1 text-sm font-medium text-clay hover:text-clay-dark"
           >
-            Open in Google Maps →
+            Open in Maps app →
           </a>
         )}
 
@@ -114,9 +114,9 @@ export default async function SplashPage({ params }: Props) {
         <Link href="/" className="text-clay hover:underline">
           Unplugg Me
         </Link>{" "}
-        — a forever-free events platform.{" "}
+        — a free events platform.{" "}
         <Link href="/create" className="text-clay hover:underline">
-          Make your own →
+          Host your own events! →
         </Link>
       </footer>
     </main>

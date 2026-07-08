@@ -15,9 +15,8 @@ const archivoBlack = Archivo_Black({
 });
 
 export const metadata: Metadata = {
-  title: "Unplugg Me — phone-free events",
-  description:
-    "A free resource to get off big tech and into public space.",
+  title: "Unplugg Me",
+  description: "Social infrastructure outside big tech",
 };
 
 export default function RootLayout({

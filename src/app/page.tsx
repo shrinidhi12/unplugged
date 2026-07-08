@@ -16,12 +16,12 @@ export default function Home() {
           aria-hidden="true"
         />
         <div className="relative mx-auto max-w-3xl px-6 pt-16 pb-20 sm:pt-24">
-          <p className="eyebrow">Phone-free events · free forever</p>
+          <p className="eyebrow">Social infrastructure outside big tech</p>
           <h1 className="u-hl mt-4 text-5xl sm:text-7xl">
-            Host and find events for your friends and the public.
+            Host and find events for your community
           </h1>
           <p className="mt-6 max-w-md text-lg text-ink-soft">
-            A simple way to organize events.
+            A simple way to host events
           </p>
           <div className="mt-8">
             <Link href="/create" className="btn text-lg">
@@ -34,33 +34,20 @@ export default function Home() {
       <section className="border-t-2 border-ink bg-paper-2">
         <div className="mx-auto grid max-w-3xl gap-8 px-6 py-14 sm:grid-cols-3">
           {[
-            {
-              n: "01",
-              t: "Plan the event",
-              d: "Date, time, a place on the map, a line about what it is.",
-            },
-            {
-              n: "02",
-              t: "Organize your community",
-              d: "Send event links and collect RSVPs. Fully compatible with dumbphones.",
-            },
-            {
-              n: "03",
-              t: "Get into public space",
-              d: "Host the event — and don't forget to turn off your phone!",
-            },
+            { n: "01", t: "Plan the event" },
+            { n: "02", t: "Invite others" },
+            { n: "03", t: "Hang up, hang out :)" },
           ].map((s) => (
             <div key={s.n}>
               <div className="font-display text-3xl text-pink">{s.n}</div>
               <h3 className="mt-2 font-display text-lg">{s.t}</h3>
-              <p className="mt-1 text-sm text-ink-soft">{s.d}</p>
             </div>
           ))}
         </div>
       </section>
 
       <footer className="mx-auto max-w-3xl px-6 py-10 text-sm text-ink-soft">
-        Unplugg Me — the event is the medium.
+        The event is the medium
       </footer>
     </main>
   );

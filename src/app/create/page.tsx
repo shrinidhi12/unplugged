@@ -15,7 +15,7 @@ export default function CreatePage() {
         </Link>
         <h1 className="font-display mt-6 text-3xl">Create an event</h1>
         <p className="mt-2 text-ink-soft">
-          No account needed and fully dumb-phone compatible.
+          (No account needed)
         </p>
       </header>
       <CreateForm />
