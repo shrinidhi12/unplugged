@@ -101,8 +101,8 @@ _Source: `src/app/e/[slug]/page.tsx`_
 
 _Source: `src/components/RsvpForm.tsx`_
 
-- **Heading:** Are you coming?
-- **Sub-text:** Just your name and email — no account. Only the host sees your reply.
+- **Heading:** Let us know if you're coming!
+- **Sub-text:** Just add your name and email. Only the host sees your reply.
 - **Name placeholder:** Your name
 - **Email placeholder:** you@email.com
 - **Plus-ones label:** Bringing anyone?
@@ -142,7 +142,7 @@ _Source: `src/app/e/[slug]/manage/[token]/page.tsx`, `src/components/ShareLink.t
 **Share section:**
 
 - **Heading:** Share this link to invite people
-- **Sub-text:** Guests see the plan and RSVP — they never see the guest list.
+- **Sub-text:** Guests see the plan and RSVP. They never see the guest list.
 - **Copy button:** Copy
 - **Copy button (after click):** Copied!
 
@@ -242,4 +242,4 @@ _Source: `src/app/manifest.ts`_
 
 - **Full name:** Unplugg Me — phone-free events
 - **Short name:** Unplugg Me
-- **Description:** A free, phone-free way to host and find events — get off big tech and into public space.
+- **Description:** A free, phone-free way to host and find event. Get off big tech and into public spaces!

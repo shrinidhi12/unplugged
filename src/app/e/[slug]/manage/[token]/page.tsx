@@ -6,6 +6,7 @@ import { formatEventDate, formatEventTime } from "@/lib/datetime";
 import { splashUrl } from "@/lib/urls";
 import { removeRsvp, cancelEvent } from "@/app/actions";
 import ShareLink from "@/components/ShareLink";
+import CopyEmails from "@/components/CopyEmails";
 import EditEventForm from "@/components/EditEventForm";
 import type { Rsvp } from "@/db/schema";
 
@@ -64,22 +65,25 @@ export default async function ManagePage({ params, searchParams }: Props) {
       <section className="card mb-8 p-5">
         <h2 className="text-sm font-semibold">Share this link to invite people</h2>
         <p className="mb-3 mt-1 text-sm text-ink-soft">
-          Guests see the plan and RSVP — they never see the guest list.
+          Guests see the plan and RSVP. They never see the guest list.
         </p>
         <ShareLink url={share} />
       </section>
 
       <section className="mb-8">
-        <div className="mb-3 flex items-baseline justify-between">
+        <div className="mb-3 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2">
           <h2 className="font-display text-xl">
             {counts.heads} coming
             {counts.heads !== counts.going && (
               <span className="text-ink-soft"> ({counts.going} RSVPs + plus-ones)</span>
             )}
           </h2>
-          {counts.cant > 0 && (
-            <span className="text-sm text-ink-soft">{counts.cant} can&apos;t</span>
-          )}
+          <div className="flex items-center gap-3">
+            {counts.cant > 0 && (
+              <span className="text-sm text-ink-soft">{counts.cant} can&apos;t</span>
+            )}
+            <CopyEmails emails={going.map((r) => r.email)} />
+          </div>
         </div>
 
         {going.length === 0 && cant.length === 0 ? (

@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Unplugg Me — phone-free events",
     short_name: "Unplugg Me",
     description:
-      "A free, phone-free way to host and find events — get off big tech and into public space.",
+      "A free, phone-free way to host and find event. Get off big tech and into public spaces!",
     start_url: "/",
     display: "standalone",
     background_color: "#f5f1ea",

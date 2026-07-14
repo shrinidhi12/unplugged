@@ -45,9 +45,9 @@ export default function RsvpForm({ slug }: { slug: string }) {
         aria-hidden="true"
         className="absolute -left-[9999px] h-0 w-0 opacity-0"
       />
-      <h2 className="font-display text-xl">Are you coming?</h2>
+      <h2 className="font-display text-xl">Let us know if you&apos;re coming!</h2>
       <p className="mt-1 text-sm text-ink-soft">
-        Just your name and email — no account. Only the host sees your reply.
+        Just add your name and email. Only the host sees your reply.
       </p>
 
       <div className="mt-4 grid gap-3 sm:grid-cols-2">
