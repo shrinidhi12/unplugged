@@ -71,6 +71,11 @@ export default async function SplashPage({ params }: Props) {
             {time && <span className="text-ink-soft"> · {time}</span>}
           </p>
           {place && <p className="mt-1 text-ink-soft">{place}</p>}
+          {event.showHostName && (
+            <p className="mt-1 text-ink-soft">
+              Hosted by <span className="font-medium text-ink">{event.hostName}</span>
+            </p>
+          )}
         </header>
 
         {event.description && (
@@ -105,6 +110,13 @@ export default async function SplashPage({ params }: Props) {
             Open in Maps app →
           </a>
         )}
+
+        <a
+          href={`/e/${slug}/event.ics`}
+          className="inline-flex items-center gap-1 text-sm font-medium text-clay hover:text-clay-dark"
+        >
+          Add to calendar →
+        </a>
 
         {!canceled && <RsvpForm slug={slug} />}
       </article>

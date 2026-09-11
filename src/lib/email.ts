@@ -2,7 +2,7 @@ import { Resend } from "resend";
 import type { Event, Rsvp } from "@/db/schema";
 import { buildEventIcs } from "./ics";
 import { formatEventDate, formatEventTime } from "./datetime";
-import { manageUrl, splashUrl } from "./urls";
+import { manageUrl, replyUrl, splashUrl } from "./urls";
 
 const resend = process.env.RESEND_API_KEY
   ? new Resend(process.env.RESEND_API_KEY)
@@ -31,11 +31,12 @@ async function send(opts: {
   html: string;
   text: string;
   attachments?: { filename: string; content: Buffer }[];
+  replyTo?: string;
 }) {
   if (!resend) {
     // Dev fallback: no API key configured, so log instead of sending.
     console.log(
-      `\n[email:dev] would send to ${opts.to}\n  subject: ${opts.subject}\n  ${opts.text.replace(/\n/g, "\n  ")}\n`
+      `\n[email:dev] would send to ${opts.to}${opts.replyTo ? ` (reply-to ${opts.replyTo})` : ""}\n  subject: ${opts.subject}\n  ${opts.text.replace(/\n/g, "\n  ")}\n`
     );
     return;
   }
@@ -46,6 +47,7 @@ async function send(opts: {
       subject: opts.subject,
       html: opts.html,
       text: opts.text,
+      replyTo: opts.replyTo,
       attachments: opts.attachments?.map((a) => ({
         filename: a.filename,
         content: a.content,
@@ -77,9 +79,37 @@ function button(href: string, label: string): string {
   return `<a href="${href}" style="display:inline-block;background:#2b2622;color:#f5f1ea;text-decoration:none;padding:11px 18px;border-radius:10px;font-weight:600;font-size:15px">${label}</a>`;
 }
 
-/** Emailed to the host on creation: their private manage link. */
-export async function sendHostManageLink(event: Event) {
-  const manage = manageUrl(event.id, event.editToken);
+/**
+ * Opt-in "Contact the organizer" block for guest-facing emails. Empty unless
+ * the host ticked "Let guests contact me", since it exposes their address.
+ * When on, replies are routed to the host too, so hitting Reply just works.
+ */
+function contactHost(event: Event): { html: string; text: string; replyTo?: string } {
+  if (!event.allowContact) return { html: "", text: "" };
+  const href = esc(
+    `mailto:${event.hostEmail}?subject=${encodeURIComponent(`Re: ${event.title}`)}`
+  );
+  return {
+    html: `<p style="font-size:14px">Questions? <a href="${href}" style="color:#c65d3b">Contact the organizer</a> — or just reply to this email.</p>`,
+    text: `\nQuestions? Contact the organizer at ${event.hostEmail}, or just reply to this email.`,
+    replyTo: event.hostEmail,
+  };
+}
+
+/**
+ * A guest's private "change your reply" link. Whoever holds it can edit the
+ * reply, hence the don't-forward warning.
+ */
+function changeLine(href: string): string {
+  return `<p style="font-size:14px">Plans changed? <a href="${href}" style="color:#c65d3b">Change your reply</a>. This link is just for you, so don't forward this email.</p>`;
+}
+
+/**
+ * Emailed to the host on creation: their private manage link. This is the only
+ * email that carries it, since only a hash of the token is stored.
+ */
+export async function sendHostManageLink(event: Event, token: string) {
+  const manage = manageUrl(event.id, token);
   const splash = splashUrl(event.id);
   const html = shell(
     `Your event is live: ${esc(event.title)}`,
@@ -95,10 +125,12 @@ Invite people with this public link: ${splash}`;
 }
 
 /** Emailed to a guest who RSVPs "going": confirmation + calendar invite. */
-export async function sendGuestConfirmation(event: Event, rsvp: Rsvp) {
+export async function sendGuestConfirmation(event: Event, rsvp: Rsvp, token: string) {
   const splash = splashUrl(event.id);
   const ics = buildEventIcs(event, splash);
   const plus = rsvp.partySize > 1 ? ` (+${rsvp.partySize - 1})` : "";
+  const contact = contactHost(event);
+  const change = replyUrl(event.id, token);
   const html = shell(
     `You're in: ${esc(event.title)}`,
     `<p>See you there${plus ? `, and your +${rsvp.partySize - 1}` : ""}.</p>
@@ -108,13 +140,17 @@ export async function sendGuestConfirmation(event: Event, rsvp: Rsvp) {
          : ""
      }</p>
      <p style="margin:20px 0">${button(splash, "See the details")}</p>
-     <p style="font-size:14px;color:#6b6459">We've attached a calendar invite so it's already on your calendar.</p>`
+     <p style="font-size:14px;color:#6b6459">We've attached a calendar invite so it's already on your calendar.</p>
+     ${changeLine(change)}
+     ${contact.html}`
   );
   const text = `You're in for "${event.title}"${plus}.
 ${whenLine(event)}
-Details: ${splash}`;
+Details: ${splash}
+Plans changed? Change your reply (private link, don't forward): ${change}${contact.text}`;
   await send({
     to: rsvp.email,
+    replyTo: contact.replyTo,
     subject: `You're in: ${event.title}`,
     html,
     text,
@@ -122,20 +158,58 @@ Details: ${splash}`;
   });
 }
 
-/** Emailed to the host on each new RSVP. */
+/** Emailed to a guest who replies "can't make it": a receipt plus their change link. */
+export async function sendGuestDeclineReceipt(event: Event, rsvp: Rsvp, token: string) {
+  const change = replyUrl(event.id, token);
+  const contact = contactHost(event);
+  const html = shell(
+    "Thanks for letting the host know",
+    `<p>You're down as can't make it for <strong>${esc(event.title)}</strong> (${whenLine(event)}).</p>
+     ${changeLine(change)}
+     ${contact.html}`
+  );
+  const text = `You're down as can't make it for "${event.title}" (${whenLine(event)}).
+Plans changed? Change your reply (private link, don't forward): ${change}${contact.text}`;
+  await send({
+    to: rsvp.email,
+    subject: `Got it: ${event.title}`,
+    html,
+    text,
+    replyTo: contact.replyTo,
+  });
+}
+
+/**
+ * Emailed when the public RSVP form is submitted with an address that has
+ * already replied. Nothing is changed; the inbox owner gets a fresh link.
+ */
+export async function sendGuestChangeLink(event: Event, rsvp: Rsvp, token: string) {
+  const change = replyUrl(event.id, token);
+  const html = shell(
+    `Change your reply: ${esc(event.title)}`,
+    `<p>Someone, hopefully you, tried to reply to <strong>${esc(event.title)}</strong> (${whenLine(event)}) with this email address. You'd already replied, so nothing was changed.</p>
+     <p style="margin:20px 0">${button(change, "Change your reply")}</p>
+     <p style="font-size:14px;color:#6b6459">This link is just for you, so don't forward this email. Any older link for this reply no longer works. If this wasn't you, you can ignore this email.</p>`
+  );
+  const text = `Someone, hopefully you, tried to reply to "${event.title}" (${whenLine(event)}) with this email address. You'd already replied, so nothing was changed.
+Change your reply (private link, don't forward): ${change}
+If this wasn't you, you can ignore this email.`;
+  await send({ to: rsvp.email, subject: `Change your reply: ${event.title}`, html, text });
+}
+
+/** Emailed to the host on each new or changed RSVP. */
 export async function sendHostRsvpNotice(event: Event, rsvp: Rsvp) {
-  const manage = manageUrl(event.id, event.editToken);
   const verb = rsvp.status === "going" ? "is in" : "can't make it";
   const plus = rsvp.status === "going" && rsvp.partySize > 1 ? ` (+${rsvp.partySize - 1})` : "";
   const html = shell(
     `${esc(rsvp.name)} ${verb}${plus}`,
     `<p><strong>${esc(rsvp.name)}</strong> ${verb}${plus} for <strong>${esc(event.title)}</strong>.</p>
      ${rsvp.note ? `<p style="font-size:14px;color:#6b6459">"${esc(rsvp.note)}"</p>` : ""}
-     <p style="margin:20px 0">${button(manage, "See your guest list")}</p>`
+     <p style="font-size:14px;color:#6b6459">Your full guest list is on your manage page. Use the private link from your "You're hosting" email.</p>`
   );
   const text = `${rsvp.name} ${verb}${plus} for "${event.title}".${
     rsvp.note ? `\nNote: ${rsvp.note}` : ""
-  }\nGuest list: ${manage}`;
+  }\nYour full guest list is on your manage page (use the private link from your "You're hosting" email).`;
   await send({
     to: event.hostEmail,
     subject: `${rsvp.name} ${verb}: ${event.title}`,
@@ -146,10 +220,18 @@ export async function sendHostRsvpNotice(event: Event, rsvp: Rsvp) {
 
 /** Emailed to all "going" guests if the host cancels. */
 export async function sendCancellationNotice(event: Event, guestEmail: string) {
+  const contact = contactHost(event);
   const html = shell(
     `Canceled: ${esc(event.title)}`,
-    `<p>Sorry — <strong>${esc(event.title)}</strong> (${whenLine(event)}) has been called off by the host.</p>`
+    `<p>Sorry — <strong>${esc(event.title)}</strong> (${whenLine(event)}) has been called off by the host.</p>
+     ${contact.html}`
   );
-  const text = `"${event.title}" (${whenLine(event)}) has been called off by the host.`;
-  await send({ to: guestEmail, subject: `Canceled: ${event.title}`, html, text });
+  const text = `"${event.title}" (${whenLine(event)}) has been called off by the host.${contact.text}`;
+  await send({
+    to: guestEmail,
+    subject: `Canceled: ${event.title}`,
+    html,
+    text,
+    replyTo: contact.replyTo,
+  });
 }

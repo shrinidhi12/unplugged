@@ -141,6 +141,36 @@ export default function CreateForm() {
         password.
       </p>
 
+      <div className="space-y-3">
+        <label className="flex items-start gap-3 text-sm">
+          <input
+            type="checkbox"
+            name="showHostName"
+            className="mt-0.5 h-4 w-4 shrink-0 accent-blue"
+          />
+          <span>
+            <span className="font-semibold">Show my name on the invite</span>
+            <span className="block text-ink-soft">
+              Adds &ldquo;Hosted by&rdquo; with your name to the event page.
+            </span>
+          </span>
+        </label>
+        <label className="flex items-start gap-3 text-sm">
+          <input
+            type="checkbox"
+            name="allowContact"
+            className="mt-0.5 h-4 w-4 shrink-0 accent-blue"
+          />
+          <span>
+            <span className="font-semibold">Let guests contact me</span>
+            <span className="block text-ink-soft">
+              Adds a &ldquo;Contact the organizer&rdquo; link to guest emails, and
+              replies come to you. Guests will see your email address.
+            </span>
+          </span>
+        </label>
+      </div>
+
       {state.error && (
         <p className="border-2 border-pink bg-pink/10 px-3 py-2 text-sm font-medium">
           {state.error}

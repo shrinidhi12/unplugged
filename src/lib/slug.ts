@@ -9,5 +9,8 @@ const tokenAlphabet =
   "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 export const newEditToken = customAlphabet(tokenAlphabet, 32);
 
+// Secret guest token for the private "change your reply" link.
+export const newGuestToken = customAlphabet(tokenAlphabet, 32);
+
 // RSVP id.
 export const newId = customAlphabet(tokenAlphabet, 16);

@@ -69,6 +69,10 @@ _Source: `src/app/create/page.tsx`, `src/components/CreateForm.tsx`, `src/compon
 - **Host name label:** Your name
 - **Host email label:** Your email
 - **Host email helper:** We'll email you a private link to manage the event. No account, no password.
+- **Show-name checkbox:** Show my name on the invite
+  - _Helper:_ Adds "Hosted by" with your name to the event page.
+- **Contact checkbox:** Let guests contact me
+  - _Helper:_ Adds a "Contact the organizer" link to guest emails, and replies come to you. Guests will see your email address.
 
 **Buttons:**
 
@@ -94,6 +98,7 @@ _Source: `src/app/e/[slug]/page.tsx`_
 
 - **Eyebrow:** You're invited!
 - **Canceled banner:** The host has called this event off. Stay tuned for new details...
+- **Host line (only if the host opted in):** Hosted by {host name}
 - **Map link:** Open in Maps app →
 - **Footer:** Made with Unplugg Me — a free events platform. Host your own events! →
 
@@ -116,12 +121,12 @@ _Source: `src/components/RsvpForm.tsx`_
 **After you say you're in:**
 
 - **Heading:** You're in.
-- **Body:** We've sent a confirmation and a calendar invite to your inbox. See you there!
+- **Body:** Check your inbox. We've emailed you the details and a private link in case your plans change. See you there!
 
 **After you decline:**
 
 - **Heading:** Maybe next time.
-- **Body:** Thanks for letting the host know. No hard feelings.
+- **Body:** Thanks for letting the host know. We've emailed you a private link in case you change your mind.
 
 **RSVP validation messages:**
 
@@ -129,6 +134,20 @@ _Source: `src/components/RsvpForm.tsx`_
 - Add a real email.
 - This event no longer exists.
 - This event has been canceled.
+- This link isn't valid anymore. Reply again from the event page and we'll email you a new one. _(change-your-reply page only)_
+
+### Change-your-reply page (`/e/{link}/reply/{secret}`)
+
+_Source: `src/app/e/[slug]/reply/[token]/page.tsx`, `src/components/RsvpForm.tsx`_
+
+Guests reach this only through the private link in their emails.
+
+- **Eyebrow:** Your reply
+- **Event link:** See the event details →
+- **Heading:** Change your reply
+- **Sub-text:** Replying as {email}. You're currently {coming / not coming}.
+- **After saving (in):** You're in. — Your reply is updated. See you there!
+- **After saving (out):** Maybe next time. — Your reply is updated. Thanks for letting the host know.
 
 ---
 
@@ -219,20 +238,39 @@ Every email footer reads: **Sent with Unplugg Me — a forever-free events platf
 - _(then the event date/time and location)_
 - **Button:** See the details
 - **Note:** We've attached a calendar invite so it's already on your calendar.
+- **Change link:** Plans changed? Change your reply. This link is just for you, so don't forward this email.
+- **Contact line (only if the host opted in):** Questions? Contact the organizer — or just reply to this email.
 
-### 3. Host RSVP notice (sent to the host on each new RSVP)
+### 3. Host RSVP notice (sent to the host on each new or changed RSVP)
 
 - **Subject:** {guest name} {is in / can't make it}: {event title}
 - **Heading:** {guest name} {is in / can't make it}{ +N}
 - **Body:** {guest name} {is in / can't make it}{ +N} for {event title}.
 - _(guest's note, if they left one)_
-- **Button:** See your guest list
+- **Guest list note:** Your full guest list is on your manage page. Use the private link from your "You're hosting" email.
 
 ### 4. Cancellation notice (sent to guests if the host cancels)
 
 - **Subject:** Canceled: {event title}
 - **Heading:** Canceled: {event title}
 - **Body:** Sorry — {event title} ({date · time}) has been called off by the host.
+- **Contact line (only if the host opted in):** Questions? Contact the organizer — or just reply to this email.
+
+### 5. Can't-make-it receipt (sent to a guest who says they can't make it)
+
+- **Subject:** Got it: {event title}
+- **Heading:** Thanks for letting the host know
+- **Body:** You're down as can't make it for {event title} ({date · time}).
+- **Change link:** Plans changed? Change your reply. This link is just for you, so don't forward this email.
+- **Contact line (only if the host opted in):** Questions? Contact the organizer — or just reply to this email.
+
+### 6. Change-your-reply link (sent when someone replies again with an email that already replied)
+
+- **Subject:** Change your reply: {event title}
+- **Heading:** Change your reply: {event title}
+- **Body:** Someone, hopefully you, tried to reply to {event title} ({date · time}) with this email address. You'd already replied, so nothing was changed.
+- **Button:** Change your reply
+- **Note:** This link is just for you, so don't forward this email. Any older link for this reply no longer works. If this wasn't you, you can ignore this email.
 
 ---
 

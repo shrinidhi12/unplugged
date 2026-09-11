@@ -1,14 +1,30 @@
 "use client";
 
 import { useActionState, useState } from "react";
-import { submitRsvp, type FormState } from "@/app/actions";
+import { submitRsvp, updateRsvp, type FormState } from "@/app/actions";
 
-export default function RsvpForm({ slug }: { slug: string }) {
+/** A guest's saved reply; present only on their private change-your-reply page. */
+export type ExistingReply = {
+  token: string;
+  name: string;
+  email: string;
+  status: "going" | "cant";
+  partySize: number;
+  note: string | null;
+};
+
+export default function RsvpForm({
+  slug,
+  existing,
+}: {
+  slug: string;
+  existing?: ExistingReply;
+}) {
   const [state, formAction, pending] = useActionState<FormState, FormData>(
-    submitRsvp,
+    existing ? updateRsvp : submitRsvp,
     {}
   );
-  const [party, setParty] = useState(1);
+  const [party, setParty] = useState(existing?.partySize ?? 1);
 
   if (state.ok) {
     return (
@@ -17,15 +33,18 @@ export default function RsvpForm({ slug }: { slug: string }) {
           <>
             <div className="u-hl text-3xl">You&apos;re in.</div>
             <p className="mt-3 text-ink-soft">
-              We&apos;ve sent a confirmation and a calendar invite to your inbox.
-              See you there!
+              {existing
+                ? "Your reply is updated. See you there!"
+                : "Check your inbox. We've emailed you the details and a private link in case your plans change. See you there!"}
             </p>
           </>
         ) : (
           <>
             <div className="font-display text-2xl">Maybe next time.</div>
             <p className="mt-3 text-ink-soft">
-              Thanks for letting the host know. No hard feelings.
+              {existing
+                ? "Your reply is updated. Thanks for letting the host know."
+                : "Thanks for letting the host know. We've emailed you a private link in case you change your mind."}
             </p>
           </>
         )}
@@ -36,6 +55,7 @@ export default function RsvpForm({ slug }: { slug: string }) {
   return (
     <form action={formAction} className="card p-6">
       <input type="hidden" name="slug" value={slug} />
+      {existing && <input type="hidden" name="token" value={existing.token} />}
       {/* Honeypot: hidden from humans, catches bots that fill every field. */}
       <input
         type="text"
@@ -45,20 +65,34 @@ export default function RsvpForm({ slug }: { slug: string }) {
         aria-hidden="true"
         className="absolute -left-[9999px] h-0 w-0 opacity-0"
       />
-      <h2 className="font-display text-xl">Let us know if you&apos;re coming!</h2>
+      <h2 className="font-display text-xl">
+        {existing ? "Change your reply" : "Let us know if you're coming!"}
+      </h2>
       <p className="mt-1 text-sm text-ink-soft">
-        Just add your name and email. Only the host sees your reply.
+        {existing
+          ? `Replying as ${existing.email}. You're currently ${
+              existing.status === "going" ? "coming" : "not coming"
+            }.`
+          : "Just add your name and email. Only the host sees your reply."}
       </p>
 
-      <div className="mt-4 grid gap-3 sm:grid-cols-2">
-        <input name="name" required placeholder="Your name" className="field" />
+      <div className={`mt-4 grid gap-3 ${existing ? "" : "sm:grid-cols-2"}`}>
         <input
-          name="email"
-          type="email"
+          name="name"
           required
-          placeholder="you@email.com"
+          placeholder="Your name"
+          defaultValue={existing?.name}
           className="field"
         />
+        {!existing && (
+          <input
+            name="email"
+            type="email"
+            required
+            placeholder="you@email.com"
+            className="field"
+          />
+        )}
       </div>
 
       <div className="mt-3 flex items-center gap-3">
@@ -91,6 +125,7 @@ export default function RsvpForm({ slug }: { slug: string }) {
         name="note"
         rows={2}
         placeholder="A note for the host (optional)"
+        defaultValue={existing?.note ?? ""}
         className="field mt-3"
       />
 

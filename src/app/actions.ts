@@ -5,13 +5,17 @@ import { revalidatePath } from "next/cache";
 import { and, eq, gte, sql } from "drizzle-orm";
 import { getDb } from "@/db";
 import { events, rsvps } from "@/db/schema";
-import { newSlug, newEditToken, newId } from "@/lib/slug";
+import { newSlug, newEditToken, newGuestToken, newId } from "@/lib/slug";
+import { hashToken, tokenMatches } from "@/lib/tokens";
+import { getRsvpByToken } from "@/lib/queries";
 import { allow, clientIp } from "@/lib/ratelimit";
 import {
   sendHostManageLink,
   sendGuestConfirmation,
   sendHostRsvpNotice,
   sendCancellationNotice,
+  sendGuestDeclineReceipt,
+  sendGuestChangeLink,
 } from "@/lib/email";
 
 export type FormState = {
@@ -64,13 +68,13 @@ export async function createEvent(
   // Bot friction (free, no infra): honeypot field.
   if (str(formData, "company")) return { error: SPAM_MSG };
 
-  // Real limit (Upstash, if configured): cap events per IP.
-  if (!(await allow("create", await clientIp(), 8, "1 h")))
+  // Per-IP limit: cap events per client.
+  if (!(await allow("create", await clientIp(), 8, 60 * 60)))
     return { error: RATE_MSG };
 
   const db = getDb();
 
-  // DB fallback cap (works even without Upstash): no more than 8 events per
+  // Per-host-email cap as well: no more than 8 events per
   // host email per hour, so one address can't be used to blast invites.
   const since = new Date(Date.now() - 60 * 60 * 1000);
   const [recent] = await db
@@ -85,7 +89,7 @@ export async function createEvent(
     .insert(events)
     .values({
       id,
-      editToken,
+      editTokenHash: hashToken(editToken),
       title,
       description: str(formData, "description") || null,
       eventDate,
@@ -97,30 +101,50 @@ export async function createEvent(
       lng: num(formData, "lng"),
       hostName,
       hostEmail,
+      showHostName: formData.get("showHostName") === "on",
+      allowContact: formData.get("allowContact") === "on",
     })
     .returning();
 
-  await sendHostManageLink(event);
+  // The plaintext token exists only here and in the host's email.
+  await sendHostManageLink(event, editToken);
 
   redirect(`/e/${id}/manage/${editToken}?created=1`);
 }
 
 // ---- RSVP -------------------------------------------------------------------
 
+// Caps on top of the per-IP limit so the RSVP form can't be used as a spam
+// relay: one event can't email unbounded strangers, and one inbox can't be
+// emailed over and over.
+const RSVPS_PER_EVENT_PER_HOUR = 60;
+const RSVPS_PER_EMAIL_PER_DAY = 10;
+const REPLY_LINK_COOLDOWN_MS = 10 * 60 * 1000;
+
+/** The guest-editable fields, shared by a first RSVP and later changes. */
+function replyValues(formData: FormData) {
+  const status: "going" | "cant" =
+    str(formData, "status") === "cant" ? "cant" : "going";
+  const partySize = Math.min(
+    Math.max(1, Math.round(num(formData, "partySize") ?? 1)),
+    20
+  );
+  return {
+    name: str(formData, "name"),
+    status,
+    partySize: status === "going" ? partySize : 1,
+    note: str(formData, "note") || null,
+  } satisfies Partial<typeof rsvps.$inferInsert>;
+}
+
 export async function submitRsvp(
   _prev: FormState,
   formData: FormData
 ): Promise<FormState> {
   const slug = str(formData, "slug");
-  const name = str(formData, "name");
   const email = str(formData, "email").toLowerCase();
-  const statusRaw = str(formData, "status");
-  const status = statusRaw === "cant" ? "cant" : "going";
-  const partySize = Math.min(
-    Math.max(1, Math.round(num(formData, "partySize") ?? 1)),
-    20
-  );
-  const note = str(formData, "note");
+  const values = replyValues(formData);
+  const { name, status } = values;
 
   if (!name) return { error: "Add your name." };
   if (!EMAIL_RE.test(email)) return { error: "Add a real email." };
@@ -128,8 +152,8 @@ export async function submitRsvp(
   // Bot friction (free, no infra): honeypot field.
   if (str(formData, "company")) return { error: SPAM_MSG };
 
-  // Real limit (Upstash, if configured): cap RSVPs per IP.
-  if (!(await allow("rsvp", await clientIp(), 20, "1 h")))
+  // Per-IP limit: cap RSVPs per client.
+  if (!(await allow("rsvp", await clientIp(), 20, 60 * 60)))
     return { error: RATE_MSG };
 
   const db = getDb();
@@ -137,37 +161,116 @@ export async function submitRsvp(
   if (!event) return { error: "This event no longer exists." };
   if (event.canceledAt) return { error: "This event has been canceled." };
 
-  const values = {
-    name,
-    status,
-    partySize: status === "going" ? partySize : 1,
-    note: note || null,
-  } satisfies Partial<typeof rsvps.$inferInsert>;
-
-  // Upsert by (event, email): a guest updating their reply edits their row
-  // instead of piling up new ones — better UX, and caps rows per event.
   const [existing] = await db
-    .select({ id: rsvps.id })
+    .select()
     .from(rsvps)
     .where(and(eq(rsvps.eventId, slug), eq(rsvps.email, email)));
 
-  const [rsvp] = existing
-    ? await db
+  if (existing) {
+    // Never overwrite a reply from the public form: anyone with the event link
+    // could type a guest's email. Instead, mail that inbox a fresh private link
+    // (which retires the old one), throttled so it can't be used to spam them.
+    // The response matches a new RSVP, so the form can't reveal who's replied.
+    const lastSent = existing.linkSentAt?.getTime() ?? 0;
+    if (Date.now() - lastSent > REPLY_LINK_COOLDOWN_MS) {
+      const token = newGuestToken();
+      await db
         .update(rsvps)
-        .set(values)
-        .where(eq(rsvps.id, existing.id))
-        .returning()
-    : await db
-        .insert(rsvps)
-        .values({ id: newId(), eventId: slug, email, ...values })
-        .returning();
+        .set({ editTokenHash: hashToken(token), linkSentAt: new Date() })
+        .where(eq(rsvps.id, existing.id));
+      await sendGuestChangeLink(event, existing, token);
+    }
+    return { ok: true, status, name };
+  }
+
+  const hourAgo = new Date(Date.now() - 60 * 60 * 1000);
+  const dayAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
+  const [[perEvent], [perEmail]] = await Promise.all([
+    db
+      .select({ n: sql<number>`count(*)::int` })
+      .from(rsvps)
+      .where(and(eq(rsvps.eventId, slug), gte(rsvps.createdAt, hourAgo))),
+    db
+      .select({ n: sql<number>`count(*)::int` })
+      .from(rsvps)
+      .where(and(eq(rsvps.email, email), gte(rsvps.createdAt, dayAgo))),
+  ]);
+  if (
+    (perEvent?.n ?? 0) >= RSVPS_PER_EVENT_PER_HOUR ||
+    (perEmail?.n ?? 0) >= RSVPS_PER_EMAIL_PER_DAY
+  )
+    return { error: RATE_MSG };
+
+  const token = newGuestToken();
+  const [rsvp] = await db
+    .insert(rsvps)
+    .values({
+      id: newId(),
+      eventId: slug,
+      email,
+      editTokenHash: hashToken(token),
+      linkSentAt: new Date(),
+      ...values,
+    })
+    .returning();
 
   if (status === "going") {
-    await sendGuestConfirmation(event, rsvp);
+    await sendGuestConfirmation(event, rsvp, token);
+  } else {
+    await sendGuestDeclineReceipt(event, rsvp, token);
   }
   await sendHostRsvpNotice(event, rsvp);
 
-  revalidatePath(`/e/${slug}/manage/${event.editToken}`);
+  revalidatePath("/e/[slug]/manage/[token]", "page");
+  return { ok: true, status, name };
+}
+
+/** A guest changing their reply through the private link from their email. */
+export async function updateRsvp(
+  _prev: FormState,
+  formData: FormData
+): Promise<FormState> {
+  const slug = str(formData, "slug");
+  const token = str(formData, "token");
+  const values = replyValues(formData);
+  const { name, status } = values;
+
+  if (!name) return { error: "Add your name." };
+
+  // Bot friction (free, no infra): honeypot field.
+  if (str(formData, "company")) return { error: SPAM_MSG };
+
+  // Per-IP limit: shares the RSVP budget per client.
+  if (!(await allow("rsvp", await clientIp(), 20, 60 * 60)))
+    return { error: RATE_MSG };
+
+  const found = await getRsvpByToken(slug, token);
+  if (!found) {
+    return {
+      error:
+        "This link isn't valid anymore. Reply again from the event page and we'll email you a new one.",
+    };
+  }
+  const { event, rsvp: before } = found;
+  if (event.canceledAt) return { error: "This event has been canceled." };
+
+  const db = getDb();
+  const [rsvp] = await db
+    .update(rsvps)
+    .set(values)
+    .where(eq(rsvps.id, before.id))
+    .returning();
+
+  // Only email when something the host counts actually changed, and only send
+  // a fresh calendar invite when switching to "going".
+  if (rsvp.status !== before.status || rsvp.partySize !== before.partySize) {
+    if (rsvp.status === "going" && before.status !== "going") {
+      await sendGuestConfirmation(event, rsvp, token);
+    }
+    await sendHostRsvpNotice(event, rsvp);
+  }
+
+  revalidatePath("/e/[slug]/manage/[token]", "page");
   return { ok: true, status, name };
 }
 
@@ -176,7 +279,7 @@ export async function submitRsvp(
 async function requireHost(slug: string, token: string) {
   const db = getDb();
   const [event] = await db.select().from(events).where(eq(events.id, slug));
-  if (!event || event.editToken !== token) {
+  if (!event || !tokenMatches(token, event.editTokenHash)) {
     throw new Error("Not authorized");
   }
   return { db, event };

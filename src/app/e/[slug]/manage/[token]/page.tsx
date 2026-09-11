@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getEvent, getRsvps, headcount } from "@/lib/queries";
 import { formatEventDate, formatEventTime } from "@/lib/datetime";
 import { splashUrl } from "@/lib/urls";
+import { tokenMatches } from "@/lib/tokens";
 import { removeRsvp, cancelEvent } from "@/app/actions";
 import ShareLink from "@/components/ShareLink";
 import CopyEmails from "@/components/CopyEmails";
@@ -25,7 +26,7 @@ export default async function ManagePage({ params, searchParams }: Props) {
   const { created } = await searchParams;
 
   const event = await getEvent(slug).catch(() => null);
-  if (!event || event.editToken !== token) notFound();
+  if (!event || !tokenMatches(token, event.editTokenHash)) notFound();
 
   const rsvps = await getRsvps(slug);
   const going = rsvps.filter((r) => r.status === "going");

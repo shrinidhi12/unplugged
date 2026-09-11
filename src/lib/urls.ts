@@ -12,3 +12,7 @@ export function splashUrl(slug: string): string {
 export function manageUrl(slug: string, token: string): string {
   return `${baseUrl()}/e/${slug}/manage/${token}`;
 }
+
+export function replyUrl(slug: string, token: string): string {
+  return `${baseUrl()}/e/${slug}/reply/${token}`;
+}
