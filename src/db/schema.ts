@@ -14,8 +14,8 @@ export const rsvpStatus = pgEnum("rsvp_status", ["going", "cant"]);
 export const events = pgTable("events", {
   id: text("id").primaryKey(), // public slug (short, unguessable-ish)
   // SHA-256 hex of the host's secret manage token; the token itself only lives
-  // in the host's email. Rows from before hashing hold the 32-char plaintext
-  // until drizzle/manual/hash-manage-tokens.sql runs.
+  // in the host's email. (The column keeps its old name from when it held the
+  // plaintext token.)
   editTokenHash: text("edit_token").notNull(),
   title: text("title").notNull(),
   description: text("description"),

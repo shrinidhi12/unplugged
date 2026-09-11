@@ -149,6 +149,13 @@ Guests reach this only through the private link in their emails.
 - **After saving (in):** You're in. — Your reply is updated. See you there!
 - **After saving (out):** Maybe next time. — Your reply is updated. Thanks for letting the host know.
 
+**Expired or mistyped link** (same page, shown when the link doesn't match a reply but the event still exists):
+
+- **Eyebrow:** Link expired
+- **Heading:** This link doesn't work anymore.
+- **Body:** Each time we email you a new link to change your reply, the older one stops working. Use the link in your most recent email, or reply again from the event page with the same email and we'll send you a fresh one.
+- **Button:** Go to the event →
+
 ---
 
 ## Host manage page (`/e/{link}/manage/{secret}`)

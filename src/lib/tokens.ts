@@ -10,17 +10,9 @@ export function hashToken(token: string): string {
   return createHash("sha256").update(token, "utf8").digest("hex");
 }
 
-/**
- * Constant-time check of a presented token against what's stored.
- *
- * Transitional: host tokens created before hashing are still 32-char plaintext
- * until drizzle/manual/hash-manage-tokens.sql runs. Hashes are always 64 chars,
- * so the length tells the two apart. Remove the plaintext branch after the
- * backfill has run in production.
- */
-export function tokenMatches(presented: string, stored: string): boolean {
-  const candidate = stored.length === 64 ? hashToken(presented) : presented;
-  const a = Buffer.from(candidate);
-  const b = Buffer.from(stored);
+/** Constant-time check of a presented token against its stored SHA-256 hash. */
+export function tokenMatches(presented: string, storedHash: string): boolean {
+  const a = Buffer.from(hashToken(presented));
+  const b = Buffer.from(storedHash);
   return a.length === b.length && timingSafeEqual(a, b);
 }
