@@ -1,13 +1,17 @@
 import Link from "next/link";
+import SuggestionBoxButton from "@/components/SuggestionBoxButton";
 
 export default function Home() {
   return (
     <main className="flex-1">
       <header className="mx-auto flex max-w-3xl items-center justify-between px-6 py-6">
         <span className="font-display text-xl text-blue">Unplugg Me</span>
-        <Link href="/create" className="btn btn-sm">
-          Create an event
-        </Link>
+        <div className="flex items-center gap-4">
+          <SuggestionBoxButton />
+          <Link href="/create" className="btn btn-sm">
+            Create an event
+          </Link>
+        </div>
       </header>
 
       <section className="relative overflow-hidden">

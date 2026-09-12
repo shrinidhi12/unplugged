@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getEvent, getRsvpByToken } from "@/lib/queries";
 import { formatEventDate, formatEventTime } from "@/lib/datetime";
 import RsvpForm from "@/components/RsvpForm";
+import SuggestionBoxButton from "@/components/SuggestionBoxButton";
 
 export const metadata: Metadata = {
   title: "Change your reply · Unplugg Me",
@@ -38,7 +39,10 @@ export default async function ReplyPage({ params }: Props) {
         <Link href="/" className="font-display text-lg font-semibold">
           Unplugg Me
         </Link>
-        <span className="eyebrow">Your reply</span>
+        <div className="flex items-center gap-4">
+          <span className="eyebrow">Your reply</span>
+          <SuggestionBoxButton />
+        </div>
       </div>
 
       {canceled && (

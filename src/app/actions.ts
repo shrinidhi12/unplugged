@@ -16,7 +16,9 @@ import {
   sendCancellationNotice,
   sendGuestDeclineReceipt,
   sendGuestChangeLink,
+  sendSuggestionNote,
 } from "@/lib/email";
+import { MAX_SUGGESTION_LENGTH, isSuggestionKind } from "@/lib/suggestions";
 
 export type FormState = {
   error?: string;
@@ -353,4 +355,43 @@ export async function cancelEvent(formData: FormData): Promise<void> {
 
   revalidatePath(`/e/${slug}/manage/${token}`);
   revalidatePath(`/e/${slug}`);
+}
+
+// ---- Suggestion box ---------------------------------------------------------
+
+/** A note from the /suggest page, emailed to the site owner. */
+export async function submitSuggestion(
+  _prev: FormState,
+  formData: FormData
+): Promise<FormState> {
+  const message = str(formData, "message");
+  const name = str(formData, "name").replace(/\s+/g, " ").slice(0, 80);
+  const email = str(formData, "email");
+  const kind = str(formData, "kind");
+
+  if (!message)
+    return { error: "The box can't eat an empty note. Write something first!" };
+  if (message.length > MAX_SUGGESTION_LENGTH)
+    return { error: "That's a whole novel! Keep it under 5,000 characters." };
+  if (email && (email.length > 254 || !EMAIL_RE.test(email)))
+    return { error: "That email doesn't look right. Fix it, or leave it blank." };
+
+  // Bot friction (free, no infra): honeypot field.
+  if (str(formData, "company")) return { error: SPAM_MSG };
+
+  // Per-IP limit: a handful of notes per client per hour.
+  if (!(await allow("suggest", await clientIp(), 5, 60 * 60)))
+    return { error: RATE_MSG };
+
+  const sent = await sendSuggestionNote({
+    kind: isSuggestionKind(kind) ? kind : "other",
+    message,
+    name,
+    email,
+  });
+  if (!sent)
+    return {
+      error: "The suggestion box is closed for a moment. Please try again later.",
+    };
+  return { ok: true, name };
 }

@@ -7,6 +7,7 @@ import { googleMapsLink } from "@/lib/maps";
 import { splashUrl } from "@/lib/urls";
 import MapViewClient from "@/components/MapViewClient";
 import RsvpForm from "@/components/RsvpForm";
+import SuggestionBoxButton from "@/components/SuggestionBoxButton";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -54,7 +55,10 @@ export default async function SplashPage({ params }: Props) {
         <Link href="/" className="font-display text-lg font-semibold">
           Unplugg Me
         </Link>
-        <span className="eyebrow">You&apos;re invited!</span>
+        <div className="flex items-center gap-4">
+          <span className="eyebrow">You&apos;re invited!</span>
+          <SuggestionBoxButton />
+        </div>
       </div>
 
       {canceled && (

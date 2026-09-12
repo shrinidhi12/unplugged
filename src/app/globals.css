@@ -130,6 +130,206 @@ body {
   border-radius: 0;
 }
 
+/* ---- Suggestion box (/suggest) ---- */
+
+/* Top-right sticker link */
+.suggest-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: var(--color-card);
+  color: var(--color-ink);
+  font-weight: 700;
+  font-size: 0.875rem;
+  border: 2px solid var(--color-ink);
+  padding: 0.35rem 0.6rem;
+  box-shadow: 3px 3px 0 var(--color-blue);
+  transform: rotate(-2deg);
+  transition: box-shadow 0.1s ease;
+}
+.suggest-btn:hover {
+  animation: sb-wiggle 0.5s ease-in-out;
+  box-shadow: 4px 4px 0 var(--color-pink);
+}
+.suggest-btn:focus-visible {
+  outline: 3px solid var(--color-pink);
+  outline-offset: 2px;
+}
+.suggest-btn .suggest-note {
+  transition: transform 0.2s ease;
+}
+.suggest-btn:hover .suggest-note {
+  transform: translateY(-3px);
+}
+
+/* Kind picker chips */
+.sticker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  background: var(--color-card);
+  border: 2px solid var(--color-ink);
+  padding: 0.35rem 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transform: rotate(var(--tilt, 0deg));
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+}
+.sticker:hover {
+  transform: translateY(-2px) rotate(var(--tilt, 0deg));
+}
+.sticker:has(input:checked) {
+  background: var(--color-blue);
+  color: var(--color-card);
+  box-shadow: 3px 3px 0 var(--color-pink);
+}
+.sticker:has(input:focus-visible) {
+  outline: 3px solid var(--color-pink);
+  outline-offset: 2px;
+}
+
+/* Lined index card with a pink margin rule */
+.notecard {
+  width: 100%;
+  resize: vertical;
+  background-color: var(--color-card);
+  background-image:
+    linear-gradient(
+      90deg,
+      transparent 2.2rem,
+      rgba(255, 79, 139, 0.55) 2.2rem,
+      rgba(255, 79, 139, 0.55) calc(2.2rem + 2px),
+      transparent calc(2.2rem + 2px)
+    ),
+    linear-gradient(transparent calc(1.75rem - 1px), var(--color-line) calc(1.75rem - 1px));
+  background-size: 100% 100%, 100% 1.75rem;
+  background-attachment: local;
+  border: 2px solid var(--color-ink);
+  border-radius: 0;
+  padding: 0 0.8rem 0 2.8rem;
+  font-size: 16px;
+  line-height: 1.75rem;
+  outline: none;
+  box-shadow: 5px 5px 0 var(--color-blue);
+  transition: box-shadow 0.12s ease;
+}
+.notecard:focus {
+  box-shadow: 5px 5px 0 var(--color-pink);
+}
+
+/* "Yum!" rubber stamp on the thank-you card */
+.sb-stamp {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-pink);
+  border: 3px solid var(--color-pink);
+  padding: 0.1rem 0.8rem;
+  transform: rotate(-8deg);
+  animation: sb-stamp 0.5s cubic-bezier(0.2, 1.4, 0.4, 1) 0.9s both;
+}
+
+/* Illustration motion */
+.sb-art .sb-twinkle,
+.sb-art .sb-box,
+.sb-art .sb-note,
+.sb-art .sb-pop,
+.sb-art .sb-eyes-open,
+.sb-art .sb-heart {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.sb-art .sb-twinkle {
+  animation: sb-twinkle 2.4s ease-in-out infinite;
+}
+.sb-art .sb-note {
+  animation: sb-bob 2.6s ease-in-out infinite;
+}
+.sb-art .sb-pop {
+  animation: sb-pop 0.35s cubic-bezier(0.2, 1.6, 0.4, 1);
+}
+.sb-art .sb-eyes-open {
+  animation: sb-blink 4.5s infinite;
+}
+.sb-art .sb-eyes-happy {
+  opacity: 0;
+}
+.sb-art.sb-fed .sb-eyes-open {
+  opacity: 0;
+  animation: none;
+}
+.sb-art.sb-fed .sb-eyes-happy {
+  opacity: 1;
+  transition: opacity 0.15s ease 0.5s;
+}
+.sb-art.sb-fed .sb-note {
+  animation: sb-drop 0.6s cubic-bezier(0.5, -0.5, 0.8, 0.6) forwards;
+}
+.sb-art.sb-fed .sb-box {
+  transform-origin: 50% 100%;
+  animation: sb-gulp 0.5s ease-in-out 0.5s;
+}
+.sb-art .sb-heart {
+  opacity: 0;
+  animation: sb-heart 1.2s ease-out forwards;
+}
+
+@keyframes sb-wiggle {
+  0%, 100% { transform: rotate(-2deg); }
+  25% { transform: rotate(3deg); }
+  50% { transform: rotate(-4deg); }
+  75% { transform: rotate(2deg); }
+}
+@keyframes sb-twinkle {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+  50% { transform: scale(0.6) rotate(45deg); opacity: 0.6; }
+}
+@keyframes sb-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes sb-pop {
+  from { transform: scale(0.3); }
+  to { transform: scale(1); }
+}
+@keyframes sb-blink {
+  0%, 93%, 100% { transform: scaleY(1); }
+  96% { transform: scaleY(0.1); }
+}
+@keyframes sb-drop {
+  to { transform: translateY(105px); }
+}
+@keyframes sb-gulp {
+  0%, 100% { transform: scale(1, 1); }
+  35% { transform: scale(1.06, 0.92); }
+  70% { transform: scale(0.97, 1.04); }
+}
+@keyframes sb-heart {
+  0% { opacity: 0; transform: translateY(0) scale(0.4); }
+  30% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-70px) scale(1.1); }
+}
+@keyframes sb-stamp {
+  0% { opacity: 0; transform: scale(2.2) rotate(-18deg); }
+  60% { opacity: 1; transform: scale(0.92) rotate(-8deg); }
+  100% { opacity: 1; transform: scale(1) rotate(-8deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .suggest-btn,
+  .sb-stamp,
+  .sb-art * {
+    animation: none !important;
+    transition: none !important;
+  }
+  .sb-art.sb-fed .sb-note {
+    opacity: 0;
+  }
+}
+
 /* MapLibre: keep the attribution/controls unobtrusive */
 .maplibregl-ctrl-attrib {
   font-size: 10px;

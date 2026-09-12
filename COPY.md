@@ -199,6 +199,54 @@ _Source: `src/app/e/[slug]/manage/[token]/page.tsx`, `src/components/ShareLink.t
 
 ---
 
+## Suggestion box (`/suggest`)
+
+_Source: `src/components/SuggestionBoxButton.tsx`, `src/app/suggest/page.tsx`, `src/components/SuggestionForm.tsx`, `src/lib/suggestions.ts`_
+
+- **Top-right button (home, create, invite, reply, and host pages):** Suggestion box _(icon only on phones)_
+- **Eyebrow:** Suggestion box
+- **Headline:** Got an idea? Feed the box.
+- **Sub-headline:** Ideas, bugs, hot takes, love notes. Every note lands straight in my inbox, and I read them all.
+- **Illustration label (on the box):** IDEAS
+- **Form heading:** What's on your mind?
+
+**Note kinds (chips) and their placeholders:**
+
+- 💡 **Idea** — It'd be amazing if Unplugg Me could…
+- 🐛 **Something's broken** — I clicked ___ and then ___ happened…
+- 💌 **Love note** — Okay, I just have to say…
+- 🎲 **Something else** — Tell me anything…
+
+- **Name placeholder:** Your name (optional)
+- **Email placeholder:** Email, if you want a reply
+- **Submit button:** Drop it in the box ↓
+- **Submit button (sending):** Munching…
+- **Next to button:** Anonymous is fine too.
+
+**After sending:**
+
+- **Stamp:** Yum!
+- **Heading:** Thanks{, name}!
+- **Body:** Your note is in the box and on its way to me. _(+ " If it needs a reply, I'll write back." when they left an email)_
+- **Button:** Drop in another
+- **Link:** Back to Unplugg Me →
+
+**Validation messages** _(source: `src/app/actions.ts`)_:
+
+- The box can't eat an empty note. Write something first!
+- That's a whole novel! Keep it under 5,000 characters.
+- That email doesn't look right. Fix it, or leave it blank.
+- The suggestion box is closed for a moment. Please try again later.
+
+**Email to you:**
+
+- **Subject:** Suggestion box: {kind} from {name, or "Anonymous"}
+- **Heading:** {emoji} {kind} from {name, or "Anonymous"}
+- **Body:** {their note}
+- **Reply line:** Hit reply to answer {email}. / No email left, so there's no way to reply.
+
+---
+
 ## "Not found" page (404)
 
 _Source: `src/app/not-found.tsx`_

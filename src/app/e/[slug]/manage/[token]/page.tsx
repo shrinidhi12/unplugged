@@ -9,6 +9,7 @@ import { removeRsvp, cancelEvent } from "@/app/actions";
 import ShareLink from "@/components/ShareLink";
 import CopyEmails from "@/components/CopyEmails";
 import EditEventForm from "@/components/EditEventForm";
+import SuggestionBoxButton from "@/components/SuggestionBoxButton";
 import type { Rsvp } from "@/db/schema";
 
 export const metadata: Metadata = {
@@ -44,7 +45,10 @@ export default async function ManagePage({ params, searchParams }: Props) {
         <Link href="/" className="font-display text-lg text-blue">
           Unplugg Me
         </Link>
-        <span className="eyebrow">Host view</span>
+        <div className="flex items-center gap-4">
+          <span className="eyebrow">Host view</span>
+          <SuggestionBoxButton />
+        </div>
       </div>
 
       {created && (
