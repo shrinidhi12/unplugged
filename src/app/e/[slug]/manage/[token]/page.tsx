@@ -45,7 +45,7 @@ export default async function ManagePage({ params, searchParams }: Props) {
         <Link href="/" className="font-display text-lg text-blue">
           Unplugg Me
         </Link>
-        <div className="flex items-center gap-4">
+        <div className="flex flex-col items-end gap-1 sm:flex-row sm:items-center sm:gap-4">
           <span className="eyebrow">Host view</span>
           <SuggestionBoxButton />
         </div>

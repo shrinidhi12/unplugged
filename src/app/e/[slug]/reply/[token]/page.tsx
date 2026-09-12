@@ -39,7 +39,7 @@ export default async function ReplyPage({ params }: Props) {
         <Link href="/" className="font-display text-lg font-semibold">
           Unplugg Me
         </Link>
-        <div className="flex items-center gap-4">
+        <div className="flex flex-col items-end gap-1 sm:flex-row sm:items-center sm:gap-4">
           <span className="eyebrow">Your reply</span>
           <SuggestionBoxButton />
         </div>

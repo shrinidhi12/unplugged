@@ -3,7 +3,6 @@ import type { Event, Rsvp } from "@/db/schema";
 import { buildEventIcs } from "./ics";
 import { formatEventDate, formatEventTime } from "./datetime";
 import { manageUrl, replyUrl, splashUrl } from "./urls";
-import { SUGGESTION_KINDS, type SuggestionKind } from "./suggestions";
 
 const resend = process.env.RESEND_API_KEY
   ? new Resend(process.env.RESEND_API_KEY)
@@ -244,7 +243,6 @@ export async function sendCancellationNotice(event: Event, guestEmail: string) {
  * pretending the note arrived.
  */
 export async function sendSuggestionNote(note: {
-  kind: SuggestionKind;
   message: string;
   name: string;
   email: string;
@@ -254,25 +252,24 @@ export async function sendSuggestionNote(note: {
     console.error("[email] SUGGESTIONS_TO is not set; suggestion dropped");
     return false;
   }
-  const { emoji, label } = SUGGESTION_KINDS[note.kind];
   const from = note.name || "Anonymous";
   const html = shell(
-    `${emoji} ${esc(label)} from ${esc(from)}`,
-    `<p style="white-space:pre-wrap;border-left:4px solid #ff4f8b;padding-left:14px">${esc(note.message)}</p>
+    `Note from ${esc(from)}`,
+    `<p style="white-space:pre-wrap">${esc(note.message)}</p>
      <p style="font-size:14px;color:#6b6459">${
        note.email
          ? `Hit reply to answer ${esc(note.email)}.`
          : "No email left, so there's no way to reply."
      }</p>`
   );
-  const text = `${emoji} ${label} from ${from}
+  const text = `Note from ${from}
 
 ${note.message}
 
 ${note.email ? `Reply to answer ${note.email}.` : "No email left, so there's no way to reply."}`;
   await send({
     to,
-    subject: `Suggestion box: ${label} from ${from}`,
+    subject: `Suggestion box: note from ${from}`,
     html,
     text,
     replyTo: note.email || undefined,
