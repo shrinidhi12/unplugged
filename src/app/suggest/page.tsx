@@ -4,7 +4,8 @@ import SuggestionForm from "@/components/SuggestionForm";
 
 export const metadata: Metadata = {
   title: "Suggestion box · Unplugg Me",
-  description: "Ideas, bugs, hot takes, love notes: send them my way.",
+  description:
+    "Suggest new functionality for Unplugg Me, or report a bug or issue.",
 };
 
 export default function SuggestPage() {
@@ -16,8 +17,8 @@ export default function SuggestPage() {
         </Link>
         <h1 className="font-display mt-6 text-3xl">Suggestion box</h1>
         <p className="mt-2 text-ink-soft">
-          Ideas, bugs, hot takes, love notes. It all comes straight to me, and I
-          read every one.
+          If you&apos;d like Shrin to add any functionality to this site, or if
+          there are any bugs or issues, please use this function
         </p>
       </header>
       <SuggestionForm />

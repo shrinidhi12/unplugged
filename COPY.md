@@ -205,7 +205,7 @@ _Source: `src/components/SuggestionBoxButton.tsx`, `src/app/suggest/page.tsx`, `
 
 - **Top-right link (home, create, invite, reply, and host pages):** Suggestion box
 - **Page title:** Suggestion box
-- **Page subtitle:** Ideas, bugs, hot takes, love notes. It all comes straight to me, and I read every one.
+- **Page subtitle:** If you'd like Shrin to add any functionality to this site, or if there are any bugs or issues, please use this function
 - **Note placeholder:** What's on your mind?
 - **Name placeholder:** Your name (optional)
 - **Email placeholder:** Email, if you want a reply
