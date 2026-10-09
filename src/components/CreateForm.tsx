@@ -4,6 +4,7 @@ import { useActionState, useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { createEvent, type FormState } from "@/app/actions";
+import ImagePicker from "./ImagePicker";
 
 const MapPicker = dynamic(() => import("./MapPicker"), {
   ssr: false,
@@ -74,6 +75,13 @@ export default function CreateForm() {
         </div>
       </div>
       <p className="-mt-3 text-xs text-ink-soft">Times shown in {tz}.</p>
+
+      <div>
+        <label className={label} htmlFor="image">
+          Cover image <span className="font-normal text-ink-soft">(optional)</span>
+        </label>
+        <ImagePicker />
+      </div>
 
       <div>
         <label className={label} htmlFor="description">

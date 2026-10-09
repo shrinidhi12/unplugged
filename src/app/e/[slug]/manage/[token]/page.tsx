@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getEvent, getRsvps, headcount } from "@/lib/queries";
 import { formatEventDate, formatEventTime } from "@/lib/datetime";
 import { splashUrl } from "@/lib/urls";
+import { imageUrl } from "@/lib/images";
 import { tokenMatches } from "@/lib/tokens";
 import { removeRsvp, cancelEvent } from "@/app/actions";
 import ShareLink from "@/components/ShareLink";
@@ -60,6 +61,14 @@ export default async function ManagePage({ params, searchParams }: Props) {
 
       <header className="mb-6">
         <h1 className="u-hl text-3xl leading-tight">{event.title}</h1>
+        {event.imageKey && (
+          // eslint-disable-next-line @next/next/no-img-element -- served from our own blob route
+          <img
+            src={imageUrl(slug, event.imageKey)}
+            alt=""
+            className="mt-4 max-h-60 w-full border-2 border-ink object-cover"
+          />
+        )}
         <p className="mt-3 text-ink-soft">
           {date}
           {time && ` · ${time}`}

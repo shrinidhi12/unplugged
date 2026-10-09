@@ -19,6 +19,7 @@ import {
   sendSuggestionNote,
 } from "@/lib/email";
 import { MAX_SUGGESTION_LENGTH } from "@/lib/suggestions";
+import { readImage, saveImage } from "@/lib/images";
 
 export type FormState = {
   error?: string;
@@ -67,6 +68,9 @@ export async function createEvent(
   if (!EMAIL_RE.test(hostEmail))
     return { error: "Add a real email — that's where your host link goes." };
 
+  const image = await readImage(formData.get("image"));
+  if (image && !image.ok) return { error: image.error };
+
   // Bot friction (free, no infra): honeypot field.
   if (str(formData, "company")) return { error: SPAM_MSG };
 
@@ -87,6 +91,7 @@ export async function createEvent(
 
   const id = newSlug();
   const editToken = newEditToken();
+  const imageKey = image ? await saveImage(id, image.bytes, image.ext) : null;
   const [event] = await db
     .insert(events)
     .values({
@@ -101,6 +106,7 @@ export async function createEvent(
       address: str(formData, "address") || null,
       lat: num(formData, "lat"),
       lng: num(formData, "lng"),
+      imageKey,
       hostName,
       hostEmail,
       showHostName: formData.get("showHostName") === "on",

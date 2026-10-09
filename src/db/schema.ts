@@ -26,6 +26,7 @@ export const events = pgTable("events", {
   address: text("address"), // human-readable address
   lat: doublePrecision("lat"),
   lng: doublePrecision("lng"),
+  imageKey: text("image_key"), // cover image in blob storage (see src/lib/images.ts)
   hostName: text("host_name").notNull(),
   hostEmail: text("host_email").notNull(),
   // Host opt-ins, off by default: guests see neither the name nor the email unless asked.

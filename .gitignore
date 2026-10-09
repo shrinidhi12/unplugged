@@ -43,3 +43,6 @@ next-env.d.ts
 
 # Local Netlify folder
 .netlify
+
+# Local dev image uploads (prod uses Netlify Blobs)
+/.blobs

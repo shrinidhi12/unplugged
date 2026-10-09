@@ -5,6 +5,7 @@ import { getEvent } from "@/lib/queries";
 import { formatEventDate, formatEventTime } from "@/lib/datetime";
 import { googleMapsLink } from "@/lib/maps";
 import { splashUrl } from "@/lib/urls";
+import { imageUrl } from "@/lib/images";
 import MapViewClient from "@/components/MapViewClient";
 import RsvpForm from "@/components/RsvpForm";
 import SuggestionBoxButton from "@/components/SuggestionBoxButton";
@@ -70,6 +71,14 @@ export default async function SplashPage({ params }: Props) {
       <article className="space-y-6">
         <header>
           <h1 className="u-hl text-4xl leading-tight sm:text-5xl">{event.title}</h1>
+          {event.imageKey && (
+            // eslint-disable-next-line @next/next/no-img-element -- served from our own blob route
+            <img
+              src={imageUrl(slug, event.imageKey)}
+              alt=""
+              className="mt-4 max-h-[28rem] w-full border-2 border-ink object-cover"
+            />
+          )}
           <p className="mt-3 text-lg">
             <span className="font-medium">{date}</span>
             {time && <span className="text-ink-soft"> · {time}</span>}
