@@ -2,29 +2,28 @@
 
 `/find-a-venue` is built from two sources:
 
-1. **The collaborator sheet**, a [Grist](https://www.getgrist.com) doc.
+1. **The collaborator sheet**, a Proton Sheet (end-to-end encrypted).
    Approved collaborators keep venue details there. Ask the site owner for
-   access. The doc's address is kept out of this public repo on purpose.
+   access. Its link is kept out of this public repo on purpose.
 2. **The NYC Off Tech newsletter** ([archive](https://buttondown.com/nycofftech/archive/)).
    `pipeline/` turns every event listing into per-venue history.
 
-A GitHub Action (`.github/workflows/venues-sync.yml`) reads the Grist doc
-every morning, or whenever someone clicks **Run workflow**. If an Approved
-venue changed, it commits `src/data/venues.json` and Netlify deploys it.
+Proton Sheets has no API, so nothing reads the sheet automatically. To
+publish, a maintainer exports it as XLSX and runs one command (below), then
+commits `src/data/venues.json`; Netlify deploys every push to `main`.
 Nothing is ever written back to the sheet.
 
-To run things by hand you need Python 3.10+ and `openpyxl`
-(`pip install openpyxl`). Netlify never runs Python: `src/data/venues.json`
-is committed.
+You need Python 3.10+ and `openpyxl` (`pip install openpyxl`). Netlify never
+runs Python: `src/data/venues.json` is committed.
 
 ## Folder map
 
 | Path | What it is |
 |---|---|
-| `sync.py` | Grist doc (or an XLSX export) → `src/data/venues.json`. Validates, geocodes, merges history, strips private fields. |
-| `test_privacy.py` | Fails if any non-public column could reach the site data, or if Grist and XLSX reads disagree. |
-| `sheet-export/` | For the XLSX fallback. **Gitignored**, because exports contain contact details. |
-| `data/venues_master_seed.xlsx` | The sheet's starting schema and data, including the **Field guide** tab, which is the schema. |
+| `sync.py` | XLSX export → `src/data/venues.json`. Validates, geocodes, merges history, strips private fields. |
+| `test_privacy.py` | Fails if any non-public column could reach the site data. |
+| `sheet-export/` | Drop exports here. **Gitignored**, because exports contain contact details. |
+| `data/venues_master_seed.xlsx` | The sheet's schema and starting data, including the **Field guide** tab. Import it to create a new sheet. |
 | `data/geocode_cache.json` | Saved address lookups, so each address is geocoded once. |
 | `data/off_tech_tabs.xlsx` | Generated **Off Tech history** and **Past events** tabs. Import into the sheet after each new issue. |
 | `data/off_tech_history.csv` | The same per-venue history as CSV (plus "All activities"); `sync.py` reads it. |
@@ -56,70 +55,46 @@ is committed.
 - **Field guide**: the schema. Every column, its allowed values, and whether
   it's shown on the site.
 
-## Set up Grist (once)
+## Set up the sheet (once)
 
-1. Make a free account at [getgrist.com](https://www.getgrist.com) and create
-   an empty document.
-2. Import `data/venues_master_seed.xlsx` (**Add New → Import from file**). Keep
-   all five tabs. Check that the Venues table's column headers came through as
-   column labels, e.g. *Capacity, standing (est.)*.
-3. Share the doc only with collaborators (**Share → Manage users**). Don't make
-   it public: it holds contact details. Optional: use **Access rules** to hide
-   the Contact columns from collaborators who don't need them.
-4. Get the doc ID from the URL: `https://docs.getgrist.com/<DOC-ID>/...`.
-   (If the doc lives on a team site, the server is `https://<team>.getgrist.com`.
-   Set that as the repo variable `GRIST_SERVER`.)
-5. Create an API key: **Account settings → Developer → API Key → Create**
-   (`https://docs.getgrist.com/account/developer`).
-6. Give both to GitHub as repository secrets. Each command prompts for the value,
-   so it never lands in your shell history:
-
-   ```bash
-   gh secret set GRIST_DOC_ID
-   ```
-
-   ```bash
-   gh secret set GRIST_API_KEY
-   ```
-
-7. Netlify already deploys every push to `main`. If that ever changes, the
-   Action's commits won't go live until you reconnect it (`netlify init`).
-8. Run the workflow once from GitHub's **Actions** tab (**Sync venues from
-   Grist → Run workflow**) and read its summary.
-
-The API key can read and edit every doc that account can open. If you'd rather
-limit that, create a separate Grist account with view-only access to just this
-doc and use its key.
+1. In Proton Drive, upload `data/venues_master_seed.xlsx` and open it as a
+   Proton Sheet (**File → Import**). Keep all five tabs.
+2. Share it only with collaborators. It holds contact details in the
+   collaborator-only columns.
 
 ## Publish edits
 
-Collaborators edit the Grist doc. Changes go live at the next morning's run, or
-straight away when someone with GitHub access clicks **Run workflow** on the
-**Sync venues from Grist** action. Each run's summary lists what changed.
+1. In the Proton Sheet: **File → Download → XLSX**.
+2. Save the file into `tools/find-a-venue/sheet-export/` (any name; the newest
+   file is used), or hand it to whoever runs the sync.
+3. Run:
 
-- Only **Approved** rows are published, so new venues stay hidden until a
-  maintainer approves them.
-- **Problems** fail the run and nothing is published. The run summary lists
-  them by row and column, e.g. `Row 11, Borough: required, but blank`. Fix them
-  in Grist and run it again. Problems on Pending or Archived rows are only warnings.
-- **New Venue IDs** are printed for rows that didn't have one. Paste them into
-  the Venue ID column so the venue's web address never changes.
-- **Looked-up coordinates** are printed for rows that had an address but no
-  Latitude/Longitude. Paste those in too.
-- **Moved pins**: a venue whose coordinates moved more than 150 m is flagged
-  with `!`. Check it on a map.
+   ```bash
+   npm run venues:sync
+   ```
 
-To run the same sync on your computer:
+   - **Problems** are listed by row and column, e.g.
+     `Row 11, Borough: required, but blank`. Nothing is written until the
+     Approved rows are clean. Fix them in the sheet, export again, re-run.
+     Problems on Pending or Archived rows are only warnings.
+   - **New Venue IDs** are printed for rows that didn't have one. Paste them
+     into the Venue ID column so the venue's web address never changes.
+   - **Looked-up coordinates** are printed for rows that had an address but no
+     Latitude/Longitude. Paste those in too.
+   - **Moved pins**: a venue whose coordinates moved more than 150 m is
+     flagged with `!`. Check it on a map.
+   - A **change summary** lists venues added, removed, and fields changed.
+4. Run the privacy test, check the page locally, then commit
+   `src/data/venues.json` and push. Netlify deploys it.
 
-```bash
-GRIST_DOC_ID=... GRIST_API_KEY=... npm run venues:sync -- --grist
-```
+   ```bash
+   npm run venues:test
+   ```
 
-### Without Grist: an XLSX export
+5. Delete the export from `sheet-export/` when you're done.
 
-`npm run venues:sync` with no `--grist` reads the newest `.xlsx` in
-`sheet-export/` (or `--input FILE.xlsx`). Commit `src/data/venues.json`
-afterwards and deploy. Run `npm run venues:test` first.
+Only **Approved** rows are published, so new venues stay hidden until a
+maintainer approves them.
 
 ### What gets published
 
@@ -215,10 +190,9 @@ New issues come out about twice a month. For now this is a manual append.
    npm run venues:tabs
    ```
 
-   Then in Grist, **Add New → Import from file** with `data/off_tech_tabs.xlsx`,
-   and for each tab choose **Update existing table** (Off Tech history, Past
-   events) so the tables are replaced rather than duplicated.
-6. Commit the pipeline changes. The next Grist sync picks up the new history.
+   Then copy the **Off Tech history** and **Past events** tabs from
+   `data/off_tech_tabs.xlsx` into the Proton Sheet, replacing the old ones.
+6. Commit the pipeline changes. The next the sheet sync picks up the new history.
 
 Places that are deliberately left out are listed in `EXCLUDED` in
 `pipeline/history.py`: Stuyvesant Park, The Players Club, the 96 St Q station,

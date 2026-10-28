@@ -9,8 +9,8 @@ Tabs:
                     issue that listed it. Private and neighborhood-only
                     addresses are never included.
 
-Import the file into the Grist doc to refresh those two tables. This script
-never touches the Venues or Field guide tabs, and never talks to Grist.
+Copy those two tabs into the Proton Sheet to refresh them. This script never
+touches the Venues or Field guide tabs, and never talks to the sheet.
 """
 import argparse, csv, sys
 from pathlib import Path
