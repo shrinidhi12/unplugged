@@ -92,11 +92,17 @@ class CommittedData(unittest.TestCase):
 
 class FakeGrist(sync.GristSource):
     """Serves an .xlsx through the Grist API's shapes: sanitized table and
-    column IDs, labels holding the headers, dates as epoch seconds."""
+    column IDs, labels holding the headers, dates as epoch seconds, and empty
+    number cells as 0."""
+
+    NUMERIC = {"Latitude", "Longitude", "Capacity, standing (est.)", "Capacity, seated (est.)"}
 
     def __init__(self, path):
         super().__init__("fake-doc", "fake-key", "https://grist.invalid")
         self.wb = openpyxl.load_workbook(path, data_only=True, read_only=True)
+
+    def _type(self, label):
+        return "Date" if label == "Last verified" else "Numeric" if label in self.NUMERIC else "Any"
 
     def _get(self, path, **params):
         table = path.split("/")[1]
@@ -105,17 +111,18 @@ class FakeGrist(sync.GristSource):
         header = rows[0]
         ids = [re.sub(r"\W", "_", str(h)) for h in header]
         if path.endswith("/columns"):
-            date_cols = {i for i, h in enumerate(header) if h == "Last verified"}
             return {"columns": [{"id": cid, "fields": {"label": h, "isFormula": False,
-                                                     "type": "Date" if i in date_cols else "Any"}}
-                                for i, (cid, h) in enumerate(zip(ids, header))]}
+                                                     "type": self._type(h)}}
+                                for cid, h in zip(ids, header)]}
         recs = []
         for n, r in enumerate(rows[1:], start=1):
             fields = {}
-            for cid, v in zip(ids, r):
+            for cid, h, v in zip(ids, header, r):
                 if hasattr(v, "year"):
                     v = calendar.timegm(v.timetuple())
-                fields[cid] = "" if v is None else v
+                if v is None:
+                    v = 0 if self._type(h) == "Numeric" else ""
+                fields[cid] = v
             recs.append({"id": n, "fields": fields})
         return {"records": recs}
 

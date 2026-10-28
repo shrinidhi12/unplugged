@@ -21,6 +21,10 @@ concurrency:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        # Explicit bash turns on pipefail, so a failed sync | tee fails the run.
+        shell: bash
     steps:
       - uses: actions/checkout@v4
 

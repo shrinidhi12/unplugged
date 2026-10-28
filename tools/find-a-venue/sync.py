@@ -163,6 +163,10 @@ def cell(v, col_type):
     """Grist cell -> the value an XLSX export would give."""
     if v is None or v == "":
         return None
+    if col_type in ("Numeric", "Int") and v == 0:
+        # Grist fills empty number cells with 0. No capacity or coordinate is
+        # ever really 0, so read it as blank.
+        return None
     if col_type == "Date" and isinstance(v, (int, float)):
         return datetime.datetime.fromtimestamp(v, datetime.timezone.utc).date()
     if col_type == "Bool" or isinstance(v, bool):

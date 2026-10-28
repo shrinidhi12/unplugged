@@ -67,7 +67,8 @@ is committed.
 4. Get the doc ID from the URL: `https://docs.getgrist.com/<DOC-ID>/...`.
    (If the doc lives on a team site, the server is `https://<team>.getgrist.com`.
    Set that as the repo variable `GRIST_SERVER`.)
-5. Create an API key: **Profile settings → API → Create**.
+5. Create an API key: **Account settings → Developer → API Key → Create**
+   (`https://docs.getgrist.com/account/developer`).
 6. Give both to GitHub as repository secrets. Each command prompts for the value,
    so it never lands in your shell history:
 
