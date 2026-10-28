@@ -120,7 +120,8 @@ def build():
 
 def write(out):
     with open(OUT, "w", encoding="utf-8", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=COLUMNS + EXTRA)
+        # Plain \n so the file is identical whether it's built on Windows or Linux.
+        w = csv.DictWriter(f, fieldnames=COLUMNS + EXTRA, lineterminator="\n")
         w.writeheader()
         w.writerows(out)
 
