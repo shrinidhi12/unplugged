@@ -9,8 +9,8 @@ Steps: validate every row against the Field guide tab, create missing Venue
 IDs, geocode rows that have an address but no coordinates, rebuild the Off
 Tech history from pipeline/, then write src/data/venues.json with only
 Approved rows and only the columns the Field guide marks "Shown on site = Yes".
-Contact columns are dropped unless the row says "OK to show contact publicly?"
-= Yes. Nothing is ever written back to the sheet.
+Collaborator-only columns (contact names, emails, phones, relationship
+notes) never leave the sheet. Nothing is ever written back to the sheet.
 """
 from __future__ import annotations
 
@@ -36,6 +36,7 @@ MOVE_WARN_M = 150
 # Sheet column -> key in venues.json. Every "Shown on site = Yes" column must
 # be listed; sync fails if the Field guide adds one this file doesn't know.
 PUBLIC_KEYS = {
+    # Venue details
     "Venue name": "name",
     "Venue type": "type",
     "Street address": "address",
@@ -45,52 +46,24 @@ PUBLIC_KEYS = {
     "Longitude": "lng",
     "Location precision": "precision",
     "Indoor / outdoor": "indoorOutdoor",
-    "Capacity, standing (est.)": "capacityStanding",
-    "Capacity, seated (est.)": "capacitySeated",
-    "Seating": "seating",
-    "Tables available": "tables",
-    "Private room / buyout": "privateRoom",
-    "Weather backup": "weatherBackup",
-    "Noise level": "noise",
-    "Amplified sound allowed": "amplifiedSound",
-    "Phone-free friendly": "phoneFree",
+    "Capacity (est.)": "capacity",
     "Cost": "cost",
-    "Cost notes": "costNotes",
+    # Venue notes (freeform)
     "How to book": "howToBook",
-    "Permit notes": "permitNotes",
-    "Booking lead time": "leadTime",
-    "Hours / best times": "bestTimes",
+    "Contact": "contact",
     "Food & drink": "food",
-    "Alcohol": "alcohol",
-    "All ages": "allAges",
-    "Restrooms": "restrooms",
-    "Step-free access": "stepFree",
-    "Accessible restroom": "accessibleRestroom",
-    "Accessibility notes": "accessibilityNotes",
-    "Power outlets": "power",
-    "Sound system / mic": "soundSystem",
-    "Projector / screen": "projector",
-    "Nearest transit": "transit",
-    "Website": "website",
-    "Instagram": "instagram",
-    "Public booking / inquiry link": "bookingLink",
-    "Notes for hosts": "notes",
+    "Accessibility": "accessibility",
+    "A/V equipment": "av",
+    "Other notes": "notes",
+    # Upkeep
     "Last verified": "lastVerified",
 }
-# Published only for rows where the venue agreed (OK to show contact = Yes).
-# "Relationship notes" is never published.
-CONTACT_KEYS = {
-    "Key contact": "name",
-    "Contact role": "role",
-    "Contact email": "email",
-    "Contact phone": "phone",
-}
-OK_CONTACT = "OK to show contact publicly?"
+# Freeform notes keep their line breaks; other text is collapsed to one line.
+MULTILINE_KEYS = {"howToBook", "contact", "food", "accessibility", "av", "notes"}
 # Columns the site filters on; their allowed values come from the Field guide.
 FILTER_COLS = ["Venue type", "Borough", "Indoor / outdoor", "Cost"]
 REQUIRED = ["Venue name", "Venue type", "Borough", "Status"]
-INTEGER_COLS = ["Capacity, standing (est.)", "Capacity, seated (est.)"]
-URL_COLS = ["Website", "Public booking / inquiry link"]
+INTEGER_COLS = ["Capacity (est.)"]
 # Venue IDs that would collide with pages under /find-a-venue/.
 RESERVED_IDS = {"suggest"}
 
@@ -304,14 +277,6 @@ def validate(rows, guide, problems):
             else:
                 d[col] = i
 
-        for col in URL_COLS:
-            v = d.get(col)
-            if v is not None and not re.match(r"https?://\S+$", str(v)):
-                problems.add(n, col, f"'{v}' should be a full link starting with https://", block)
-        ig = d.get("Instagram")
-        if ig is not None and not re.match(r"(@?[A-Za-z0-9._]+|https?://(www\.)?instagram\.com/\S+)$", str(ig)):
-            problems.add(n, "Instagram", f"'{ig}' should be @handle or an instagram.com link", block)
-
         lv = d.get("Last verified")
         if lv is not None:
             dt = as_date(lv)
@@ -401,12 +366,6 @@ def load_history():
     out, candidates = history.build()
     history.write(out)
 
-    def counts(s, sep):
-        # "Reading, poetry & book clubs (12), Music & dance (9)": names can hold
-        # commas, so match "name (n)" pairs rather than splitting on the separator.
-        return [{"activity": m.group(1), "count": int(m.group(2))}
-                for m in re.finditer(rf"(.+?) \((\d+)\)(?:{re.escape(sep)}|$)", s or "")]
-
     by_id = {}
     for r in out:
         host = r["Most common host"]
@@ -416,10 +375,8 @@ def load_history():
             "firstIssue": r["First issue"],
             "latestIssue": r["Latest issue"],
             "latestEvent": r["Latest event"],
-            "topActivities": counts(r["Top activities"], ", "),
-            "activities": counts(r["All activities"], "; "),
-            "signatureEvents": [s.strip() for s in r["Signature events"].split(", ") if s.strip()],
             "topHost": None if host.startswith("—") else host,
+            "recentEvents": [e.strip() for e in r["Recent events"].split("; ") if e.strip()],
         }
     return by_id, candidates
 
@@ -440,14 +397,10 @@ def publish(rows, guide, history):
         for col, key in PUBLIC_KEYS.items():
             # A column the Field guide no longer marks as shown stays out.
             v[key] = d.get(col) if col in shown else None
-            if isinstance(v[key], str) and key not in ("notes", "accessibilityNotes", "permitNotes", "costNotes"):
+            if isinstance(v[key], str) and key not in MULTILINE_KEYS:
                 v[key] = re.sub(r"\s+", " ", v[key])
         if v["precision"] is None:
             v["precision"] = "exact"
-        if d.get(OK_CONTACT) == "Yes":
-            contact = {k: d.get(c) for c, k in CONTACT_KEYS.items() if d.get(c) is not None}
-            if contact:
-                v["contact"] = contact
         v["history"] = history.get(v["id"])
         venues.append(v)
     venues.sort(key=lambda v: (-(v["history"] or {}).get("listings", 0), v["name"].lower()))

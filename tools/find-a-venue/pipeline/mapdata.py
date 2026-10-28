@@ -38,8 +38,7 @@ def main():
                 "latest_issue": h.get("latestIssue"),
                 "latest_event": h.get("latestEvent"),
                 "top_host": h.get("topHost"),
-                "top_activities": ", ".join(f"{a['activity']} ({a['count']})" for a in h.get("topActivities", [])),
-                "signature_events": ", ".join(h.get("signatureEvents", [])),
+                "recent_events": "; ".join(h.get("recentEvents", [])),
                 "location_precision": v["precision"],
             },
         })

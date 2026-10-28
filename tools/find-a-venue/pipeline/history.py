@@ -18,7 +18,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 from data import ISSUES, V, rows  # noqa: E402
-from activities import summarize  # noqa: E402
+from activities import series, summarize  # noqa: E402
 
 OUT = HERE.parent / "data" / "off_tech_history.csv"
 SEED = HERE.parent / "data" / "venues_master_seed.xlsx"
@@ -26,8 +26,10 @@ SEED = HERE.parent / "data" / "venues_master_seed.xlsx"
 COLUMNS = ["Venue ID", "Off Tech listings", "Issues mentioning", "First issue",
            "Latest issue", "Latest event", "Top activities", "Signature events",
            "Most common host"]
-# Not on the sheet tab; feeds the site's "where have X happened?" filter.
-EXTRA = ["All activities"]
+# Not on the sheet tab. "All activities" feeds activity counts; "Recent
+# events" is the venue page's "events held here" line.
+EXTRA = ["All activities", "Recent events"]
+RECENT_EVENTS = 8
 
 # Places that show up in listings but aren't venues a host can book or reuse.
 # They never get a history row, even if someone adds them to venue_ids.csv.
@@ -73,6 +75,20 @@ def top_host(rs):
     return f"{last} (tied, {len(tied)} hosts)"
 
 
+def recent_events(rs):
+    """Distinct event series at a venue, newest first ("Crafternoon", not
+    "Crafternoon (weekly)" three times)."""
+    out, seen = [], set()
+    for r in sorted(rs, key=lambda r: r["date"], reverse=True):
+        name = series(r["event"]).replace(";", ",")
+        if name.lower() not in seen:
+            seen.add(name.lower())
+            out.append(name)
+        if len(out) == RECENT_EVENTS:
+            break
+    return out
+
+
 def load_ids():
     with open(HERE / "venue_ids.csv", encoding="utf-8", newline="") as f:
         return {r["code"]: r["venue_id"] for r in csv.DictReader(f)}
@@ -110,6 +126,7 @@ def build():
             "Signature events": ", ".join(s for s, _ in a["series"]),
             "Most common host": top_host(rs),
             "All activities": "; ".join(f"{t} ({n})" for t, n in sorted(a["all"].items(), key=lambda x: -x[1])),
+            "Recent events": "; ".join(recent_events(rs)),
         })
     out.sort(key=lambda r: -r["Off Tech listings"])
 

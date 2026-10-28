@@ -13,8 +13,7 @@ export type VenueSummary = Pick<
   | "lat"
   | "lng"
   | "indoorOutdoor"
-  | "capacityStanding"
-  | "capacitySeated"
+  | "capacity"
   | "cost"
 > & { listings: number };
 
@@ -52,12 +51,9 @@ function one(value: string | null): string[] {
 }
 
 function capacities(v: VenueSummary): string[] {
-  const nums = [v.capacityStanding, v.capacitySeated].filter(
-    (n): n is number => typeof n === "number"
-  );
-  return CAPACITY_BUCKETS.filter((b) =>
-    nums.some((n) => n >= b.min && n <= b.max)
-  ).map((b) => b.label);
+  const n = v.capacity;
+  if (typeof n !== "number") return [];
+  return CAPACITY_BUCKETS.filter((b) => n >= b.min && n <= b.max).map((b) => b.label);
 }
 
 // "Free / public?" groups the sheet's Cost values into a yes/no answer.
@@ -120,20 +116,6 @@ export function matches(f: Filter, v: VenueSummary, selected: string): boolean {
   const vals = f.values(v);
   if (selected === UNKNOWN) return vals.length === 0;
   return vals.includes(selected);
-}
-
-export function osmLink(v: Pick<Venue, "lat" | "lng">): string {
-  return `https://www.openstreetmap.org/?mlat=${v.lat}&mlon=${v.lng}#map=17/${v.lat}/${v.lng}`;
-}
-
-export function osmDirections(v: Pick<Venue, "lat" | "lng">): string {
-  return `https://www.openstreetmap.org/directions?to=${v.lat}%2C${v.lng}`;
-}
-
-export function instagramUrl(handle: string): string {
-  return /^https?:\/\//.test(handle)
-    ? handle
-    : `https://www.instagram.com/${handle.replace(/^@/, "")}/`;
 }
 
 // ---- Marker colors -----------------------------------------------------------

@@ -6,24 +6,22 @@ import type { VenueSummary } from "./venue-filters";
 
 export type { VenueSummary };
 
-export type ActivityCount = { activity: string; count: number };
-
 export type VenueHistory = {
   listings: number;
   issues: number;
   firstIssue: string;
   latestIssue: string;
   latestEvent: string;
-  topActivities: ActivityCount[];
-  activities: ActivityCount[];
-  signatureEvents: string[];
   topHost: string | null;
+  /** Distinct event series held here, newest first. */
+  recentEvents: string[];
 };
 
 type Text = string | null;
 
 export type Venue = {
   id: string;
+  // Venue details
   name: string;
   type: string;
   address: Text;
@@ -33,38 +31,16 @@ export type Venue = {
   lng: number;
   precision: "exact" | "approx";
   indoorOutdoor: Text;
-  capacityStanding: number | null;
-  capacitySeated: number | null;
-  seating: Text;
-  tables: Text;
-  privateRoom: Text;
-  weatherBackup: Text;
-  noise: Text;
-  amplifiedSound: Text;
-  phoneFree: Text;
+  capacity: number | null;
   cost: Text;
-  costNotes: Text;
+  // Venue notes (freeform, from the sheet)
   howToBook: Text;
-  permitNotes: Text;
-  leadTime: Text;
-  bestTimes: Text;
+  contact: Text;
   food: Text;
-  alcohol: Text;
-  allAges: Text;
-  restrooms: Text;
-  stepFree: Text;
-  accessibleRestroom: Text;
-  accessibilityNotes: Text;
-  power: Text;
-  soundSystem: Text;
-  projector: Text;
-  transit: Text;
-  website: Text;
-  instagram: Text;
-  bookingLink: Text;
+  accessibility: Text;
+  av: Text;
   notes: Text;
   lastVerified: Text;
-  contact?: { name?: string; role?: string; email?: string; phone?: string };
   history: VenueHistory | null;
 };
 
@@ -99,8 +75,7 @@ export function summaries(): VenueSummary[] {
     lat: v.lat,
     lng: v.lng,
     indoorOutdoor: v.indoorOutdoor,
-    capacityStanding: v.capacityStanding,
-    capacitySeated: v.capacitySeated,
+    capacity: v.capacity,
     cost: v.cost,
     listings: v.history?.listings ?? 0,
   }));
@@ -117,11 +92,12 @@ export function isStale(lastVerified: string | null, now = new Date()): boolean 
   return d < cutoff;
 }
 
-export function capacityText(v: Pick<Venue, "capacityStanding" | "capacitySeated">): string | null {
-  const parts = [
-    v.capacityStanding ? `~${v.capacityStanding} standing` : null,
-    v.capacitySeated ? `~${v.capacitySeated} seated` : null,
-  ].filter(Boolean);
-  return parts.length ? parts.join(", ") : null;
-}
+// Parks, plazas and libraries are open to the public by nature.
+const PUBLIC_TYPES = ["Park / public space", "Privately owned public space (POPS)", "Library"];
 
+/** "Public space · Free", "Rental fee", or null when nothing is known. */
+export function publicCostText(v: Pick<Venue, "type" | "cost">): string | null {
+  const cost = v.cost && v.cost !== "Unknown" ? v.cost : null;
+  const parts = [PUBLIC_TYPES.includes(v.type) ? "Public space" : null, cost].filter(Boolean);
+  return parts.length ? parts.join(" · ") : null;
+}

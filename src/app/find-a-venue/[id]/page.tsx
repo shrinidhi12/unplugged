@@ -1,16 +1,14 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import MapViewClient from "@/components/MapViewClient";
 import {
   NEWSLETTER_URL,
   VENUES,
-  capacityText,
   getVenue,
   isStale,
+  publicCostText,
   type Venue,
 } from "@/lib/venues";
-import { instagramUrl, osmDirections, osmLink } from "@/lib/venue-filters";
 import { formatSyncDate } from "@/lib/venue-dates";
 
 // Every synced venue is prerendered; any other ID hits notFound() below and
@@ -18,6 +16,9 @@ import { formatSyncDate } from "@/lib/venue-dates";
 export function generateStaticParams() {
   return VENUES.map((v) => ({ id: v.id }));
 }
+
+// How many past events the "events held here" line names.
+const EVENTS_SHOWN = 6;
 
 function place(v: Venue): string {
   return [v.neighborhood, v.borough].filter(Boolean).join(", ");
@@ -31,12 +32,12 @@ export async function generateMetadata({
   const v = getVenue((await params).id);
   if (!v) return {};
   const where = place(v);
-  const used = v.history
-    ? ` Used for ${v.history.listings} NYC Off Tech event listing${v.history.listings === 1 ? "" : "s"}.`
-    : "";
+  const events = v.history?.recentEvents.slice(0, 3) ?? [];
   return {
     title: `${v.name} · Find a venue · Unplugg Me`,
-    description: `${v.type}${where ? ` in ${where}` : ""}. Hosting details for offline events: capacity, cost, booking and accessibility.${used}`,
+    description: `${v.type}${where ? ` in ${where}` : ""}. Hosting notes for offline events: booking, contact, food, accessibility and A/V.${
+      events.length ? ` Past events: ${events.join(", ")}.` : ""
+    }`,
   };
 }
 
@@ -44,7 +45,7 @@ const NOT_KNOWN = <span className="text-ink-soft italic">Not yet known</span>;
 
 /** One labelled detail. Empty values read "Not yet known", never a blank gap. */
 function Row({ label, value }: { label: string; value: React.ReactNode }) {
-  const empty = value === null || value === undefined || value === "" || value === "Unknown";
+  const empty = value === null || value === undefined || value === "";
   return (
     <div className="grid grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-3 border-b border-line py-2 last:border-b-0">
       <dt className="text-sm font-bold">{label}</dt>
@@ -65,23 +66,42 @@ function Section({ title, children }: { title: string; children: React.ReactNode
   );
 }
 
-function withNotes(value: string | null, notes: string | null) {
-  if (!value && !notes) return null;
-  return (
-    <>
-      {value}
-      {value && notes ? ". " : ""}
-      {notes && <span className="text-ink-soft">{notes}</span>}
-    </>
-  );
-}
-
 function ExternalLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
     <a href={href} className="text-blue underline underline-offset-4" rel="noopener noreferrer">
       {children}
     </a>
   );
+}
+
+const LINKABLE = /(https?:\/\/[^\s)]+|[\w.+-]+@[\w-]+\.[\w.-]+)/g;
+
+/** Freeform text from the sheet: keeps line breaks, links URLs and emails. */
+function Freeform({ text }: { text: string | null }) {
+  if (!text) return null;
+  return (
+    <span className="whitespace-pre-line">
+      {text.split(LINKABLE).map((part, i) =>
+        i % 2 === 0 ? (
+          part
+        ) : (
+          <ExternalLink key={i} href={part.includes("@") && !part.startsWith("http") ? `mailto:${part}` : part}>
+            {part}
+          </ExternalLink>
+        )
+      )}
+    </span>
+  );
+}
+
+/** A notes value for <Row>: null when blank, so the row reads "Not yet known". */
+function note(text: string | null) {
+  return text ? <Freeform text={text} /> : null;
+}
+
+/** "A, B and C" */
+function listOf(items: string[]): string {
+  return items.length < 2 ? items.join("") : `${items.slice(0, -1).join(", ")} and ${items.at(-1)}`;
 }
 
 export default async function VenuePage({
@@ -93,11 +113,7 @@ export default async function VenuePage({
   if (!v) notFound();
   const h = v.history;
   const stale = isStale(v.lastVerified);
-  const links = [
-    v.website && { label: "Website", href: v.website },
-    v.instagram && { label: "Instagram", href: instagramUrl(v.instagram) },
-    v.bookingLink && { label: "Booking or inquiries", href: v.bookingLink },
-  ].filter(Boolean) as { label: string; href: string }[];
+  const events = h?.recentEvents.slice(0, EVENTS_SHOWN) ?? [];
 
   return (
     <main className="venue-page mx-auto w-full max-w-4xl flex-1 px-4 py-8 sm:px-6">
@@ -133,139 +149,43 @@ export default async function VenuePage({
       </header>
 
       <div className="mt-8 grid gap-5">
-        <Section title="At a glance">
+        <Section title="Venue details">
           <Row label="Type" value={v.type} />
           <Row label="Address" value={v.address} />
           <Row label="Neighborhood" value={place(v)} />
           <Row label="Indoor / outdoor" value={v.indoorOutdoor} />
-          <Row label="Capacity (estimate)" value={capacityText(v)} />
-          <Row label="Seating" value={v.seating} />
-          <Row label="Private room / buyout" value={v.privateRoom} />
-          <Row label="Noise level" value={v.noise} />
-          <Row label="Cost" value={withNotes(v.cost === "Unknown" ? null : v.cost, v.costNotes)} />
-          {(v.indoorOutdoor === "Outdoor" || v.weatherBackup) && (
-            <Row label="Rain plan" value={v.weatherBackup} />
-          )}
+          <Row label="Capacity (estimate)" value={v.capacity ? `About ${v.capacity} people` : null} />
+          <Row label="Public / cost" value={publicCostText(v)} />
         </Section>
 
-        {/* Filled in by collaborators on the sheet. Contact details stay
-            collaborator-only unless the venue agreed to show them. */}
+        {/* Freeform notes collaborators write on the sheet. */}
         <Section title="Venue notes">
-          <Row label="About the space" value={v.notes} />
-          <Row label="Food & drink" value={v.food} />
-          <Row label="Alcohol" value={v.alcohol} />
-          <Row
-            label="Contact"
-            value={
-              v.contact ? (
-                <>
-                  {[v.contact.name, v.contact.role].filter(Boolean).join(", ")}
-                  {v.contact.email && (
-                    <>
-                      {" "}
-                      <ExternalLink href={`mailto:${v.contact.email}`}>{v.contact.email}</ExternalLink>
-                    </>
-                  )}
-                  {v.contact.phone && <> {v.contact.phone}</>}
-                </>
-              ) : v.bookingLink ? (
-                <ExternalLink href={v.bookingLink}>Use the venue&apos;s booking or inquiry link</ExternalLink>
-              ) : null
-            }
-          />
-          <Row label="Links" value={
-            links.length ? (
-              <span className="flex flex-wrap gap-x-4">
-                {links.map((l) => (
-                  <ExternalLink key={l.label} href={l.href}>{l.label}</ExternalLink>
-                ))}
-              </span>
-            ) : null
-          } />
-          <Row label="Last verified" value={v.lastVerified && formatSyncDate(v.lastVerified)} />
+          <Row label="How to book" value={note(v.howToBook)} />
+          <Row label="Contact" value={note(v.contact)} />
+          <Row label="Food & drink" value={note(v.food)} />
+          <Row label="Accessibility" value={note(v.accessibility)} />
+          <Row label="A/V equipment" value={note(v.av)} />
+          <Row label="Other" value={note(v.notes)} />
         </Section>
+      </div>
 
-        <Section title="Hosting here">
-          <Row label="How to book" value={v.howToBook} />
-          <Row label="Booking lead time" value={v.leadTime} />
-          <Row label="Permits" value={v.permitNotes} />
-          <Row label="Best times" value={v.bestTimes} />
-          <Row label="All ages" value={v.allAges} />
-          <Row label="Restrooms" value={v.restrooms} />
-          <Row label="Amplified sound" value={v.amplifiedSound} />
-          <Row label="Phone-free friendly" value={v.phoneFree} />
-        </Section>
-
-        <Section title="Accessibility">
-          <Row label="Step-free access" value={v.stepFree} />
-          <Row label="Accessible restroom" value={v.accessibleRestroom} />
-          <Row label="Notes" value={v.accessibilityNotes} />
-        </Section>
-
-        <Section title="Equipment">
-          <Row label="Power outlets" value={v.power} />
-          <Row label="Sound system / mic" value={v.soundSystem} />
-          <Row label="Projector / screen" value={v.projector} />
-          <Row label="Tables" value={v.tables} />
-        </Section>
-
-        <section className="card p-4 sm:p-5" aria-labelledby="h-getting-there">
-          <h2 id="h-getting-there" className="font-display text-xl">
-            Getting there
-          </h2>
-          <dl className="mt-2">
-            <Row label="Nearest transit" value={v.transit} />
-          </dl>
-          {v.precision === "approx" && (
-            <p className="mt-3 border-2 border-dashed border-pink p-2 text-sm">
-              Approximate location: this pin is placed by neighborhood or cross
-              street, not an exact address.
-            </p>
-          )}
-          <div className="mt-3">
-            <MapViewClient lat={v.lat} lng={v.lng} />
-          </div>
-          <p className="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-sm">
-            <ExternalLink href={osmLink(v)}>Open in OpenStreetMap</ExternalLink>
-            <ExternalLink href={osmDirections(v)}>Directions</ExternalLink>
-          </p>
-        </section>
-
-        <section className="card p-4 sm:p-5" aria-labelledby="h-history">
-          <h2 id="h-history" className="font-display text-xl">
-            Off Tech history
-          </h2>
-          {h ? (
+      <section className="mt-8" aria-labelledby="h-events">
+        <h2 id="h-events" className="font-display text-xl">
+          Events held here
+        </h2>
+        <p className="mt-2 max-w-2xl">
+          {events.length > 0 && h ? (
             <>
-              <p className="mt-2 text-sm">
-                Listed {h.listings} time{h.listings === 1 ? "" : "s"} across {h.issues} issue
-                {h.issues === 1 ? "" : "s"} of the{" "}
-                <ExternalLink href={NEWSLETTER_URL}>NYC Off Tech newsletter</ExternalLink>, from{" "}
-                {h.firstIssue} to {h.latestIssue}.
-              </p>
-              {h.topActivities.length > 0 && (
-                <ul className="mt-3 flex flex-wrap gap-2" aria-label="Top activities">
-                  {h.topActivities.map((a) => (
-                    <li key={a.activity} className="border-2 border-ink bg-paper px-2 py-0.5 text-sm">
-                      {a.activity} <span className="text-ink-soft">({a.count})</span>
-                    </li>
-                  ))}
-                </ul>
-              )}
-              <dl className="mt-3">
-                <Row label="Signature events" value={h.signatureEvents.join(", ")} />
-                <Row label="Most common host" value={h.topHost} />
-                <Row label="Latest event" value={h.latestEvent} />
-              </dl>
+              {listOf(events)}
+              {h.recentEvents.length > EVENTS_SHOWN ? ", among others" : ""}. Listed in the{" "}
+              <ExternalLink href={NEWSLETTER_URL}>NYC Off Tech newsletter</ExternalLink> between{" "}
+              {h.firstIssue} and {h.latestIssue}.
             </>
           ) : (
-            <p className="mt-2 text-sm text-ink-soft">
-              No NYC Off Tech events listed here yet.
-            </p>
+            <span className="text-ink-soft">No NYC Off Tech events listed here yet.</span>
           )}
-        </section>
-
-      </div>
+        </p>
+      </section>
 
       <p className="mt-8 text-sm text-ink-soft">
         Something wrong or missing?{" "}

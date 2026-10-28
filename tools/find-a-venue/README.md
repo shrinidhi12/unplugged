@@ -42,11 +42,13 @@ is committed.
 ## What's on the sheet
 
 - **Venues**: one row per venue. Collaborators fill these in.
-  - **Venue notes** on the site come from *Notes for hosts* (about the space),
-    *Food & drink*, *Alcohol*, and the contact columns. Contact name, role,
-    email and phone are only published if *OK to show contact publicly?* is
-    Yes; otherwise they stay on the sheet for people with access.
-    *Relationship notes* are never published.
+  - **Venue details** (shown): name, type, address, neighborhood, borough,
+    indoor / outdoor, *Capacity (est.)* and *Cost* (shown as "Public / cost").
+  - **Venue notes** (shown, freeform): *How to book*, *Contact*, *Food & drink*,
+    *Accessibility*, *A/V equipment*, *Other notes*. Everything here is
+    public, so *Contact* is for an events email or booking form only.
+  - **Collaborators only** (never published): *Key contact*, *Contact email*,
+    *Contact phone*, *Relationship notes*.
 - **Off Tech history**: per-venue totals from the newsletter. Generated.
 - **Past events**: every event the newsletter listed at each venue (date,
   name, host as listed, activity, and a link to the issue). Generated. Private
@@ -125,9 +127,9 @@ afterwards and deploy. Run `npm run venues:test` first.
 - Only columns the Field guide marks **Shown on site = Yes**, plus the Venue ID
   as the page address. If a column's "Shown on site?" changes to No, it drops off the site
   on the next sync.
-- **Contact name, role, email and phone** are published only on rows where
-  **OK to show contact publicly? = Yes**, which needs the venue's agreement.
-  **Relationship notes**, Verified by and Submitted by are never published.
+- The collaborator-only columns (key contact, email, phone, relationship
+  notes) and Verified by / Submitted by are never published. A public contact
+  belongs in the freeform *Contact* note instead.
 - If the Field guide marks a *new* column as shown, the sync stops and asks for
   it to be added to `PUBLIC_KEYS` in `sync.py`. Then add it to the venue page.
 

@@ -50,35 +50,13 @@
    "lng": -73.9817,
    "precision": "exact",
    "indoorOutdoor": "Outdoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": "Free",
-   "costNotes": null,
-   "howToBook": null,
-   "permitNotes": "Public park: check NYC Parks special event permit rules for larger groups, tables or structures, and NYPD sound permit for amplified sound.",
-   "leadTime": null,
-   "bestTimes": null,
+   "howToBook": "Public park: check NYC Parks special event permit rules for larger groups, tables or structures, and NYPD sound permit for amplified sound.",
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -87,76 +65,17 @@
     "firstIssue": "Oct 2, 2025",
     "latestIssue": "Oct 16, 2026",
     "latestEvent": "Tompkins Distro (weekly)",
-    "topActivities": [
-     {
-      "activity": "Art & performance",
-      "count": 13
-     },
-     {
-      "activity": "Teach-ins & workshops",
-      "count": 12
-     },
-     {
-      "activity": "Parties & socials",
-      "count": 12
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Art & performance",
-      "count": 13
-     },
-     {
-      "activity": "Teach-ins & workshops",
-      "count": 12
-     },
-     {
-      "activity": "Parties & socials",
-      "count": 12
-     },
-     {
-      "activity": "Book launches & talks",
-      "count": 11
-     },
-     {
-      "activity": "Music & dance",
-      "count": 9
-     },
-     {
-      "activity": "Moon rituals & meditation",
-      "count": 8
-     },
-     {
-      "activity": "Luddite Club meetups",
-      "count": 7
-     },
-     {
-      "activity": "Protests & actions",
-      "count": 5
-     },
-     {
-      "activity": "Crafts, repair & making",
-      "count": 4
-     },
-     {
-      "activity": "Games & play",
-      "count": 4
-     },
-     {
-      "activity": "Walks, hikes & nature",
-      "count": 3
-     },
-     {
-      "activity": "Film & screenings",
-      "count": 1
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "Summer of Ludd",
+    "recentEvents": [
+     "Tompkins Distro",
      "Luddite Club",
+     "Local Multiplayer",
+     "Weave nyc",
      "New Rat City",
-     "Tompkins Distro"
-    ],
-    "topHost": "Summer of Ludd"
+     "Jamboree",
+     "STRANGERS Teach-In",
+     "Tech Policy Q&A"
+    ]
    }
   },
   {
@@ -170,35 +89,13 @@
    "lng": -73.9897,
    "precision": "exact",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -207,48 +104,17 @@
     "firstIssue": "Oct 2, 2025",
     "latestIssue": "Oct 16, 2026",
     "latestEvent": "The Dance of an Open Mind: Toni Morrison's Radical Attentions",
-    "topActivities": [
-     {
-      "activity": "Attention Labs (SoRA)",
-      "count": 36
-     },
-     {
-      "activity": "Book launches & talks",
-      "count": 3
-     },
-     {
-      "activity": "Teach-ins & workshops",
-      "count": 1
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Attention Labs (SoRA)",
-      "count": 36
-     },
-     {
-      "activity": "Book launches & talks",
-      "count": 3
-     },
-     {
-      "activity": "Teach-ins & workshops",
-      "count": 1
-     },
-     {
-      "activity": "Reading, poetry & book clubs",
-      "count": 1
-     },
-     {
-      "activity": "Games & play",
-      "count": 1
-     }
-    ],
-    "signatureEvents": [
-     "Attention Lab COALITION",
-     "Attention Lab SANCTUARY",
-     "Attention Lab STUDY"
-    ],
-    "topHost": "School of Radical Attention (SoRA)"
+    "topHost": "School of Radical Attention (SoRA)",
+    "recentEvents": [
+     "The Dance of an Open Mind: Toni Morrison's Radical Attentions",
+     "Attention Lab FEAR",
+     "Attention Lab FOR TEACHERS",
+     "Attention Lab WORLDBUILDING",
+     "Attention Lab FASHION",
+     "EYECATCH! Exhibition Opening",
+     "EYE-CATCH! Fashion Show",
+     "EYE-CATCH! Fashion Show & Dance Party"
+    ]
    }
   },
   {
@@ -262,35 +128,13 @@
    "lng": -73.9814,
    "precision": "exact",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -299,44 +143,14 @@
     "firstIssue": "Oct 2, 2025",
     "latestIssue": "Oct 16, 2026",
     "latestEvent": "Crafternoon (weekly)",
-    "topActivities": [
-     {
-      "activity": "Reading, poetry & book clubs",
-      "count": 12
-     },
-     {
-      "activity": "Crafts, repair & making",
-      "count": 10
-     },
-     {
-      "activity": "Book launches & talks",
-      "count": 2
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Reading, poetry & book clubs",
-      "count": 12
-     },
-     {
-      "activity": "Crafts, repair & making",
-      "count": 10
-     },
-     {
-      "activity": "Book launches & talks",
-      "count": 2
-     },
-     {
-      "activity": "Writing, zines & letters",
-      "count": 1
-     }
-    ],
-    "signatureEvents": [
-     "Offline Book Club",
+    "topHost": "NYPL Offline Book Club",
+    "recentEvents": [
      "Crafternoon",
-     "Who Gets to Decide How AI Enters Our Schools?"
-    ],
-    "topHost": "NYPL Offline Book Club"
+     "Offline Book Club",
+     "Who Gets to Decide How AI Enters Our Schools?",
+     "Junk Journal Night",
+     "SoRA at NYPL"
+    ]
    }
   },
   {
@@ -350,35 +164,13 @@
    "lng": -73.969,
    "precision": "exact",
    "indoorOutdoor": "Outdoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": "Free",
-   "costNotes": null,
-   "howToBook": null,
-   "permitNotes": "Public park: check NYC Parks special event permit rules for larger groups, tables or structures, and NYPD sound permit for amplified sound.",
-   "leadTime": null,
-   "bestTimes": null,
+   "howToBook": "Public park: check NYC Parks special event permit rules for larger groups, tables or structures, and NYPD sound permit for amplified sound.",
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -387,64 +179,17 @@
     "firstIssue": "Oct 2, 2025",
     "latestIssue": "Oct 16, 2026",
     "latestEvent": "Pirates of Prospect Park Annual Treasure Hunt",
-    "topActivities": [
-     {
-      "activity": "Walks, hikes & nature",
-      "count": 6
-     },
-     {
-      "activity": "Teach-ins & workshops",
-      "count": 3
-     },
-     {
-      "activity": "Games & play",
-      "count": 3
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Walks, hikes & nature",
-      "count": 6
-     },
-     {
-      "activity": "Teach-ins & workshops",
-      "count": 3
-     },
-     {
-      "activity": "Games & play",
-      "count": 3
-     },
-     {
-      "activity": "Reading, poetry & book clubs",
-      "count": 3
-     },
-     {
-      "activity": "Art & performance",
-      "count": 2
-     },
-     {
-      "activity": "Attention Labs (SoRA)",
-      "count": 2
-     },
-     {
-      "activity": "Crafts, repair & making",
-      "count": 1
-     },
-     {
-      "activity": "Moon rituals & meditation",
-      "count": 1
-     },
-     {
-      "activity": "Music & dance",
-      "count": 1
-     }
-    ],
-    "signatureEvents": [
-     "Trephelobia Poetry Circle",
+    "topHost": "Kyle Barnes / Chimeras Collective",
+    "recentEvents": [
+     "Pirates of Prospect Park Annual Treasure Hunt",
+     "Capture the Future",
      "Druid School",
-     "Monthly Molting' Ecology Workshop"
-    ],
-    "topHost": "Kyle Barnes / Chimeras Collective"
+     "Get lost day",
+     "Trephelobia Poetry Circle",
+     "Prospect Park Sunset Circlesing",
+     "Naming Ceremony",
+     "How to Throw a Party"
+    ]
    }
   },
   {
@@ -458,35 +203,13 @@
    "lng": -73.9844,
    "precision": "exact",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -495,56 +218,17 @@
     "firstIssue": "Mar 2, 2026",
     "latestIssue": "Oct 1, 2026",
     "latestEvent": "The Art of Leonard Peltier Comes to NYC",
-    "topActivities": [
-     {
-      "activity": "Teach-ins & workshops",
-      "count": 7
-     },
-     {
-      "activity": "Art & performance",
-      "count": 5
-     },
-     {
-      "activity": "Parties & socials",
-      "count": 2
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Teach-ins & workshops",
-      "count": 7
-     },
-     {
-      "activity": "Art & performance",
-      "count": 5
-     },
-     {
-      "activity": "Parties & socials",
-      "count": 2
-     },
-     {
-      "activity": "Book launches & talks",
-      "count": 1
-     },
-     {
-      "activity": "Film & screenings",
-      "count": 1
-     },
-     {
-      "activity": "Crafts, repair & making",
-      "count": 1
-     },
-     {
-      "activity": "Writing, zines & letters",
-      "count": 1
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "Summer of Ludd",
+    "recentEvents": [
+     "The Art of Leonard Peltier Comes to NYC",
      "Earth Chxrch",
+     "Computer Care Café",
+     "Public Interest Postal Service Zine Making",
+     "Defense Against the Dark Arts",
+     "Stevie Wonder vs. The Nazis Teach-In",
      "Hat Making & Teach-in",
-     "The Art of Leonard Peltier Comes to NYC"
-    ],
-    "topHost": "Summer of Ludd"
+     "Pre-SoL Teach-in"
+    ]
    }
   },
   {
@@ -558,35 +242,13 @@
    "lng": -73.9381,
    "precision": "exact",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -595,52 +257,17 @@
     "firstIssue": "Nov 14, 2025",
     "latestIssue": "Aug 1, 2026",
     "latestEvent": "MO Gallery Exhibition (Free Offline Expo)",
-    "topActivities": [
-     {
-      "activity": "Parties & socials",
-      "count": 5
-     },
-     {
-      "activity": "Art & performance",
-      "count": 4
-     },
-     {
-      "activity": "Reading, poetry & book clubs",
-      "count": 2
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Parties & socials",
-      "count": 5
-     },
-     {
-      "activity": "Art & performance",
-      "count": 4
-     },
-     {
-      "activity": "Reading, poetry & book clubs",
-      "count": 2
-     },
-     {
-      "activity": "Writing, zines & letters",
-      "count": 1
-     },
-     {
-      "activity": "Support groups",
-      "count": 1
-     },
-     {
-      "activity": "Music & dance",
-      "count": 1
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "NYC offline community (Let's Get Off Together)",
+    "recentEvents": [
+     "Month Offline Gallery Exhibition",
+     "MO Gallery Exhibition",
      "Let's get off together",
-     "Consumption Book Club: Land of Milk and Honey",
-     "Month Offline Gallery Exhibition"
-    ],
-    "topHost": "NYC offline community (Let's Get Off Together)"
+     "Cut the Chord Concert",
+     "SofAI Launch",
+     "Month Offline Expo",
+     "Month Offline kickoff",
+     "Appstinence IRL Office Hours"
+    ]
    }
   },
   {
@@ -654,35 +281,13 @@
    "lng": -73.9973,
    "precision": "exact",
    "indoorOutdoor": "Outdoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": "Free",
-   "costNotes": null,
-   "howToBook": null,
-   "permitNotes": "Public park: check NYC Parks special event permit rules for larger groups, tables or structures, and NYPD sound permit for amplified sound.",
-   "leadTime": null,
-   "bestTimes": null,
+   "howToBook": "Public park: check NYC Parks special event permit rules for larger groups, tables or structures, and NYPD sound permit for amplified sound.",
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -691,60 +296,17 @@
     "firstIssue": "Oct 2, 2025",
     "latestIssue": "Sep 14, 2026",
     "latestEvent": "Washington Square Mass Read-in",
-    "topActivities": [
-     {
-      "activity": "Reading, poetry & book clubs",
-      "count": 4
-     },
-     {
-      "activity": "Art & performance",
-      "count": 3
-     },
-     {
-      "activity": "Outreach & tabling",
-      "count": 2
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Reading, poetry & book clubs",
-      "count": 4
-     },
-     {
-      "activity": "Art & performance",
-      "count": 3
-     },
-     {
-      "activity": "Outreach & tabling",
-      "count": 2
-     },
-     {
-      "activity": "Protests & actions",
-      "count": 2
-     },
-     {
-      "activity": "Book launches & talks",
-      "count": 1
-     },
-     {
-      "activity": "Attention Labs (SoRA)",
-      "count": 1
-     },
-     {
-      "activity": "Writing, zines & letters",
-      "count": 1
-     },
-     {
-      "activity": "Moon rituals & meditation",
-      "count": 1
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "Young People's Alliance & friends (tied, 5 hosts)",
+    "recentEvents": [
      "Washington Square Mass Read-in",
      "OPT OUT OF UTOPIA: an art pop-up",
-     "Mass for the magnetic field"
-    ],
-    "topHost": "Young People's Alliance & friends (tied, 5 hosts)"
+     "Mass for the magnetic field",
+     "Come write a scathing postcard",
+     "Miming in the Park",
+     "Introducing the First Fully Offline Presidential Candidate",
+     "Mass Poetry Reading",
+     "Sunday Pride with ACT UP"
+    ]
    }
   },
   {
@@ -758,35 +320,13 @@
    "lng": -73.9757,
    "precision": "exact",
    "indoorOutdoor": "Outdoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": "Free",
-   "costNotes": null,
-   "howToBook": null,
-   "permitNotes": "Public park: check NYC Parks special event permit rules for larger groups, tables or structures, and NYPD sound permit for amplified sound.",
-   "leadTime": null,
-   "bestTimes": null,
+   "howToBook": "Public park: check NYC Parks special event permit rules for larger groups, tables or structures, and NYPD sound permit for amplified sound.",
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -795,52 +335,17 @@
     "firstIssue": "Oct 2, 2025",
     "latestIssue": "Oct 16, 2026",
     "latestEvent": "Falling Leaves Moon",
-    "topActivities": [
-     {
-      "activity": "Moon rituals & meditation",
-      "count": 5
-     },
-     {
-      "activity": "Reading, poetry & book clubs",
-      "count": 3
-     },
-     {
-      "activity": "Teach-ins & workshops",
-      "count": 2
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Moon rituals & meditation",
-      "count": 5
-     },
-     {
-      "activity": "Reading, poetry & book clubs",
-      "count": 3
-     },
-     {
-      "activity": "Teach-ins & workshops",
-      "count": 2
-     },
-     {
-      "activity": "Parties & socials",
-      "count": 2
-     },
-     {
-      "activity": "Art & performance",
-      "count": 1
-     },
-     {
-      "activity": "Writing, zines & letters",
-      "count": 1
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "Kyle Barnes / Chimeras Collective",
+    "recentEvents": [
      "Falling Leaves Moon",
      "LUDD LOVERS Zine Party",
-     "October New Moon Study Circle: Technopoly"
-    ],
-    "topHost": "Kyle Barnes / Chimeras Collective"
+     "October New Moon Study Circle: Technopoly",
+     "How to Throw a Party at the End of the World",
+     "Corn Moon",
+     "New Moon Study Group: Amusing Ourselves To Death",
+     "Leftist Buddhist Book Club",
+     "Dan's Phone Free Birthday Bash"
+    ]
    }
   },
   {
@@ -854,35 +359,13 @@
    "lng": -73.9682,
    "precision": "exact",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -891,44 +374,15 @@
     "firstIssue": "Oct 2, 2025",
     "latestIssue": "Sep 14, 2026",
     "latestEvent": "AI and You",
-    "topActivities": [
-     {
-      "activity": "Teach-ins & workshops",
-      "count": 3
-     },
-     {
-      "activity": "Luddite Club meetups",
-      "count": 3
-     },
-     {
-      "activity": "Crafts, repair & making",
-      "count": 2
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Teach-ins & workshops",
-      "count": 3
-     },
-     {
-      "activity": "Luddite Club meetups",
-      "count": 3
-     },
-     {
-      "activity": "Crafts, repair & making",
-      "count": 2
-     },
-     {
-      "activity": "Book launches & talks",
-      "count": 1
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "Brooklyn Luddite Club",
+    "recentEvents": [
+     "AI and You",
+     "CyPurr Collective: AI and You",
      "Luddite Club",
      "Unplatform Creatives Workshop",
-     "AI and You"
-    ],
-    "topHost": "Brooklyn Luddite Club"
+     "Unplatform",
+     "ENSHITTIFICATION w/ Cory Doctorow & Lina Khan"
+    ]
    }
   },
   {
@@ -942,35 +396,13 @@
    "lng": -73.9318,
    "precision": "exact",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -979,32 +411,15 @@
     "firstIssue": "Jul 11, 2026",
     "latestIssue": "Oct 16, 2026",
     "latestEvent": "Sewing Repair Café",
-    "topActivities": [
-     {
-      "activity": "Crafts, repair & making",
-      "count": 7
-     },
-     {
-      "activity": "Teach-ins & workshops",
-      "count": 1
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Crafts, repair & making",
-      "count": 7
-     },
-     {
-      "activity": "Teach-ins & workshops",
-      "count": 1
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "Cornerstone Makerspace",
+    "recentEvents": [
      "Sewing Repair Café",
      "Spooky Synthesizer Show and Tell",
-     "Makerspace Open House"
-    ],
-    "topHost": "Cornerstone Makerspace"
+     "Makerspace Open House",
+     "Intro to Creative Coding",
+     "Fall in Love with the City",
+     "Soldering for Beginners II"
+    ]
    }
   },
   {
@@ -1018,35 +433,13 @@
    "lng": -73.97,
    "precision": "exact",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -1055,40 +448,15 @@
     "firstIssue": "Nov 14, 2025",
     "latestIssue": "Aug 15, 2026",
     "latestEvent": "Unplatform ORGANIZER MEETUP",
-    "topActivities": [
-     {
-      "activity": "Teach-ins & workshops",
-      "count": 4
-     },
-     {
-      "activity": "Protests & actions",
-      "count": 2
-     },
-     {
-      "activity": "Book launches & talks",
-      "count": 1
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Teach-ins & workshops",
-      "count": 4
-     },
-     {
-      "activity": "Protests & actions",
-      "count": 2
-     },
-     {
-      "activity": "Book launches & talks",
-      "count": 1
-     }
-    ],
-    "signatureEvents": [
-     "Unplatform Creatives Workshop",
+    "topHost": "Unplatform",
+    "recentEvents": [
      "Unplatform ORGANIZER MEETUP",
-     "ChatGTFO!"
-    ],
-    "topHost": "Unplatform"
+     "ChatGTFO",
+     "ChatGTFO!",
+     "Unplatform Creatives Workshop",
+     "Unplatform",
+     "Should we get off?"
+    ]
    }
   },
   {
@@ -1102,35 +470,13 @@
    "lng": -73.9626,
    "precision": "exact",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -1139,40 +485,16 @@
     "firstIssue": "Nov 1, 2025",
     "latestIssue": "May 19, 2026",
     "latestEvent": "Brown Institute Media Party",
-    "topActivities": [
-     {
-      "activity": "Book launches & talks",
-      "count": 5
-     },
-     {
-      "activity": "Writing, zines & letters",
-      "count": 1
-     },
-     {
-      "activity": "Art & performance",
-      "count": 1
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Book launches & talks",
-      "count": 5
-     },
-     {
-      "activity": "Writing, zines & letters",
-      "count": 1
-     },
-     {
-      "activity": "Art & performance",
-      "count": 1
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "Brown Institute",
+    "recentEvents": [
      "Brown Institute Media Party",
      "Devotion and Distraction Talk",
-     "Evening with Alex Bores"
-    ],
-    "topHost": "Brown Institute"
+     "Evening with Alex Bores",
+     "Left to Their Own Devices: Jon Haidt",
+     "The extraction economy",
+     "Poster Party MANHATTAN",
+     "New Luddism conference"
+    ]
    }
   },
   {
@@ -1186,35 +508,13 @@
    "lng": -73.999,
    "precision": "exact",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -1223,22 +523,10 @@
     "firstIssue": "Feb 2, 2026",
     "latestIssue": "Jun 14, 2026",
     "latestEvent": "Technocritical Writers Room",
-    "topActivities": [
-     {
-      "activity": "Writing, zines & letters",
-      "count": 5
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Writing, zines & letters",
-      "count": 5
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "Amalia Mayorga",
+    "recentEvents": [
      "Technocritical Writers Room"
-    ],
-    "topHost": "Amalia Mayorga"
+    ]
    }
   },
   {
@@ -1252,35 +540,13 @@
    "lng": -74.001,
    "precision": "exact",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -1289,22 +555,10 @@
     "firstIssue": "Jul 11, 2026",
     "latestIssue": "Oct 16, 2026",
     "latestEvent": "Internet & Tech Addicts Anonymous (weekly)",
-    "topActivities": [
-     {
-      "activity": "Support groups",
-      "count": 5
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Support groups",
-      "count": 5
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "Internet & Tech Addicts Anonymous",
+    "recentEvents": [
      "Internet & Tech Addicts Anonymous"
-    ],
-    "topHost": "Internet & Tech Addicts Anonymous"
+    ]
    }
   },
   {
@@ -1318,35 +572,13 @@
    "lng": -73.9933,
    "precision": "exact",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -1355,32 +587,12 @@
     "firstIssue": "Jan 2, 2026",
     "latestIssue": "Mar 2, 2026",
     "latestEvent": "Event Facilitator Workshop (weekly)",
-    "topActivities": [
-     {
-      "activity": "Teach-ins & workshops",
-      "count": 3
-     },
-     {
-      "activity": "Reading, poetry & book clubs",
-      "count": 1
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Teach-ins & workshops",
-      "count": 3
-     },
-     {
-      "activity": "Reading, poetry & book clubs",
-      "count": 1
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "NYC Off Tech organizers",
+    "recentEvents": [
      "Event Facilitator Workshop",
      "Giorno Poetry Systems Live Programming Resumes",
      "Event Facilitator Training"
-    ],
-    "topHost": "NYC Off Tech organizers"
+    ]
    }
   },
   {
@@ -1394,35 +606,13 @@
    "lng": -73.933,
    "precision": "approx",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -1431,40 +621,14 @@
     "firstIssue": "Nov 1, 2025",
     "latestIssue": "Sep 1, 2026",
     "latestEvent": "\"Can Games Change the World?\" Showcase",
-    "topActivities": [
-     {
-      "activity": "Music & dance",
-      "count": 5
-     },
-     {
-      "activity": "Book launches & talks",
-      "count": 1
-     },
-     {
-      "activity": "Art & performance",
-      "count": 1
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Music & dance",
-      "count": 5
-     },
-     {
-      "activity": "Book launches & talks",
-      "count": 1
-     },
-     {
-      "activity": "Art & performance",
-      "count": 1
-     }
-    ],
-    "signatureEvents": [
-     "boshi's spontaneous orchestra",
+    "topHost": "boshi's place",
+    "recentEvents": [
      "Can Games Change the World? Showcase",
-     "boshi's lecture series: C. Thi Nguyen"
-    ],
-    "topHost": "boshi's place"
+     "boshi's spontaneous orchestra",
+     "boshi's lecture series: C. Thi Nguyen",
+     "Spotify Deletion Dance Party",
+     "Spotify Unwrapped"
+    ]
    }
   },
   {
@@ -1478,35 +642,13 @@
    "lng": -74.004,
    "precision": "exact",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -1515,31 +657,11 @@
     "firstIssue": "Dec 1, 2025",
     "latestIssue": "Apr 2, 2026",
     "latestEvent": "An Evening of Music (Screen-Free)",
-    "topActivities": [
-     {
-      "activity": "Music & dance",
-      "count": 3
-     },
-     {
-      "activity": "Parties & socials",
-      "count": 1
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Music & dance",
-      "count": 3
-     },
-     {
-      "activity": "Parties & socials",
-      "count": 1
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "August Lamm & Andy Henley",
+    "recentEvents": [
      "An Evening of Music",
      "Christmas Presence w/ August Lamm & Andy Henley"
-    ],
-    "topHost": "August Lamm & Andy Henley"
+    ]
    }
   },
   {
@@ -1553,35 +675,13 @@
    "lng": -73.8856,
    "precision": "exact",
    "indoorOutdoor": "Outdoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": "Free",
-   "costNotes": null,
-   "howToBook": null,
-   "permitNotes": "Public park: check NYC Parks special event permit rules for larger groups, tables or structures, and NYPD sound permit for amplified sound.",
-   "leadTime": null,
-   "bestTimes": null,
+   "howToBook": "Public park: check NYC Parks special event permit rules for larger groups, tables or structures, and NYPD sound permit for amplified sound.",
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -1590,22 +690,10 @@
     "firstIssue": "Aug 1, 2026",
     "latestIssue": "Oct 16, 2026",
     "latestEvent": "Fort Tilden & Breezy Point Beach Cleanup (weekly)",
-    "topActivities": [
-     {
-      "activity": "Walks, hikes & nature",
-      "count": 4
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Walks, hikes & nature",
-      "count": 4
-     }
-    ],
-    "signatureEvents": [
+    "topHost": null,
+    "recentEvents": [
      "Fort Tilden & Breezy Point Beach Cleanup"
-    ],
-    "topHost": null
+    ]
    }
   },
   {
@@ -1619,35 +707,13 @@
    "lng": -73.9293,
    "precision": "exact",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -1656,22 +722,10 @@
     "firstIssue": "Jun 1, 2026",
     "latestIssue": "Sep 14, 2026",
     "latestEvent": "Burner Phone Writing Group",
-    "topActivities": [
-     {
-      "activity": "Writing, zines & letters",
-      "count": 4
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Writing, zines & letters",
-      "count": 4
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "Burner Phone",
+    "recentEvents": [
      "Burner Phone Writing Group"
-    ],
-    "topHost": "Burner Phone"
+    ]
    }
   },
   {
@@ -1685,35 +739,13 @@
    "lng": -73.9971,
    "precision": "exact",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -1722,40 +754,14 @@
     "firstIssue": "Mar 2, 2026",
     "latestIssue": "Jun 20, 2026",
     "latestEvent": "The Luddite Conference on Participatory Futures",
-    "topActivities": [
-     {
-      "activity": "Film & screenings",
-      "count": 2
-     },
-     {
-      "activity": "Book launches & talks",
-      "count": 2
-     },
-     {
-      "activity": "Art & performance",
-      "count": 1
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Film & screenings",
-      "count": 2
-     },
-     {
-      "activity": "Book launches & talks",
-      "count": 2
-     },
-     {
-      "activity": "Art & performance",
-      "count": 1
-     }
-    ],
-    "signatureEvents": [
-     "The Luddite Conference on Participatory Futures",
+    "topHost": "Tech Workers Coalition",
+    "recentEvents": [
      "Luddite Conference on Participatory Futures",
-     "TWC: Ghost in the Machine Screening"
-    ],
-    "topHost": "Tech Workers Coalition"
+     "The Luddite Conference on Participatory Futures",
+     "TWC: Ghost in the Machine Screening",
+     "TWC: Ghost in the Machine",
+     "President Protocol"
+    ]
    }
   },
   {
@@ -1769,35 +775,13 @@
    "lng": -73.9306,
    "precision": "exact",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -1806,40 +790,13 @@
     "firstIssue": "Jan 16, 2026",
     "latestIssue": "May 19, 2026",
     "latestEvent": "Event Organizer Meetup",
-    "topActivities": [
-     {
-      "activity": "Crafts, repair & making",
-      "count": 2
-     },
-     {
-      "activity": "Writing, zines & letters",
-      "count": 1
-     },
-     {
-      "activity": "Teach-ins & workshops",
-      "count": 1
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Crafts, repair & making",
-      "count": 2
-     },
-     {
-      "activity": "Writing, zines & letters",
-      "count": 1
-     },
-     {
-      "activity": "Teach-ins & workshops",
-      "count": 1
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "NYC Event Organizers Meetup (tied, 2 hosts)",
+    "recentEvents": [
      "Event Organizer Meetup",
      "Break Up with Google Again",
-     "Requiem for the Home Computer Zine Release"
-    ],
-    "topHost": "NYC Event Organizers Meetup (tied, 2 hosts)"
+     "Requiem for the Home Computer Zine Release",
+     "Break Up with Google"
+    ]
    }
   },
   {
@@ -1853,35 +810,13 @@
    "lng": -73.9447,
    "precision": "exact",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -1890,24 +825,12 @@
     "firstIssue": "Jun 1, 2026",
     "latestIssue": "Oct 1, 2026",
     "latestEvent": "News & Brews #2: Prediction Markets",
-    "topActivities": [
-     {
-      "activity": "Book launches & talks",
-      "count": 4
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Book launches & talks",
-      "count": 4
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "News and Brews",
+    "recentEvents": [
      "News & Brews #2: Prediction Markets",
-     "When the Data Disappears",
-     "Covering the Environment When the Data Disappears"
-    ],
-    "topHost": "News and Brews"
+     "Covering the Environment When the Data Disappears",
+     "When the Data Disappears"
+    ]
    }
   },
   {
@@ -1921,35 +844,13 @@
    "lng": -73.9773,
    "precision": "exact",
    "indoorOutdoor": "Outdoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": "Free",
-   "costNotes": null,
-   "howToBook": null,
-   "permitNotes": "Public park: check NYC Parks special event permit rules for larger groups, tables or structures, and NYPD sound permit for amplified sound.",
-   "leadTime": null,
-   "bestTimes": null,
+   "howToBook": "Public park: check NYC Parks special event permit rules for larger groups, tables or structures, and NYPD sound permit for amplified sound.",
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -1958,40 +859,14 @@
     "firstIssue": "Jun 1, 2026",
     "latestIssue": "Jun 20, 2026",
     "latestEvent": "The Card Catalog of Potential",
-    "topActivities": [
-     {
-      "activity": "Teach-ins & workshops",
-      "count": 3
-     },
-     {
-      "activity": "Parties & socials",
-      "count": 1
-     },
-     {
-      "activity": "Crafts, repair & making",
-      "count": 1
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Teach-ins & workshops",
-      "count": 3
-     },
-     {
-      "activity": "Parties & socials",
-      "count": 1
-     },
-     {
-      "activity": "Crafts, repair & making",
-      "count": 1
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "Summer of Ludd (tied, 2 hosts)",
+    "recentEvents": [
      "The Card Catalog of Potential",
      "Live Texting",
+     "Make Your Own Community Calendars",
+     "What Are You Doing Tonight? Make Your Own Event Calendar",
      "What Are You Doing Tonight? Start Your Own Events Calendar"
-    ],
-    "topHost": "Summer of Ludd (tied, 2 hosts)"
+    ]
    }
   },
   {
@@ -2005,35 +880,13 @@
    "lng": -74.0048,
    "precision": "exact",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -2042,40 +895,13 @@
     "firstIssue": "Apr 2, 2026",
     "latestIssue": "Aug 1, 2026",
     "latestEvent": "Handmade Datasets",
-    "topActivities": [
-     {
-      "activity": "Teach-ins & workshops",
-      "count": 2
-     },
-     {
-      "activity": "Attention Labs (SoRA)",
-      "count": 1
-     },
-     {
-      "activity": "Crafts, repair & making",
-      "count": 1
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Teach-ins & workshops",
-      "count": 2
-     },
-     {
-      "activity": "Attention Labs (SoRA)",
-      "count": 1
-     },
-     {
-      "activity": "Crafts, repair & making",
-      "count": 1
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "School of Radical Attention (SoRA)",
+    "recentEvents": [
      "Handmade Datasets",
      "ATTENTION IS A SCHOOL: SoRA Workshops",
-     "Attention Activism 101 IN PERSON"
-    ],
-    "topHost": "School of Radical Attention (SoRA)"
+     "Attention Activism 101 IN PERSON",
+     "Attention Lab at NoAD"
+    ]
    }
   },
   {
@@ -2089,35 +915,13 @@
    "lng": -73.9507,
    "precision": "exact",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -2126,32 +930,12 @@
     "firstIssue": "Oct 1, 2026",
     "latestIssue": "Oct 16, 2026",
     "latestEvent": "\"BRIGHT FIVE\" Presentation Party",
-    "topActivities": [
-     {
-      "activity": "Art & performance",
-      "count": 3
-     },
-     {
-      "activity": "Parties & socials",
-      "count": 1
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Art & performance",
-      "count": 3
-     },
-     {
-      "activity": "Parties & socials",
-      "count": 1
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "Dan Fox (Phone-Free Adelphi)",
+    "recentEvents": [
      "BRIGHT FIVE Presentation Party",
      "Phone Free Comedy w/ Dan Fox",
      "Ihatemyphoneilovemyphone"
-    ],
-    "topHost": "Dan Fox (Phone-Free Adelphi)"
+    ]
    }
   },
   {
@@ -2165,35 +949,13 @@
    "lng": -73.9845,
    "precision": "exact",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -2202,22 +964,10 @@
     "firstIssue": "May 1, 2026",
     "latestIssue": "Jun 14, 2026",
     "latestEvent": "NYC Mesh Open Mesh Night (weekly)",
-    "topActivities": [
-     {
-      "activity": "Crafts, repair & making",
-      "count": 2
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Crafts, repair & making",
-      "count": 2
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "NYC Mesh",
+    "recentEvents": [
      "NYC Mesh Open Mesh Night"
-    ],
-    "topHost": "NYC Mesh"
+    ]
    }
   },
   {
@@ -2231,35 +981,13 @@
    "lng": -73.9967,
    "precision": "exact",
    "indoorOutdoor": "Outdoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": "Free",
-   "costNotes": null,
-   "howToBook": null,
-   "permitNotes": "Public park: check NYC Parks special event permit rules for larger groups, tables or structures, and NYPD sound permit for amplified sound.",
-   "leadTime": null,
-   "bestTimes": null,
+   "howToBook": "Public park: check NYC Parks special event permit rules for larger groups, tables or structures, and NYPD sound permit for amplified sound.",
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -2268,44 +996,13 @@
     "firstIssue": "Apr 17, 2026",
     "latestIssue": "Oct 1, 2026",
     "latestEvent": "Jungle Games",
-    "topActivities": [
-     {
-      "activity": "Moon rituals & meditation",
-      "count": 1
-     },
-     {
-      "activity": "Walks, hikes & nature",
-      "count": 1
-     },
-     {
-      "activity": "Art & performance",
-      "count": 1
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Moon rituals & meditation",
-      "count": 1
-     },
-     {
-      "activity": "Walks, hikes & nature",
-      "count": 1
-     },
-     {
-      "activity": "Art & performance",
-      "count": 1
-     },
-     {
-      "activity": "Games & play",
-      "count": 1
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "Samvit Sengupta",
+    "recentEvents": [
      "Jungle Games",
      "Weave nyc",
-     "BrooklynHike"
-    ],
-    "topHost": "Samvit Sengupta"
+     "BrooklynHike",
+     "Sunset in Silence"
+    ]
    }
   },
   {
@@ -2319,35 +1016,13 @@
    "lng": -73.9921,
    "precision": "exact",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -2356,23 +1031,11 @@
     "firstIssue": "Aug 1, 2026",
     "latestIssue": "Oct 1, 2026",
     "latestEvent": "Singles Dating Matching Using Palantir Data",
-    "topActivities": [
-     {
-      "activity": "Games & play",
-      "count": 2
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Games & play",
-      "count": 2
-     }
-    ],
-    "signatureEvents": [
+    "topHost": null,
+    "recentEvents": [
      "Singles Dating Matching Using Palantir Data",
      "Singles Dating Using Palantir Data"
-    ],
-    "topHost": null
+    ]
    }
   },
   {
@@ -2386,35 +1049,13 @@
    "lng": -73.9216,
    "precision": "exact",
    "indoorOutdoor": "Both",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -2423,31 +1064,11 @@
     "firstIssue": "Aug 1, 2026",
     "latestIssue": "Sep 14, 2026",
     "latestEvent": "Burner Phone MISS WORLD Launch Party",
-    "topActivities": [
-     {
-      "activity": "Music & dance",
-      "count": 1
-     },
-     {
-      "activity": "Art & performance",
-      "count": 1
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Music & dance",
-      "count": 1
-     },
-     {
-      "activity": "Art & performance",
-      "count": 1
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "Burner Phone (tied, 2 hosts)",
+    "recentEvents": [
      "Burner Phone MISS WORLD Launch Party",
      "Vainglory Record Release Show"
-    ],
-    "topHost": "Burner Phone (tied, 2 hosts)"
+    ]
    }
   },
   {
@@ -2461,35 +1082,13 @@
    "lng": -74.027,
    "precision": "approx",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -2498,22 +1097,10 @@
     "firstIssue": "Feb 2, 2026",
     "latestIssue": "May 19, 2026",
     "latestEvent": "Bay Ridge Figure Drawing",
-    "topActivities": [
-     {
-      "activity": "Art & performance",
-      "count": 3
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Art & performance",
-      "count": 3
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "Amanda Hanna-McLeer",
+    "recentEvents": [
      "Bay Ridge Figure Drawing"
-    ],
-    "topHost": "Amanda Hanna-McLeer"
+    ]
    }
   },
   {
@@ -2527,35 +1114,13 @@
    "lng": -73.978,
    "precision": "exact",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -2564,23 +1129,11 @@
     "firstIssue": "May 19, 2026",
     "latestIssue": "Jun 14, 2026",
     "latestEvent": "'Your Attention Please' NYC Premiere",
-    "topActivities": [
-     {
-      "activity": "Film & screenings",
-      "count": 2
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Film & screenings",
-      "count": 2
-     }
-    ],
-    "signatureEvents": [
-     "Your Attention Please' NYC Premiere",
-     "Your Attention Please NY Premiere"
-    ],
-    "topHost": null
+    "topHost": null,
+    "recentEvents": [
+     "Your Attention Please NY Premiere",
+     "Your Attention Please' NYC Premiere"
+    ]
    }
   },
   {
@@ -2594,35 +1147,13 @@
    "lng": -73.9573,
    "precision": "exact",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -2631,32 +1162,12 @@
     "firstIssue": "May 1, 2026",
     "latestIssue": "May 19, 2026",
     "latestEvent": "Global Endurance Collective Launch",
-    "topActivities": [
-     {
-      "activity": "Book launches & talks",
-      "count": 2
-     },
-     {
-      "activity": "Parties & socials",
-      "count": 1
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Book launches & talks",
-      "count": 2
-     },
-     {
-      "activity": "Parties & socials",
-      "count": 1
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "Global Endurance Collective (tied, 2 hosts)",
+    "recentEvents": [
      "Global Endurance Collective Launch",
-     "Newsreel: Feed Is Cooked",
-     "Newsreel Launch: The Feed Is Cooked"
-    ],
-    "topHost": "Global Endurance Collective (tied, 2 hosts)"
+     "Newsreel Launch: The Feed Is Cooked",
+     "Newsreel: Feed Is Cooked"
+    ]
    }
   },
   {
@@ -2670,35 +1181,13 @@
    "lng": -73.9842,
    "precision": "exact",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -2707,23 +1196,11 @@
     "firstIssue": "Oct 1, 2026",
     "latestIssue": "Oct 16, 2026",
     "latestEvent": "REAL LIFE TONIGHT",
-    "topActivities": [
-     {
-      "activity": "Parties & socials",
-      "count": 1
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Parties & socials",
-      "count": 1
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "Ian & Amelia",
+    "recentEvents": [
      "Real life tonight",
      "We're Ready tobelieve You"
-    ],
-    "topHost": "Ian & Amelia"
+    ]
    }
   },
   {
@@ -2737,35 +1214,13 @@
    "lng": -74.0015,
    "precision": "exact",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -2774,23 +1229,11 @@
     "firstIssue": "Sep 14, 2026",
     "latestIssue": "Oct 16, 2026",
     "latestEvent": "CDNY English Country Dance & Contra (twice weekly)",
-    "topActivities": [
-     {
-      "activity": "Music & dance",
-      "count": 2
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Music & dance",
-      "count": 2
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "CDNY",
+    "recentEvents": [
      "CDNY English Country Dance & Contra",
      "Cdny"
-    ],
-    "topHost": "CDNY"
+    ]
    }
   },
   {
@@ -2804,35 +1247,13 @@
    "lng": -73.997,
    "precision": "approx",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -2841,32 +1262,12 @@
     "firstIssue": "Feb 17, 2026",
     "latestIssue": "Sep 14, 2026",
     "latestEvent": "Does Expertise Matter?",
-    "topActivities": [
-     {
-      "activity": "Book launches & talks",
-      "count": 2
-     },
-     {
-      "activity": "Parties & socials",
-      "count": 1
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Book launches & talks",
-      "count": 2
-     },
-     {
-      "activity": "Parties & socials",
-      "count": 1
-     }
-    ],
-    "signatureEvents": [
+    "topHost": null,
+    "recentEvents": [
      "Does Expertise Matter?",
      "Evening with Alex Bores",
      "Teaching Creative Tech in the Age of AI"
-    ],
-    "topHost": null
+    ]
    }
   },
   {
@@ -2880,35 +1281,13 @@
    "lng": -73.9835,
    "precision": "exact",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -2917,31 +1296,11 @@
     "firstIssue": "Mar 2, 2026",
     "latestIssue": "May 19, 2026",
     "latestEvent": "Intro to Linux Workshop",
-    "topActivities": [
-     {
-      "activity": "Music & dance",
-      "count": 1
-     },
-     {
-      "activity": "Teach-ins & workshops",
-      "count": 1
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Music & dance",
-      "count": 1
-     },
-     {
-      "activity": "Teach-ins & workshops",
-      "count": 1
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "IWW NYC",
+    "recentEvents": [
      "Intro to Linux Workshop",
      "Ditch Spotify' Mix Tape Swap"
-    ],
-    "topHost": "IWW NYC"
+    ]
    }
   },
   {
@@ -2955,35 +1314,13 @@
    "lng": -73.9366,
    "precision": "exact",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -2992,23 +1329,11 @@
     "firstIssue": "Feb 17, 2026",
     "latestIssue": "Apr 17, 2026",
     "latestEvent": "Break Up with Spotify Again",
-    "topActivities": [
-     {
-      "activity": "Music & dance",
-      "count": 2
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Music & dance",
-      "count": 2
-     }
-    ],
-    "signatureEvents": [
+    "topHost": null,
+    "recentEvents": [
      "Break Up with Spotify Again",
      "Break Up with Spotify"
-    ],
-    "topHost": null
+    ]
    }
   },
   {
@@ -3022,35 +1347,13 @@
    "lng": -73.9875,
    "precision": "exact",
    "indoorOutdoor": "Outdoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": "Free",
-   "costNotes": null,
-   "howToBook": null,
-   "permitNotes": "Public park: check NYC Parks special event permit rules for larger groups, tables or structures, and NYPD sound permit for amplified sound.",
-   "leadTime": null,
-   "bestTimes": null,
+   "howToBook": "Public park: check NYC Parks special event permit rules for larger groups, tables or structures, and NYPD sound permit for amplified sound.",
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -3059,31 +1362,11 @@
     "firstIssue": "Oct 17, 2025",
     "latestIssue": "Jul 11, 2026",
     "latestEvent": "Sidewalk Study \"Ensouled Beauty\"",
-    "topActivities": [
-     {
-      "activity": "Protests & actions",
-      "count": 1
-     },
-     {
-      "activity": "Attention Labs (SoRA)",
-      "count": 1
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Protests & actions",
-      "count": 1
-     },
-     {
-      "activity": "Attention Labs (SoRA)",
-      "count": 1
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "SoRA Study Corps",
+    "recentEvents": [
      "Sidewalk Study Ensouled Beauty",
      "Retooling"
-    ],
-    "topHost": "SoRA Study Corps"
+    ]
    }
   },
   {
@@ -3097,35 +1380,13 @@
    "lng": -73.9434,
    "precision": "exact",
    "indoorOutdoor": "Outdoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": "Free",
-   "costNotes": null,
-   "howToBook": null,
-   "permitNotes": "Public park: check NYC Parks special event permit rules for larger groups, tables or structures, and NYPD sound permit for amplified sound.",
-   "leadTime": null,
-   "bestTimes": null,
+   "howToBook": "Public park: check NYC Parks special event permit rules for larger groups, tables or structures, and NYPD sound permit for amplified sound.",
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -3134,22 +1395,10 @@
     "firstIssue": "Oct 2, 2025",
     "latestIssue": "Dec 1, 2025",
     "latestEvent": "McGolrick Park Bird Club",
-    "topActivities": [
-     {
-      "activity": "Walks, hikes & nature",
-      "count": 3
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Walks, hikes & nature",
-      "count": 3
-     }
-    ],
-    "signatureEvents": [
+    "topHost": null,
+    "recentEvents": [
      "McGolrick Park Bird Club"
-    ],
-    "topHost": null
+    ]
    }
   },
   {
@@ -3163,35 +1412,13 @@
    "lng": -73.9196,
    "precision": "exact",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -3200,23 +1427,11 @@
     "firstIssue": "Apr 17, 2026",
     "latestIssue": "May 19, 2026",
     "latestEvent": "Skin in the Game",
-    "topActivities": [
-     {
-      "activity": "Games & play",
-      "count": 3
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Games & play",
-      "count": 3
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "How Do We Play",
+    "recentEvents": [
      "Skin in the Game: Experiments in PlayDating",
      "Skin in the Game"
-    ],
-    "topHost": "How Do We Play"
+    ]
    }
   },
   {
@@ -3230,35 +1445,13 @@
    "lng": -73.9239,
    "precision": "exact",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -3267,24 +1460,12 @@
     "firstIssue": "May 19, 2026",
     "latestIssue": "Oct 16, 2026",
     "latestEvent": "Phone Free Fridays (weekly)",
-    "topActivities": [
-     {
-      "activity": "Parties & socials",
-      "count": 2
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Parties & socials",
-      "count": 2
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "MoMI, Light Phone & Dan Fox (tied, 3 hosts)",
+    "recentEvents": [
      "Phone Free Fridays",
      "Phone Free Fridays Launch",
      "Escape the Internet"
-    ],
-    "topHost": "MoMI, Light Phone & Dan Fox (tied, 3 hosts)"
+    ]
    }
   },
   {
@@ -3298,35 +1479,13 @@
    "lng": -73.9839,
    "precision": "exact",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -3335,40 +1494,12 @@
     "firstIssue": "Feb 2, 2026",
     "latestIssue": "Aug 1, 2026",
     "latestEvent": "Moving offline in an online age",
-    "topActivities": [
-     {
-      "activity": "Art & performance",
-      "count": 1
-     },
-     {
-      "activity": "Film & screenings",
-      "count": 1
-     },
-     {
-      "activity": "Book launches & talks",
-      "count": 1
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Art & performance",
-      "count": 1
-     },
-     {
-      "activity": "Film & screenings",
-      "count": 1
-     },
-     {
-      "activity": "Book launches & talks",
-      "count": 1
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "August Lamm (tied, 3 hosts)",
+    "recentEvents": [
      "Moving offline in an online age",
      "Special Screening: 'It Came From the Basement",
      "Month Offline Exhibition"
-    ],
-    "topHost": "August Lamm (tied, 3 hosts)"
+    ]
    }
   },
   {
@@ -3382,35 +1513,13 @@
    "lng": -73.9993,
    "precision": "exact",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -3419,23 +1528,11 @@
     "firstIssue": "Feb 2, 2026",
     "latestIssue": "Sep 1, 2026",
     "latestEvent": "The Trial of Jeff Bezos",
-    "topActivities": [
-     {
-      "activity": "Book launches & talks",
-      "count": 2
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Book launches & talks",
-      "count": 2
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "Authors of Against Tech Oligarchy",
+    "recentEvents": [
      "The Trial of Jeff Bezos",
      "Who Should Decide AI's Future?"
-    ],
-    "topHost": "Authors of Against Tech Oligarchy"
+    ]
    }
   },
   {
@@ -3449,35 +1546,13 @@
    "lng": -73.9406,
    "precision": "exact",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -3486,31 +1561,11 @@
     "firstIssue": "Apr 17, 2026",
     "latestIssue": "May 19, 2026",
     "latestEvent": "Digital Security",
-    "topActivities": [
-     {
-      "activity": "Teach-ins & workshops",
-      "count": 1
-     },
-     {
-      "activity": "Crafts, repair & making",
-      "count": 1
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Teach-ins & workshops",
-      "count": 1
-     },
-     {
-      "activity": "Crafts, repair & making",
-      "count": 1
-     }
-    ],
-    "signatureEvents": [
+    "topHost": null,
+    "recentEvents": [
      "Digital Security",
      "Digital Security Workshop"
-    ],
-    "topHost": null
+    ]
    }
   },
   {
@@ -3524,35 +1579,13 @@
    "lng": -73.9298,
    "precision": "exact",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -3561,31 +1594,11 @@
     "firstIssue": "Mar 2, 2026",
     "latestIssue": "Aug 15, 2026",
     "latestEvent": "GUNK's Third Birthday Party",
-    "topActivities": [
-     {
-      "activity": "Music & dance",
-      "count": 1
-     },
-     {
-      "activity": "Art & performance",
-      "count": 1
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Music & dance",
-      "count": 1
-     },
-     {
-      "activity": "Art & performance",
-      "count": 1
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "GUNK",
+    "recentEvents": [
      "GUNK's Third Birthday Party",
      "Break Up with Spotify"
-    ],
-    "topHost": "GUNK"
+    ]
    }
   },
   {
@@ -3599,35 +1612,13 @@
    "lng": -74.0018,
    "precision": "exact",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -3636,23 +1627,11 @@
     "firstIssue": "Jun 20, 2026",
     "latestIssue": "Jun 20, 2026",
     "latestEvent": "Secret Film Speakeasy",
-    "topActivities": [
-     {
-      "activity": "Film & screenings",
-      "count": 2
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Film & screenings",
-      "count": 2
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "Museum of Interesting Things",
+    "recentEvents": [
      "Secret Film Speakeasy",
      "Museum of Interesting Things: 16mm Speakeasy"
-    ],
-    "topHost": "Museum of Interesting Things"
+    ]
    }
   },
   {
@@ -3666,35 +1645,13 @@
    "lng": -73.994,
    "precision": "exact",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -3703,22 +1660,10 @@
     "firstIssue": "Jul 11, 2026",
     "latestIssue": "Aug 1, 2026",
     "latestEvent": "CDNY Dance Lab",
-    "topActivities": [
-     {
-      "activity": "Music & dance",
-      "count": 2
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Music & dance",
-      "count": 2
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "CDNY",
+    "recentEvents": [
      "CDNY Dance Lab"
-    ],
-    "topHost": "CDNY"
+    ]
    }
   },
   {
@@ -3732,35 +1677,13 @@
    "lng": -73.9235,
    "precision": "exact",
    "indoorOutdoor": "Outdoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": "Free",
-   "costNotes": null,
-   "howToBook": null,
-   "permitNotes": "Public park: check NYC Parks special event permit rules for larger groups, tables or structures, and NYPD sound permit for amplified sound.",
-   "leadTime": null,
-   "bestTimes": null,
+   "howToBook": "Public park: check NYC Parks special event permit rules for larger groups, tables or structures, and NYPD sound permit for amplified sound.",
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -3769,31 +1692,11 @@
     "firstIssue": "Jun 20, 2026",
     "latestIssue": "Sep 1, 2026",
     "latestEvent": "Public Service",
-    "topActivities": [
-     {
-      "activity": "Teach-ins & workshops",
-      "count": 1
-     },
-     {
-      "activity": "Parties & socials",
-      "count": 1
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Teach-ins & workshops",
-      "count": 1
-     },
-     {
-      "activity": "Parties & socials",
-      "count": 1
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "Public Service (tied, 2 hosts)",
+    "recentEvents": [
      "Public Service",
      "Intro to Self-Defense"
-    ],
-    "topHost": "Public Service (tied, 2 hosts)"
+    ]
    }
   },
   {
@@ -3807,35 +1710,13 @@
    "lng": -73.9516,
    "precision": "exact",
    "indoorOutdoor": "Outdoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": "Free",
-   "costNotes": null,
-   "howToBook": null,
-   "permitNotes": "Public park: check NYC Parks special event permit rules for larger groups, tables or structures, and NYPD sound permit for amplified sound.",
-   "leadTime": null,
-   "bestTimes": null,
+   "howToBook": "Public park: check NYC Parks special event permit rules for larger groups, tables or structures, and NYPD sound permit for amplified sound.",
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -3844,31 +1725,11 @@
     "firstIssue": "Sep 14, 2026",
     "latestIssue": "Sep 14, 2026",
     "latestEvent": "WEAVE NYC [postponed]",
-    "topActivities": [
-     {
-      "activity": "Art & performance",
-      "count": 1
-     },
-     {
-      "activity": "Reading, poetry & book clubs",
-      "count": 1
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Art & performance",
-      "count": 1
-     },
-     {
-      "activity": "Reading, poetry & book clubs",
-      "count": 1
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "Jasmine Zimmerman (tied, 2 hosts)",
+    "recentEvents": [
      "Weave nyc",
      "Speed Book Clubbing"
-    ],
-    "topHost": "Jasmine Zimmerman (tied, 2 hosts)"
+    ]
    }
   },
   {
@@ -3882,35 +1743,13 @@
    "lng": -73.933,
    "precision": "exact",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -3919,23 +1758,11 @@
     "firstIssue": "Jul 11, 2026",
     "latestIssue": "Sep 14, 2026",
     "latestEvent": "DISORIENTATION",
-    "topActivities": [
-     {
-      "activity": "Music & dance",
-      "count": 2
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Music & dance",
-      "count": 2
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "Friendly Stranger Studios & Quazar (tied, 2 hosts)",
+    "recentEvents": [
      "Disorientation",
      "Quazar Radio"
-    ],
-    "topHost": "Friendly Stranger Studios & Quazar (tied, 2 hosts)"
+    ]
    }
   },
   {
@@ -3949,35 +1776,13 @@
    "lng": -74.012,
    "precision": "exact",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -3986,23 +1791,11 @@
     "firstIssue": "Dec 1, 2025",
     "latestIssue": "Dec 13, 2025",
     "latestEvent": "Press Play",
-    "topActivities": [
-     {
-      "activity": "Art & performance",
-      "count": 2
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Art & performance",
-      "count": 2
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "Micaela Durand",
+    "recentEvents": [
      "Press Play Fair",
      "Press Play"
-    ],
-    "topHost": "Micaela Durand"
+    ]
    }
   },
   {
@@ -4016,35 +1809,13 @@
    "lng": -74.0033,
    "precision": "exact",
    "indoorOutdoor": "Indoor",
-   "capacityStanding": null,
-   "capacitySeated": null,
-   "seating": null,
-   "tables": null,
-   "privateRoom": null,
-   "weatherBackup": null,
-   "noise": null,
-   "amplifiedSound": null,
-   "phoneFree": null,
+   "capacity": null,
    "cost": null,
-   "costNotes": null,
    "howToBook": null,
-   "permitNotes": null,
-   "leadTime": null,
-   "bestTimes": null,
+   "contact": null,
    "food": null,
-   "alcohol": null,
-   "allAges": null,
-   "restrooms": null,
-   "stepFree": null,
-   "accessibleRestroom": null,
-   "accessibilityNotes": null,
-   "power": null,
-   "soundSystem": null,
-   "projector": null,
-   "transit": null,
-   "website": null,
-   "instagram": null,
-   "bookingLink": null,
+   "accessibility": null,
+   "av": null,
    "notes": null,
    "lastVerified": null,
    "history": {
@@ -4053,23 +1824,11 @@
     "firstIssue": "Sep 14, 2026",
     "latestIssue": "Oct 16, 2026",
     "latestEvent": "Dear Dear: An Afternoon with Reuben Gelley Newman",
-    "topActivities": [
-     {
-      "activity": "Reading, poetry & book clubs",
-      "count": 1
-     }
-    ],
-    "activities": [
-     {
-      "activity": "Reading, poetry & book clubs",
-      "count": 1
-     }
-    ],
-    "signatureEvents": [
+    "topHost": "Walt Whitman Initiative",
+    "recentEvents": [
      "Dear Dear: An Afternoon with Reuben Gelley Newman",
      "Song of Myself Marathon"
-    ],
-    "topHost": "Walt Whitman Initiative"
+    ]
    }
   }
  ]

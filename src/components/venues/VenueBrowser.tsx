@@ -31,8 +31,7 @@ function fromSlug(f: Filter, slug: string | null): string | null {
 }
 
 export function capacityLabel(v: VenueSummary): string {
-  const n = Math.max(v.capacityStanding ?? 0, v.capacitySeated ?? 0);
-  return n ? `Up to ~${n}` : "Capacity unknown";
+  return v.capacity ? `Up to ~${v.capacity}` : "Capacity unknown";
 }
 
 function Facts({ v }: { v: VenueSummary }) {
