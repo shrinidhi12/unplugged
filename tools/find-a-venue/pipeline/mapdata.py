@@ -39,7 +39,6 @@ def main():
                 "latest_event": h.get("latestEvent"),
                 "top_host": h.get("topHost"),
                 "recent_events": "; ".join(h.get("recentEvents", [])),
-                "location_precision": v["precision"],
             },
         })
     (OUT / "venues.geojson").write_text(
@@ -49,7 +48,7 @@ def main():
     for f in feats:
         p = f["properties"]
         desc = (f"{p['listings']} listings in {p['issues']} issues. Most recent issue: {p['latest_issue']}. "
-                f"Most common host: {p['top_host'] or 'none named'}. Location precision: {p['location_precision']}."
+                f"Most common host: {p['top_host'] or 'none named'}."
                 if p["listings"] else "No Off Tech listings yet.")
         lng, lat = f["geometry"]["coordinates"]
         kml.append(f"<Placemark><name>{e(p['name'])}</name><description>{e(desc)}</description>"

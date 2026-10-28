@@ -1,4 +1,4 @@
-"""Write the newsletter-generated tabs for the collaborator sheet.
+"""Write the private reference workbook (not shared with collaborators).
 
     python tools/find-a-venue/pipeline/sheet_tabs.py                 # -> data/off_tech_tabs.xlsx
     python tools/find-a-venue/pipeline/sheet_tabs.py --into FILE.xlsx  # replace the tabs in FILE
@@ -8,9 +8,10 @@ Tabs:
   Past events       one row per event held at a venue, newest first, with the
                     issue that listed it. Private and neighborhood-only
                     addresses are never included.
+  Field guide       the Venues schema, copied from field_guide.csv.
 
-Copy those two tabs into the Proton Sheet to refresh them. This script never
-touches the Venues or Field guide tabs, and never talks to the sheet.
+The shared Proton Sheet holds only the Venues tab. This script never touches
+it and never talks to Proton.
 """
 import argparse, csv, sys
 from pathlib import Path
@@ -75,7 +76,7 @@ def past_events(venue_order):
     return out
 
 
-def write_tab(wb, title, header, rows_, widths, index=None):
+def write_tab(wb, title, header, rows_, widths, index=None, note=NOTE):
     if title in wb.sheetnames:
         index = wb.sheetnames.index(title)
         del wb[title]
@@ -89,7 +90,7 @@ def write_tab(wb, title, header, rows_, widths, index=None):
     for r in rows_:
         ws.append(r)
     ws.append([])
-    ws.append([NOTE])
+    ws.append([note])
     ws.cell(ws.max_row, 1).font = Font(italic=True, color="555555")
     for i, w in enumerate(widths, start=1):
         ws.column_dimensions[openpyxl.utils.get_column_letter(i)].width = w
@@ -118,6 +119,10 @@ def main():
     past_index = wb.sheetnames.index("Off Tech history") + 1 if "Past events" not in wb.sheetnames else None
     write_tab(wb, "Past events", [c for c, _ in PAST_COLUMNS], past,
               [w for _, w in PAST_COLUMNS], past_index)
+    with open(HERE.parent / "field_guide.csv", encoding="utf-8", newline="") as f:
+        guide = list(csv.reader(f))
+    write_tab(wb, "Field guide", guide[0], guide[1:], [22, 16, 18, 50, 70],
+              note="Copied from tools/find-a-venue/field_guide.csv, which the sync reads. Edit it there.")
     wb.save(path)
     print(f"Wrote {len(hist)} venues and {len(past)} past events to {path}")
 

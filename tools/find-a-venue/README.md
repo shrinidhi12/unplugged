@@ -23,9 +23,10 @@ runs Python: `src/data/venues.json` is committed.
 | `sync.py` | XLSX export → `src/data/venues.json`. Validates, geocodes, merges history, strips private fields. |
 | `test_privacy.py` | Fails if any non-public column could reach the site data. |
 | `sheet-export/` | Drop exports here. **Gitignored**, because exports contain contact details. |
-| `data/venues_master_seed.xlsx` | The sheet's schema and starting data, including the **Field guide** tab. Import it to create a new sheet. |
+| `field_guide.csv` | **The schema**: every Venues column, whether it's shown on the site, and its allowed values. The sync reads it. |
+| `data/venues_master_seed.xlsx` | The shared sheet's starting data: one **Venues** tab. Import it to create a new sheet. |
 | `data/geocode_cache.json` | Saved address lookups, so each address is geocoded once. |
-| `data/off_tech_tabs.xlsx` | Generated **Off Tech history** and **Past events** tabs. Import into the sheet after each new issue. |
+| `data/off_tech_tabs.xlsx` | Private reference workbook (not shared): **Off Tech history**, **Past events** and **Field guide**. Regenerated after each new issue. |
 | `data/off_tech_history.csv` | The same per-venue history as CSV (plus "All activities"); `sync.py` reads it. |
 | `data/venues.geojson`, `venues.kml` | Generated export for uMap and other OSM tools. |
 | `data/venue_references.xlsx` | The original research: every listing in issues 1–27, with method notes. |
@@ -34,33 +35,35 @@ runs Python: `src/data/venues.json` is committed.
 | `pipeline/activity_overrides.csv` | Hand corrections to activity tags. |
 | `pipeline/venue_ids.csv` | Pipeline venue code → Venue ID on the site. |
 | `pipeline/history.py` | Builds the history. Also holds the exclusion list and hand edits. |
-| `pipeline/sheet_tabs.py` | Writes the two newsletter tabs for the sheet (`off_tech_tabs.xlsx`). |
+| `pipeline/sheet_tabs.py` | Writes the private reference workbook (`off_tech_tabs.xlsx`). |
 | `pipeline/mapdata.py` | Writes the GeoJSON/KML export from the synced data. |
 | `reference/prototype-map.html` | The original prototype (UX reference only). |
 
 ## What's on the sheet
 
-- **Venues**: one row per venue. Collaborators fill these in.
-  - **Venue details** (shown): name, type, address, neighborhood, borough,
-    indoor / outdoor, *Capacity (est.)* and *Cost* (shown as "Public / cost").
-  - **Venue notes** (shown, freeform): *How to book*, *Contact*, *Food & drink*,
-    *Accessibility*, *A/V equipment*, *Other notes*. Everything here is
-    public, so *Contact* is for an events email or booking form only.
-  - **Collaborators only** (never published): *Key contact*, *Contact email*,
-    *Contact phone*, *Relationship notes*.
-- **Off Tech history**: per-venue totals from the newsletter. Generated.
-- **Past events**: every event the newsletter listed at each venue (date,
-  name, host as listed, activity, and a link to the issue). Generated. Private
-  and neighborhood-only addresses are never included.
-- **Field guide**: the schema. Every column, its allowed values, and whether
-  it's shown on the site.
+The **shared Proton Sheet has one tab, Venues**, one row per venue, in the
+same order as the venue page. Hover a header for what to enter.
+
+| Group | Columns | On the site? |
+|---|---|---|
+| Admin | Venue ID, Status | No (ID is the page address) |
+| Venue details | Venue name, Venue type, Address, Neighborhood, Borough, Indoor / outdoor, Capacity (est.), Cost | Yes |
+| Venue notes (freeform) | How to book, Contact, Food & drink, Accessibility, A/V equipment, Other notes | Yes. *Contact* is for an events email or booking form only. |
+| Private | Private notes | **Never.** Personal contacts and anything sensitive go here. |
+| Upkeep | Last verified, Latitude, Longitude | Yes (coordinates place the map pin) |
+
+Everything else stays private, out of the shared sheet: the schema in
+`field_guide.csv`, and the newsletter history in `data/off_tech_tabs.xlsx`.
 
 ## Set up the sheet (once)
 
 1. In Proton Drive, upload `data/venues_master_seed.xlsx` and open it as a
-   Proton Sheet (**File → Import**). Keep all five tabs.
-2. Share it only with collaborators. It holds contact details in the
-   collaborator-only columns.
+   Proton Sheet (**File → Import**).
+2. Share it with collaborators as editors. Everyone with access can read the
+   Private notes column, so share it only with people you trust with it.
+
+To change the columns, edit `field_guide.csv`, add the column to the sheet,
+and map it in `PUBLIC_KEYS` in `sync.py` if it's shown on the site.
 
 ## Publish edits
 
@@ -132,10 +135,8 @@ To approve one:
 
 ## Correct a coordinate
 
-Edit **Latitude / Longitude** in the sheet (decimal degrees) and set
-**Location precision** to `exact`, or to `approx` if the pin is only placed by
-neighborhood or cross street. The site shows an "approximate location" note
-for `approx`. Export and sync. The sync flags the move if it's more than 150 m.
+Edit **Latitude / Longitude** in the sheet (decimal degrees), then export and
+sync. The sync flags the move if it's more than 150 m.
 
 To re-geocode from the address instead, clear both coordinate cells. If the
 cached lookup was wrong, delete that address's entry from `data/geocode_cache.json`.
@@ -190,8 +191,7 @@ New issues come out about twice a month. For now this is a manual append.
    npm run venues:tabs
    ```
 
-   Then copy the **Off Tech history** and **Past events** tabs from
-   `data/off_tech_tabs.xlsx` into the Proton Sheet, replacing the old ones.
+   This also refreshes the private reference workbook `data/off_tech_tabs.xlsx`.
 6. Commit the pipeline changes. The next the sheet sync picks up the new history.
 
 Places that are deliberately left out are listed in `EXCLUDED` in

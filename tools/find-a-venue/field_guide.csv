@@ -1,0 +1,21 @@
+Column,Section,Shown on site?,Allowed values,What to enter
+Venue ID,Admin,No,,"The venue's web address on the site. Leave blank for a new venue (the sync creates one), and never change it once set."
+Status,Admin,No,Approved · Pending review · Archived,Only Approved venues appear on the site. New venues start as Pending review.
+Venue name,Venue details,Yes,,Common name of the space.
+Venue type,Venue details,Yes,Park / public space · Privately owned public space (POPS) · Library · Bar / cafe / restaurant · Club / event venue · Arts / community space · Gallery / museum · Bookstore · Church / meeting house · University · Makerspace · Community tech space · Radio station / studio · Other,What kind of place this is.
+Address,Venue details,Yes,,"Street address, or cross streets for a park. Public places only: never a private home."
+Neighborhood,Venue details,Yes,,
+Borough,Venue details,Yes,Manhattan · Brooklyn · Queens · Bronx · Staten Island,
+Indoor / outdoor,Venue details,Yes,Indoor · Outdoor · Both,
+Capacity (est.),Venue details,Yes,,Rough number of people the space holds. An estimate is fine.
+Cost,Venue details,Yes,Free · Donation · Purchase / minimum spend · Rental fee · Ticketed by venue · Unknown,"Shown as 'Public / cost'. Parks, plazas and libraries also show as public spaces."
+How to book,Venue notes,Yes,,"Freeform. Who to ask, how far ahead, permits, any fees."
+Contact,Venue notes,Yes,,"Freeform and PUBLIC: an events email, booking form or front desk. Never a personal email or phone; put those in Private notes."
+Food & drink,Venue notes,Yes,,Freeform. Outside food OK? Purchase required? Alcohol?
+Accessibility,Venue notes,Yes,,"Freeform. Step-free entry, elevator, accessible restroom, seating, lighting, quiet corner."
+A/V equipment,Venue notes,Yes,,"Freeform. Power outlets, sound system or mic, projector or screen."
+Other notes,Venue notes,Yes,,"Freeform. Anything else: where to set up, what's worked, what to avoid."
+Private notes,Private,Collaborators only,,"Never published. Personal contacts (name, email, phone), who knows the venue, anything sensitive."
+Last verified,Upkeep,Yes,,Date someone last confirmed these details (YYYY-MM-DD).
+Latitude,Upkeep,Yes,,Decimal degrees. Leave blank and the sync fills it in from the address.
+Longitude,Upkeep,Yes,,Decimal degrees.

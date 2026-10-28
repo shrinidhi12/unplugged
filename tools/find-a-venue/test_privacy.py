@@ -15,7 +15,7 @@ SECRET = "SECRET"
 
 
 def guide():
-    return sync.read_field_guide(sync.XlsxSource(sync.SEED))
+    return sync.read_field_guide()
 
 
 class FieldGuideMapping(unittest.TestCase):
@@ -26,7 +26,7 @@ class FieldGuideMapping(unittest.TestCase):
 
     def test_private_contact_columns_stay_private(self):
         g = guide()
-        for col in ("Key contact", "Contact email", "Contact phone", "Relationship notes"):
+        for col in ("Private notes",):
             self.assertEqual(g[col]["shown"], "Collaborators only", col)
             self.assertNotIn(col, sync.PUBLIC_KEYS)
 
@@ -42,7 +42,7 @@ class BuiltData(unittest.TestCase):
         wb = openpyxl.load_workbook(src)
         ws = wb["Venues"]
         header = [c.value for c in ws[1]]
-        g = sync.read_field_guide(sync.XlsxSource(sync.SEED))
+        g = sync.read_field_guide()
         private = [c for c, v in g.items() if v["shown"] != "Yes" and c not in ("Venue ID", "Status")]
         for r in range(2, ws.max_row + 1):
             if not ws.cell(r, 1).value:

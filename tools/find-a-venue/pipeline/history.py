@@ -1,7 +1,7 @@
 """Build the per-venue Off Tech history, keyed by Venue ID.
 
     python tools/find-a-venue/pipeline/history.py           # write data/off_tech_history.csv
-    python tools/find-a-venue/pipeline/history.py --check   # also diff against the seed sheet's tab
+    python tools/find-a-venue/pipeline/history.py --check   # also diff against data/off_tech_tabs.xlsx
 
 Inputs (all in this folder):
   data.py                 every listing from every newsletter issue
@@ -22,6 +22,8 @@ from activities import series, summarize  # noqa: E402
 
 OUT = HERE.parent / "data" / "off_tech_history.csv"
 SEED = HERE.parent / "data" / "venues_master_seed.xlsx"
+# The last published history tabs (private reference workbook).
+TABS = HERE.parent / "data" / "off_tech_tabs.xlsx"
 
 COLUMNS = ["Venue ID", "Off Tech listings", "Issues mentioning", "First issue",
            "Latest issue", "Latest event", "Top activities", "Signature events",
@@ -144,9 +146,9 @@ def write(out):
 
 
 def check(out):
-    """Compare against the seed sheet's Off Tech history tab. Returns # of differences."""
+    """Compare against the last published Off Tech history tab. Returns # of differences."""
     import openpyxl
-    ws = openpyxl.load_workbook(SEED, read_only=True)["Off Tech history"]
+    ws = openpyxl.load_workbook(TABS, read_only=True)["Off Tech history"]
     it = ws.iter_rows(values_only=True)
     header = next(r for r in it if r and r[0] == "Venue ID")
     # Skip the explanatory note row(s): real IDs are slugs, never sentences.
@@ -176,4 +178,4 @@ if __name__ == "__main__":
             print(f"  {n:>3}  {name}  (code {c})")
     if "--check" in sys.argv:
         n = check(out)
-        print(f"{n} difference(s) from the seed sheet's Off Tech history tab")
+        print(f"{n} difference(s) from the Off Tech history tab in {TABS.name}")

@@ -29,7 +29,6 @@ export type Venue = {
   borough: Text;
   lat: number;
   lng: number;
-  precision: "exact" | "approx";
   indoorOutdoor: Text;
   capacity: number | null;
   cost: Text;

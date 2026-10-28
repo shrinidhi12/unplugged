@@ -4,7 +4,7 @@
     npm run venues:sync -- --input FILE.xlsx  # a specific export
     npm run venues:sync -- --no-geocode       # skip address lookups
 
-Steps: validate every row against the Field guide tab, create missing Venue
+Steps: validate every row against field_guide.csv, create missing Venue
 IDs, geocode rows that have an address but no coordinates, rebuild the Off
 Tech history from pipeline/, then write src/data/venues.json with only
 Approved rows and only the columns the Field guide marks "Shown on site = Yes".
@@ -13,7 +13,7 @@ notes) never leave the sheet. Nothing is ever written back to the sheet.
 """
 from __future__ import annotations
 
-import argparse, datetime, json, math, re, sys, time, unicodedata, urllib.parse, urllib.request
+import argparse, csv, datetime, json, math, re, sys, time, unicodedata, urllib.parse, urllib.request
 from pathlib import Path
 
 import openpyxl
@@ -24,6 +24,9 @@ sys.path.insert(0, str(HERE / "pipeline"))
 
 EXPORT_DIR = HERE / "sheet-export"
 SEED = HERE / "data" / "venues_master_seed.xlsx"
+# The schema: every column, whether it's shown on the site, and its allowed
+# values. It lives in the repo, so the shared sheet only needs the Venues tab.
+FIELD_GUIDE = HERE / "field_guide.csv"
 GEOCODE_CACHE = HERE / "data" / "geocode_cache.json"
 OUT = ROOT / "src" / "data" / "venues.json"
 
@@ -38,12 +41,9 @@ PUBLIC_KEYS = {
     # Venue details
     "Venue name": "name",
     "Venue type": "type",
-    "Street address": "address",
+    "Address": "address",
     "Neighborhood": "neighborhood",
     "Borough": "borough",
-    "Latitude": "lat",
-    "Longitude": "lng",
-    "Location precision": "precision",
     "Indoor / outdoor": "indoorOutdoor",
     "Capacity (est.)": "capacity",
     "Cost": "cost",
@@ -56,6 +56,8 @@ PUBLIC_KEYS = {
     "Other notes": "notes",
     # Upkeep
     "Last verified": "lastVerified",
+    "Latitude": "lat",
+    "Longitude": "lng",
 }
 # Freeform notes keep their line breaks; other text is collapsed to one line.
 MULTILINE_KEYS = {"howToBook", "contact", "food", "accessibility", "av", "notes"}
@@ -92,7 +94,9 @@ class XlsxSource:
         self.wb = openpyxl.load_workbook(self.path, data_only=True, read_only=True)
 
     def tab(self, title):
-        return list(self.wb[title].iter_rows(values_only=True))
+        # A one-tab export may come back with the tab renamed; use it anyway.
+        ws = self.wb[title] if title in self.wb.sheetnames or len(self.wb.sheetnames) > 1             else self.wb.worksheets[0]
+        return list(ws.iter_rows(values_only=True))
 
 
 def clean(v):
@@ -102,12 +106,12 @@ def clean(v):
     return v
 
 
-def read_field_guide(src):
-    it = iter(src.tab("Field guide"))
-    header = [clean(c) for c in next(it)]
+def read_field_guide(path=FIELD_GUIDE):
+    with open(path, encoding="utf-8", newline="") as f:
+        rows = list(csv.DictReader(f))
     guide = {}
-    for r in it:
-        d = dict(zip(header, (clean(c) for c in r)))
+    for r in rows:
+        d = {k: clean(v) for k, v in r.items()}
         if not d.get("Column"):
             continue
         allowed = d.get("Allowed values")
@@ -209,8 +213,8 @@ def validate(rows, guide, problems):
                 if not in_nyc(lat, lng):
                     hint = " (swapped?)" if in_nyc(lng, lat) else ""
                     problems.add(n, "Latitude/Longitude", f"{lat}, {lng} isn't in New York City{hint}", block)
-        elif d.get("Street address") is None:
-            problems.add(n, "Street address", "needs a street address or coordinates", block)
+        elif d.get("Address") is None:
+            problems.add(n, "Address", "needs an address or coordinates", block)
 
         for col in INTEGER_COLS:
             v = d.get(col)
@@ -267,7 +271,7 @@ def geocode(rows, problems, enabled):
     cache = json.loads(GEOCODE_CACHE.read_text("utf-8")) if GEOCODE_CACHE.exists() else {}
     looked_up, last_call = [], 0.0
     for d in rows:
-        addr = d.get("Street address")
+        addr = d.get("Address")
         if d.get("Latitude") is not None or addr is None:
             continue
         q = addr if re.search(r"new york|ny\b|\d{5}", addr, re.I) else f"{addr}, {d.get('Borough') or ''}, New York, NY"
@@ -286,19 +290,18 @@ def geocode(rows, problems, enabled):
                 with urllib.request.urlopen(req, timeout=20) as r:
                     hits = json.load(r)
             except OSError as e:
-                problems.add(d["_row"], "Street address", f"geocoding failed ({e}); try again later")
+                problems.add(d["_row"], "Address", f"geocoding failed ({e}); try again later")
                 continue
             finally:
                 last_call = time.time()
             cache[key] = [round(float(hits[0]["lat"]), 6), round(float(hits[0]["lon"]), 6)] if hits else None
         hit = cache[key]
         if hit is None:
-            problems.add(d["_row"], "Street address",
+            problems.add(d["_row"], "Address",
                          f"couldn't find '{addr}' on OpenStreetMap; check it or enter coordinates",
                          d.get("Status") == "Approved")
             continue
         d["Latitude"], d["Longitude"] = hit
-        d.setdefault("Location precision", "exact")
         looked_up.append((d["_row"], d.get("Venue ID"), addr, hit))
     GEOCODE_CACHE.write_text(json.dumps(cache, indent=1, ensure_ascii=False, sort_keys=True) + "\n", "utf-8")
     return looked_up
@@ -344,8 +347,6 @@ def publish(rows, guide, history):
             v[key] = d.get(col) if col in shown else None
             if isinstance(v[key], str) and key not in MULTILINE_KEYS:
                 v[key] = re.sub(r"\s+", " ", v[key])
-        if v["precision"] is None:
-            v["precision"] = "exact"
         v["history"] = history.get(v["id"])
         venues.append(v)
     venues.sort(key=lambda v: (-(v["history"] or {}).get("listings", 0), v["name"].lower()))
@@ -388,7 +389,7 @@ def run(source, geocode_on=True, out_path=OUT, quiet=False):
     say = (lambda *a: None) if quiet else print
     src = source if hasattr(source, "tab") else XlsxSource(source)
     problems = Problems()
-    guide = read_field_guide(src)
+    guide = read_field_guide()
     rows = read_venues(src, guide, problems)
     seen = validate(rows, guide, problems)
     created = assign_ids(rows, seen)
