@@ -15,14 +15,16 @@ no feeds, no follower counts. The event is the medium.
   Guests get a confirmation and a calendar invite; the host is notified of each reply.
 - **No accounts** — creating an event emails the host a private manage link. That link is the key.
 - **Private by design** — no public guest names, no public head-count. Only the host sees who's coming.
-- **Free maps** — keyless Leaflet + OpenStreetMap picker, plus an "Open in Google Maps" link.
+- **Free maps** — keyless MapLibre + OpenFreeMap picker, plus an "Open in Google Maps" link.
+- **Find a venue** — a map of NYC spaces where offline events have worked, for hosts
+  (`/find-a-venue`). Maintainers: see [tools/find-a-venue/README.md](tools/find-a-venue/README.md).
 
 ## Stack
 
 - [Next.js](https://nextjs.org) (App Router) + TypeScript, server actions
 - [Drizzle ORM](https://orm.drizzle.team) + [Neon](https://neon.tech) serverless Postgres
 - [Resend](https://resend.com) for transactional email (+ `.ics` calendar invites)
-- [Leaflet](https://leafletjs.com) + OpenStreetMap for the map picker
+- [MapLibre GL](https://maplibre.org) + [OpenFreeMap](https://openfreemap.org) tiles (OpenStreetMap data) for maps
 - Deployed on [Netlify](https://netlify.com); design system is a two-ink Risograph look (Archivo + Archivo Black)
 
 ## Local development

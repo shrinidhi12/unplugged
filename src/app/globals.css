@@ -134,3 +134,34 @@ body {
 .maplibregl-ctrl-attrib {
   font-size: 10px;
 }
+
+/* ---- Find a venue ---- */
+
+.venue-marker {
+  border-radius: 9999px;
+  border: 2px solid var(--color-card);
+  box-shadow: 0 0 0 1px rgba(23, 24, 42, 0.45);
+  cursor: pointer;
+  padding: 0;
+  opacity: 0.9;
+}
+.venue-marker:hover {
+  opacity: 1;
+}
+.venue-marker.is-selected {
+  opacity: 1;
+  border-color: var(--color-ink);
+  box-shadow: 0 0 0 3px var(--color-card), 0 0 0 5px var(--color-ink);
+  z-index: 2;
+}
+.venue-marker:focus-visible,
+.venue-page a:focus-visible,
+.venue-page button:focus-visible {
+  outline: 3px solid var(--color-pink);
+  outline-offset: 2px;
+}
+
+.venue-select {
+  padding: 0.4rem 0.5rem;
+  font-size: 14px;
+}

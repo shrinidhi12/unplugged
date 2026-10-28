@@ -276,3 +276,49 @@ ${note.email ? `Reply to answer ${note.email}.` : "No email left, so there's no 
   });
   return true;
 }
+
+/** A "Find a venue" suggestion: a new venue or an edit, for the maintainer to review. */
+export async function sendVenueSuggestion(note: {
+  kind: "new" | "edit";
+  venueName: string;
+  venueId: string;
+  address: string;
+  details: string;
+  name: string;
+  email: string;
+}): Promise<boolean> {
+  const to = process.env.SUGGESTIONS_TO;
+  if (!to) {
+    console.error("[email] SUGGESTIONS_TO is not set; venue suggestion dropped");
+    return false;
+  }
+  const from = note.name || "Anonymous";
+  const what = note.kind === "new" ? "New venue" : "Edit";
+  const subject = `Find a venue: ${what.toLowerCase()} for ${note.venueName}`;
+  const lines: [string, string][] = [
+    ["Venue", note.venueName],
+    ...(note.venueId ? [["Venue ID", note.venueId] as [string, string]] : []),
+    ...(note.address ? [["Address", note.address] as [string, string]] : []),
+    ["From", from],
+  ];
+  const reply = note.email
+    ? `Hit reply to answer ${note.email}.`
+    : "No email left, so there's no way to reply.";
+  const html = shell(
+    `${what}: ${esc(note.venueName)}`,
+    `<table style="font-size:14px;border-collapse:collapse">${lines
+      .map(([k, v]) => `<tr><td style="padding:2px 12px 2px 0;color:#6b6459">${k}</td><td>${esc(v)}</td></tr>`)
+      .join("")}</table>
+     <p style="white-space:pre-wrap">${esc(note.details)}</p>
+     <p style="font-size:14px;color:#6b6459">Review it, then update the collaborator sheet and re-sync. Nothing is published automatically. ${esc(reply)}</p>`
+  );
+  const text = `${what}: ${note.venueName}
+
+${lines.map(([k, v]) => `${k}: ${v}`).join("\n")}
+
+${note.details}
+
+Review it, then update the collaborator sheet and re-sync. Nothing is published automatically. ${reply}`;
+  await send({ to, subject, html, text, replyTo: note.email || undefined });
+  return true;
+}

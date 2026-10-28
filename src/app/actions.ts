@@ -17,9 +17,11 @@ import {
   sendGuestDeclineReceipt,
   sendGuestChangeLink,
   sendSuggestionNote,
+  sendVenueSuggestion,
 } from "@/lib/email";
 import { MAX_SUGGESTION_LENGTH } from "@/lib/suggestions";
 import { readImage, saveImage } from "@/lib/images";
+import { getVenue } from "@/lib/venues";
 
 export type FormState = {
   error?: string;
@@ -392,5 +394,51 @@ export async function submitSuggestion(
     return {
       error: "The suggestion box is closed for a moment. Please try again later.",
     };
+  return { ok: true, name };
+}
+
+// ---- Find a venue: suggestions ---------------------------------------------
+
+/**
+ * A new venue or an edit from /find-a-venue/suggest, emailed to the site owner
+ * for review. Nothing here touches the site's venue data: a maintainer updates
+ * the collaborator sheet and re-syncs.
+ */
+export async function submitVenueSuggestion(
+  _prev: FormState,
+  formData: FormData
+): Promise<FormState> {
+  const kind = str(formData, "kind") === "edit" ? "edit" : "new";
+  const venueId = str(formData, "venueId");
+  const known = venueId ? getVenue(venueId) : undefined;
+  const venueName = (known?.name ?? str(formData, "venueName")).replace(/\s+/g, " ").slice(0, 120);
+  const address = str(formData, "address").replace(/\s+/g, " ").slice(0, 200);
+  const details = str(formData, "details");
+  const name = str(formData, "name").replace(/\s+/g, " ").slice(0, 80);
+  const email = str(formData, "email");
+
+  if (kind === "edit" && !known) return { error: "Pick the venue you want to edit." };
+  if (kind === "new" && !venueName) return { error: "What's the venue called?" };
+  if (!details) return { error: "Tell us a little about it first." };
+  if (details.length > MAX_SUGGESTION_LENGTH)
+    return { error: "That's too long. Keep it under 5,000 characters." };
+  if (email && (email.length > 254 || !EMAIL_RE.test(email)))
+    return { error: "That email doesn't look right. Fix it, or leave it blank." };
+
+  if (str(formData, "company")) return { error: SPAM_MSG };
+  if (!(await allow("venue-suggest", await clientIp(), 5, 60 * 60)))
+    return { error: RATE_MSG };
+
+  const sent = await sendVenueSuggestion({
+    kind,
+    venueName,
+    venueId: known?.id ?? "",
+    address,
+    details,
+    name,
+    email,
+  });
+  if (!sent)
+    return { error: "Suggestions are closed for a moment. Please try again later." };
   return { ok: true, name };
 }

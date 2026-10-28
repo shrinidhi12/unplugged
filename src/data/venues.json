@@ -1,0 +1,4076 @@
+{
+ "syncedAt": "2026-10-28",
+ "options": {
+  "type": [
+   "Park / public space",
+   "Privately owned public space (POPS)",
+   "Library",
+   "Bar / cafe / restaurant",
+   "Club / event venue",
+   "Arts / community space",
+   "Gallery / museum",
+   "Bookstore",
+   "Church / meeting house",
+   "University",
+   "Makerspace",
+   "Community tech space",
+   "Radio station / studio",
+   "Other"
+  ],
+  "borough": [
+   "Manhattan",
+   "Brooklyn",
+   "Queens",
+   "Bronx",
+   "Staten Island"
+  ],
+  "indoorOutdoor": [
+   "Indoor",
+   "Outdoor",
+   "Both"
+  ],
+  "cost": [
+   "Free",
+   "Donation",
+   "Purchase / minimum spend",
+   "Rental fee",
+   "Ticketed by venue",
+   "Unknown"
+  ]
+ },
+ "venues": [
+  {
+   "id": "tompkins-square-park",
+   "name": "Tompkins Square Park",
+   "type": "Park / public space",
+   "address": "Ave A to Ave B, E 7th to E 10th St, Manhattan",
+   "neighborhood": "East Village",
+   "borough": "Manhattan",
+   "lat": 40.7265,
+   "lng": -73.9817,
+   "precision": "exact",
+   "indoorOutdoor": "Outdoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": "Free",
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": "Public park: check NYC Parks special event permit rules for larger groups, tables or structures, and NYPD sound permit for amplified sound.",
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 106,
+    "issues": 18,
+    "firstIssue": "Oct 2, 2025",
+    "latestIssue": "Oct 16, 2026",
+    "latestEvent": "Tompkins Distro (weekly)",
+    "topActivities": [
+     {
+      "activity": "Art & performance",
+      "count": 13
+     },
+     {
+      "activity": "Teach-ins & workshops",
+      "count": 12
+     },
+     {
+      "activity": "Parties & socials",
+      "count": 12
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Art & performance",
+      "count": 13
+     },
+     {
+      "activity": "Teach-ins & workshops",
+      "count": 12
+     },
+     {
+      "activity": "Parties & socials",
+      "count": 12
+     },
+     {
+      "activity": "Book launches & talks",
+      "count": 11
+     },
+     {
+      "activity": "Music & dance",
+      "count": 9
+     },
+     {
+      "activity": "Moon rituals & meditation",
+      "count": 8
+     },
+     {
+      "activity": "Luddite Club meetups",
+      "count": 7
+     },
+     {
+      "activity": "Protests & actions",
+      "count": 5
+     },
+     {
+      "activity": "Crafts, repair & making",
+      "count": 4
+     },
+     {
+      "activity": "Games & play",
+      "count": 4
+     },
+     {
+      "activity": "Walks, hikes & nature",
+      "count": 3
+     },
+     {
+      "activity": "Film & screenings",
+      "count": 1
+     }
+    ],
+    "signatureEvents": [
+     "Luddite Club",
+     "New Rat City",
+     "Tompkins Distro"
+    ],
+    "topHost": "Summer of Ludd"
+   }
+  },
+  {
+   "id": "strother-school-of-radical-attention",
+   "name": "Strother School of Radical Attention",
+   "type": "Arts / community space",
+   "address": "55 Washington St, Ste 736, Brooklyn, NY 11201",
+   "neighborhood": "DUMBO",
+   "borough": "Brooklyn",
+   "lat": 40.7024,
+   "lng": -73.9897,
+   "precision": "exact",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 67,
+    "issues": 24,
+    "firstIssue": "Oct 2, 2025",
+    "latestIssue": "Oct 16, 2026",
+    "latestEvent": "The Dance of an Open Mind: Toni Morrison's Radical Attentions",
+    "topActivities": [
+     {
+      "activity": "Attention Labs (SoRA)",
+      "count": 36
+     },
+     {
+      "activity": "Book launches & talks",
+      "count": 3
+     },
+     {
+      "activity": "Teach-ins & workshops",
+      "count": 1
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Attention Labs (SoRA)",
+      "count": 36
+     },
+     {
+      "activity": "Book launches & talks",
+      "count": 3
+     },
+     {
+      "activity": "Teach-ins & workshops",
+      "count": 1
+     },
+     {
+      "activity": "Reading, poetry & book clubs",
+      "count": 1
+     },
+     {
+      "activity": "Games & play",
+      "count": 1
+     }
+    ],
+    "signatureEvents": [
+     "Attention Lab COALITION",
+     "Attention Lab SANCTUARY",
+     "Attention Lab STUDY"
+    ],
+    "topHost": "School of Radical Attention (SoRA)"
+   }
+  },
+  {
+   "id": "stavros-niarchos-foundation-library",
+   "name": "Stavros Niarchos Foundation Library",
+   "type": "Library",
+   "address": "455 Fifth Ave, New York, NY 10016",
+   "neighborhood": "Midtown",
+   "borough": "Manhattan",
+   "lat": 40.752,
+   "lng": -73.9814,
+   "precision": "exact",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 44,
+    "issues": 24,
+    "firstIssue": "Oct 2, 2025",
+    "latestIssue": "Oct 16, 2026",
+    "latestEvent": "Crafternoon (weekly)",
+    "topActivities": [
+     {
+      "activity": "Reading, poetry & book clubs",
+      "count": 12
+     },
+     {
+      "activity": "Crafts, repair & making",
+      "count": 10
+     },
+     {
+      "activity": "Book launches & talks",
+      "count": 2
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Reading, poetry & book clubs",
+      "count": 12
+     },
+     {
+      "activity": "Crafts, repair & making",
+      "count": 10
+     },
+     {
+      "activity": "Book launches & talks",
+      "count": 2
+     },
+     {
+      "activity": "Writing, zines & letters",
+      "count": 1
+     }
+    ],
+    "signatureEvents": [
+     "Offline Book Club",
+     "Crafternoon",
+     "Who Gets to Decide How AI Enters Our Schools?"
+    ],
+    "topHost": "NYPL Offline Book Club"
+   }
+  },
+  {
+   "id": "prospect-park",
+   "name": "Prospect Park",
+   "type": "Park / public space",
+   "address": null,
+   "neighborhood": "Prospect Park",
+   "borough": "Brooklyn",
+   "lat": 40.6602,
+   "lng": -73.969,
+   "precision": "exact",
+   "indoorOutdoor": "Outdoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": "Free",
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": "Public park: check NYC Parks special event permit rules for larger groups, tables or structures, and NYPD sound permit for amplified sound.",
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 31,
+    "issues": 14,
+    "firstIssue": "Oct 2, 2025",
+    "latestIssue": "Oct 16, 2026",
+    "latestEvent": "Pirates of Prospect Park Annual Treasure Hunt",
+    "topActivities": [
+     {
+      "activity": "Walks, hikes & nature",
+      "count": 6
+     },
+     {
+      "activity": "Teach-ins & workshops",
+      "count": 3
+     },
+     {
+      "activity": "Games & play",
+      "count": 3
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Walks, hikes & nature",
+      "count": 6
+     },
+     {
+      "activity": "Teach-ins & workshops",
+      "count": 3
+     },
+     {
+      "activity": "Games & play",
+      "count": 3
+     },
+     {
+      "activity": "Reading, poetry & book clubs",
+      "count": 3
+     },
+     {
+      "activity": "Art & performance",
+      "count": 2
+     },
+     {
+      "activity": "Attention Labs (SoRA)",
+      "count": 2
+     },
+     {
+      "activity": "Crafts, repair & making",
+      "count": 1
+     },
+     {
+      "activity": "Moon rituals & meditation",
+      "count": 1
+     },
+     {
+      "activity": "Music & dance",
+      "count": 1
+     }
+    ],
+    "signatureEvents": [
+     "Trephelobia Poetry Circle",
+     "Druid School",
+     "Monthly Molting' Ecology Workshop"
+    ],
+    "topHost": "Kyle Barnes / Chimeras Collective"
+   }
+  },
+  {
+   "id": "15th-street-quaker-meeting-house",
+   "name": "15th Street Quaker Meeting House",
+   "type": "Church / meeting house",
+   "address": "15 Rutherford Pl, New York, NY 10003",
+   "neighborhood": "Stuyvesant Square",
+   "borough": "Manhattan",
+   "lat": 40.7343,
+   "lng": -73.9844,
+   "precision": "exact",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 24,
+    "issues": 12,
+    "firstIssue": "Mar 2, 2026",
+    "latestIssue": "Oct 1, 2026",
+    "latestEvent": "The Art of Leonard Peltier Comes to NYC",
+    "topActivities": [
+     {
+      "activity": "Teach-ins & workshops",
+      "count": 7
+     },
+     {
+      "activity": "Art & performance",
+      "count": 5
+     },
+     {
+      "activity": "Parties & socials",
+      "count": 2
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Teach-ins & workshops",
+      "count": 7
+     },
+     {
+      "activity": "Art & performance",
+      "count": 5
+     },
+     {
+      "activity": "Parties & socials",
+      "count": 2
+     },
+     {
+      "activity": "Book launches & talks",
+      "count": 1
+     },
+     {
+      "activity": "Film & screenings",
+      "count": 1
+     },
+     {
+      "activity": "Crafts, repair & making",
+      "count": 1
+     },
+     {
+      "activity": "Writing, zines & letters",
+      "count": 1
+     }
+    ],
+    "signatureEvents": [
+     "Earth Chxrch",
+     "Hat Making & Teach-in",
+     "The Art of Leonard Peltier Comes to NYC"
+    ],
+    "topHost": "Summer of Ludd"
+   }
+  },
+  {
+   "id": "telos-haus",
+   "name": "telos.haus",
+   "type": "Arts / community space",
+   "address": "303 Ten Eyck St, 2nd Fl, Brooklyn, NY",
+   "neighborhood": "East Williamsburg",
+   "borough": "Brooklyn",
+   "lat": 40.7087,
+   "lng": -73.9381,
+   "precision": "exact",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 22,
+    "issues": 16,
+    "firstIssue": "Nov 14, 2025",
+    "latestIssue": "Aug 1, 2026",
+    "latestEvent": "MO Gallery Exhibition (Free Offline Expo)",
+    "topActivities": [
+     {
+      "activity": "Parties & socials",
+      "count": 5
+     },
+     {
+      "activity": "Art & performance",
+      "count": 4
+     },
+     {
+      "activity": "Reading, poetry & book clubs",
+      "count": 2
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Parties & socials",
+      "count": 5
+     },
+     {
+      "activity": "Art & performance",
+      "count": 4
+     },
+     {
+      "activity": "Reading, poetry & book clubs",
+      "count": 2
+     },
+     {
+      "activity": "Writing, zines & letters",
+      "count": 1
+     },
+     {
+      "activity": "Support groups",
+      "count": 1
+     },
+     {
+      "activity": "Music & dance",
+      "count": 1
+     }
+    ],
+    "signatureEvents": [
+     "Let's get off together",
+     "Consumption Book Club: Land of Milk and Honey",
+     "Month Offline Gallery Exhibition"
+    ],
+    "topHost": "NYC offline community (Let's Get Off Together)"
+   }
+  },
+  {
+   "id": "washington-square-park",
+   "name": "Washington Square Park",
+   "type": "Park / public space",
+   "address": null,
+   "neighborhood": "Greenwich Village",
+   "borough": "Manhattan",
+   "lat": 40.7308,
+   "lng": -73.9973,
+   "precision": "exact",
+   "indoorOutdoor": "Outdoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": "Free",
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": "Public park: check NYC Parks special event permit rules for larger groups, tables or structures, and NYPD sound permit for amplified sound.",
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 22,
+    "issues": 17,
+    "firstIssue": "Oct 2, 2025",
+    "latestIssue": "Sep 14, 2026",
+    "latestEvent": "Washington Square Mass Read-in",
+    "topActivities": [
+     {
+      "activity": "Reading, poetry & book clubs",
+      "count": 4
+     },
+     {
+      "activity": "Art & performance",
+      "count": 3
+     },
+     {
+      "activity": "Outreach & tabling",
+      "count": 2
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Reading, poetry & book clubs",
+      "count": 4
+     },
+     {
+      "activity": "Art & performance",
+      "count": 3
+     },
+     {
+      "activity": "Outreach & tabling",
+      "count": 2
+     },
+     {
+      "activity": "Protests & actions",
+      "count": 2
+     },
+     {
+      "activity": "Book launches & talks",
+      "count": 1
+     },
+     {
+      "activity": "Attention Labs (SoRA)",
+      "count": 1
+     },
+     {
+      "activity": "Writing, zines & letters",
+      "count": 1
+     },
+     {
+      "activity": "Moon rituals & meditation",
+      "count": 1
+     }
+    ],
+    "signatureEvents": [
+     "Washington Square Mass Read-in",
+     "OPT OUT OF UTOPIA: an art pop-up",
+     "Mass for the magnetic field"
+    ],
+    "topHost": "Young People's Alliance & friends (tied, 5 hosts)"
+   }
+  },
+  {
+   "id": "fort-greene-park",
+   "name": "Fort Greene Park",
+   "type": "Park / public space",
+   "address": null,
+   "neighborhood": "Fort Greene",
+   "borough": "Brooklyn",
+   "lat": 40.6914,
+   "lng": -73.9757,
+   "precision": "exact",
+   "indoorOutdoor": "Outdoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": "Free",
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": "Public park: check NYC Parks special event permit rules for larger groups, tables or structures, and NYPD sound permit for amplified sound.",
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 19,
+    "issues": 10,
+    "firstIssue": "Oct 2, 2025",
+    "latestIssue": "Oct 16, 2026",
+    "latestEvent": "Falling Leaves Moon",
+    "topActivities": [
+     {
+      "activity": "Moon rituals & meditation",
+      "count": 5
+     },
+     {
+      "activity": "Reading, poetry & book clubs",
+      "count": 3
+     },
+     {
+      "activity": "Teach-ins & workshops",
+      "count": 2
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Moon rituals & meditation",
+      "count": 5
+     },
+     {
+      "activity": "Reading, poetry & book clubs",
+      "count": 3
+     },
+     {
+      "activity": "Teach-ins & workshops",
+      "count": 2
+     },
+     {
+      "activity": "Parties & socials",
+      "count": 2
+     },
+     {
+      "activity": "Art & performance",
+      "count": 1
+     },
+     {
+      "activity": "Writing, zines & letters",
+      "count": 1
+     }
+    ],
+    "signatureEvents": [
+     "Falling Leaves Moon",
+     "LUDD LOVERS Zine Party",
+     "October New Moon Study Circle: Technopoly"
+    ],
+    "topHost": "Kyle Barnes / Chimeras Collective"
+   }
+  },
+  {
+   "id": "brooklyn-public-library-central-library",
+   "name": "Brooklyn Public Library – Central Library",
+   "type": "Library",
+   "address": null,
+   "neighborhood": "Grand Army Plaza",
+   "borough": "Brooklyn",
+   "lat": 40.6724,
+   "lng": -73.9682,
+   "precision": "exact",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 14,
+    "issues": 11,
+    "firstIssue": "Oct 2, 2025",
+    "latestIssue": "Sep 14, 2026",
+    "latestEvent": "AI and You",
+    "topActivities": [
+     {
+      "activity": "Teach-ins & workshops",
+      "count": 3
+     },
+     {
+      "activity": "Luddite Club meetups",
+      "count": 3
+     },
+     {
+      "activity": "Crafts, repair & making",
+      "count": 2
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Teach-ins & workshops",
+      "count": 3
+     },
+     {
+      "activity": "Luddite Club meetups",
+      "count": 3
+     },
+     {
+      "activity": "Crafts, repair & making",
+      "count": 2
+     },
+     {
+      "activity": "Book launches & talks",
+      "count": 1
+     }
+    ],
+    "signatureEvents": [
+     "Luddite Club",
+     "Unplatform Creatives Workshop",
+     "AI and You"
+    ],
+    "topHost": "Brooklyn Luddite Club"
+   }
+  },
+  {
+   "id": "cornerstone-makerspace",
+   "name": "Cornerstone Makerspace",
+   "type": "Makerspace",
+   "address": "178 Bennett Ave, New York, NY 10040",
+   "neighborhood": "Washington Heights",
+   "borough": "Manhattan",
+   "lat": 40.8571,
+   "lng": -73.9318,
+   "precision": "exact",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 12,
+    "issues": 6,
+    "firstIssue": "Jul 11, 2026",
+    "latestIssue": "Oct 16, 2026",
+    "latestEvent": "Sewing Repair Café",
+    "topActivities": [
+     {
+      "activity": "Crafts, repair & making",
+      "count": 7
+     },
+     {
+      "activity": "Teach-ins & workshops",
+      "count": 1
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Crafts, repair & making",
+      "count": 7
+     },
+     {
+      "activity": "Teach-ins & workshops",
+      "count": 1
+     }
+    ],
+    "signatureEvents": [
+     "Sewing Repair Café",
+     "Spooky Synthesizer Show and Tell",
+     "Makerspace Open House"
+    ],
+    "topHost": "Cornerstone Makerspace"
+   }
+  },
+  {
+   "id": "875-third-ave",
+   "name": "875 Third Ave. (POPS, Lower Level)",
+   "type": "Privately owned public space (POPS)",
+   "address": "875 Third Ave, Lower Level, New York, NY 10022",
+   "neighborhood": "Midtown East",
+   "borough": "Manhattan",
+   "lat": 40.7566,
+   "lng": -73.97,
+   "precision": "exact",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 10,
+    "issues": 10,
+    "firstIssue": "Nov 14, 2025",
+    "latestIssue": "Aug 15, 2026",
+    "latestEvent": "Unplatform ORGANIZER MEETUP",
+    "topActivities": [
+     {
+      "activity": "Teach-ins & workshops",
+      "count": 4
+     },
+     {
+      "activity": "Protests & actions",
+      "count": 2
+     },
+     {
+      "activity": "Book launches & talks",
+      "count": 1
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Teach-ins & workshops",
+      "count": 4
+     },
+     {
+      "activity": "Protests & actions",
+      "count": 2
+     },
+     {
+      "activity": "Book launches & talks",
+      "count": 1
+     }
+    ],
+    "signatureEvents": [
+     "Unplatform Creatives Workshop",
+     "Unplatform ORGANIZER MEETUP",
+     "ChatGTFO!"
+    ],
+    "topHost": "Unplatform"
+   }
+  },
+  {
+   "id": "columbia-university",
+   "name": "Columbia University",
+   "type": "University",
+   "address": null,
+   "neighborhood": "Morningside Heights",
+   "borough": "Manhattan",
+   "lat": 40.8075,
+   "lng": -73.9626,
+   "precision": "exact",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 10,
+    "issues": 9,
+    "firstIssue": "Nov 1, 2025",
+    "latestIssue": "May 19, 2026",
+    "latestEvent": "Brown Institute Media Party",
+    "topActivities": [
+     {
+      "activity": "Book launches & talks",
+      "count": 5
+     },
+     {
+      "activity": "Writing, zines & letters",
+      "count": 1
+     },
+     {
+      "activity": "Art & performance",
+      "count": 1
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Book launches & talks",
+      "count": 5
+     },
+     {
+      "activity": "Writing, zines & letters",
+      "count": 1
+     },
+     {
+      "activity": "Art & performance",
+      "count": 1
+     }
+    ],
+    "signatureEvents": [
+     "Brown Institute Media Party",
+     "Devotion and Distraction Talk",
+     "Evening with Alex Bores"
+    ],
+    "topHost": "Brown Institute"
+   }
+  },
+  {
+   "id": "jefferson-market-library",
+   "name": "Jefferson Market Library",
+   "type": "Library",
+   "address": null,
+   "neighborhood": "Greenwich Village",
+   "borough": "Manhattan",
+   "lat": 40.7344,
+   "lng": -73.999,
+   "precision": "exact",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 9,
+    "issues": 9,
+    "firstIssue": "Feb 2, 2026",
+    "latestIssue": "Jun 14, 2026",
+    "latestEvent": "Technocritical Writers Room",
+    "topActivities": [
+     {
+      "activity": "Writing, zines & letters",
+      "count": 5
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Writing, zines & letters",
+      "count": 5
+     }
+    ],
+    "signatureEvents": [
+     "Technocritical Writers Room"
+    ],
+    "topHost": "Amalia Mayorga"
+   }
+  },
+  {
+   "id": "208-w-13th-st",
+   "name": "208 W 13th St. (ITAA meeting)",
+   "type": "Arts / community space",
+   "address": "208 W 13th St, New York, NY 10011",
+   "neighborhood": "West Village",
+   "borough": "Manhattan",
+   "lat": 40.7381,
+   "lng": -74.001,
+   "precision": "exact",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 7,
+    "issues": 7,
+    "firstIssue": "Jul 11, 2026",
+    "latestIssue": "Oct 16, 2026",
+    "latestEvent": "Internet & Tech Addicts Anonymous (weekly)",
+    "topActivities": [
+     {
+      "activity": "Support groups",
+      "count": 5
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Support groups",
+      "count": 5
+     }
+    ],
+    "signatureEvents": [
+     "Internet & Tech Addicts Anonymous"
+    ],
+    "topHost": "Internet & Tech Addicts Anonymous"
+   }
+  },
+  {
+   "id": "222-bowery",
+   "name": "222 Bowery (Giorno Poetry Systems)",
+   "type": "Arts / community space",
+   "address": "222 Bowery, New York, NY 10012",
+   "neighborhood": "Bowery",
+   "borough": "Manhattan",
+   "lat": 40.7224,
+   "lng": -73.9933,
+   "precision": "exact",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 7,
+    "issues": 5,
+    "firstIssue": "Jan 2, 2026",
+    "latestIssue": "Mar 2, 2026",
+    "latestEvent": "Event Facilitator Workshop (weekly)",
+    "topActivities": [
+     {
+      "activity": "Teach-ins & workshops",
+      "count": 3
+     },
+     {
+      "activity": "Reading, poetry & book clubs",
+      "count": 1
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Teach-ins & workshops",
+      "count": 3
+     },
+     {
+      "activity": "Reading, poetry & book clubs",
+      "count": 1
+     }
+    ],
+    "signatureEvents": [
+     "Event Facilitator Workshop",
+     "Giorno Poetry Systems Live Programming Resumes",
+     "Event Facilitator Training"
+    ],
+    "topHost": "NYC Off Tech organizers"
+   }
+  },
+  {
+   "id": "boshis-place",
+   "name": "boshi's place",
+   "type": "Arts / community space",
+   "address": null,
+   "neighborhood": "East Williamsburg",
+   "borough": "Brooklyn",
+   "lat": 40.711,
+   "lng": -73.933,
+   "precision": "approx",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 7,
+    "issues": 5,
+    "firstIssue": "Nov 1, 2025",
+    "latestIssue": "Sep 1, 2026",
+    "latestEvent": "\"Can Games Change the World?\" Showcase",
+    "topActivities": [
+     {
+      "activity": "Music & dance",
+      "count": 5
+     },
+     {
+      "activity": "Book launches & talks",
+      "count": 1
+     },
+     {
+      "activity": "Art & performance",
+      "count": 1
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Music & dance",
+      "count": 5
+     },
+     {
+      "activity": "Book launches & talks",
+      "count": 1
+     },
+     {
+      "activity": "Art & performance",
+      "count": 1
+     }
+    ],
+    "signatureEvents": [
+     "boshi's spontaneous orchestra",
+     "Can Games Change the World? Showcase",
+     "boshi's lecture series: C. Thi Nguyen"
+    ],
+    "topHost": "boshi's place"
+   }
+  },
+  {
+   "id": "t-j-byrnes",
+   "name": "T.J. Byrnes",
+   "type": "Bar / cafe / restaurant",
+   "address": "77 Fulton St, New York, NY 10038",
+   "neighborhood": "Financial District",
+   "borough": "Manhattan",
+   "lat": 40.7085,
+   "lng": -74.004,
+   "precision": "exact",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 7,
+    "issues": 7,
+    "firstIssue": "Dec 1, 2025",
+    "latestIssue": "Apr 2, 2026",
+    "latestEvent": "An Evening of Music (Screen-Free)",
+    "topActivities": [
+     {
+      "activity": "Music & dance",
+      "count": 3
+     },
+     {
+      "activity": "Parties & socials",
+      "count": 1
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Music & dance",
+      "count": 3
+     },
+     {
+      "activity": "Parties & socials",
+      "count": 1
+     }
+    ],
+    "signatureEvents": [
+     "An Evening of Music",
+     "Christmas Presence w/ August Lamm & Andy Henley"
+    ],
+    "topHost": "August Lamm & Andy Henley"
+   }
+  },
+  {
+   "id": "fort-tilden",
+   "name": "Fort Tilden",
+   "type": "Park / public space",
+   "address": null,
+   "neighborhood": "Rockaway",
+   "borough": "Queens",
+   "lat": 40.5625,
+   "lng": -73.8856,
+   "precision": "exact",
+   "indoorOutdoor": "Outdoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": "Free",
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": "Public park: check NYC Parks special event permit rules for larger groups, tables or structures, and NYPD sound permit for amplified sound.",
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 6,
+    "issues": 6,
+    "firstIssue": "Aug 1, 2026",
+    "latestIssue": "Oct 16, 2026",
+    "latestEvent": "Fort Tilden & Breezy Point Beach Cleanup (weekly)",
+    "topActivities": [
+     {
+      "activity": "Walks, hikes & nature",
+      "count": 4
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Walks, hikes & nature",
+      "count": 4
+     }
+    ],
+    "signatureEvents": [
+     "Fort Tilden & Breezy Point Beach Cleanup"
+    ],
+    "topHost": null
+   }
+  },
+  {
+   "id": "lalins",
+   "name": "Lalin's",
+   "type": "Bar / cafe / restaurant",
+   "address": "1131 Broadway, Brooklyn, NY 11221",
+   "neighborhood": "Bushwick",
+   "borough": "Brooklyn",
+   "lat": 40.6942,
+   "lng": -73.9293,
+   "precision": "exact",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 6,
+    "issues": 6,
+    "firstIssue": "Jun 1, 2026",
+    "latestIssue": "Sep 14, 2026",
+    "latestEvent": "Burner Phone Writing Group",
+    "topActivities": [
+     {
+      "activity": "Writing, zines & letters",
+      "count": 4
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Writing, zines & letters",
+      "count": 4
+     }
+    ],
+    "signatureEvents": [
+     "Burner Phone Writing Group"
+    ],
+    "topHost": "Burner Phone"
+   }
+  },
+  {
+   "id": "the-new-school",
+   "name": "The New School",
+   "type": "University",
+   "address": null,
+   "neighborhood": "Greenwich Village",
+   "borough": "Manhattan",
+   "lat": 40.7355,
+   "lng": -73.9971,
+   "precision": "exact",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 6,
+    "issues": 6,
+    "firstIssue": "Mar 2, 2026",
+    "latestIssue": "Jun 20, 2026",
+    "latestEvent": "The Luddite Conference on Participatory Futures",
+    "topActivities": [
+     {
+      "activity": "Film & screenings",
+      "count": 2
+     },
+     {
+      "activity": "Book launches & talks",
+      "count": 2
+     },
+     {
+      "activity": "Art & performance",
+      "count": 1
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Film & screenings",
+      "count": 2
+     },
+     {
+      "activity": "Book launches & talks",
+      "count": 2
+     },
+     {
+      "activity": "Art & performance",
+      "count": 1
+     }
+    ],
+    "signatureEvents": [
+     "The Luddite Conference on Participatory Futures",
+     "Luddite Conference on Participatory Futures",
+     "TWC: Ghost in the Machine Screening"
+    ],
+    "topHost": "Tech Workers Coalition"
+   }
+  },
+  {
+   "id": "wonderville",
+   "name": "Wonderville",
+   "type": "Bar / cafe / restaurant",
+   "address": null,
+   "neighborhood": "Bushwick",
+   "borough": "Brooklyn",
+   "lat": 40.6936,
+   "lng": -73.9306,
+   "precision": "exact",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 6,
+    "issues": 5,
+    "firstIssue": "Jan 16, 2026",
+    "latestIssue": "May 19, 2026",
+    "latestEvent": "Event Organizer Meetup",
+    "topActivities": [
+     {
+      "activity": "Crafts, repair & making",
+      "count": 2
+     },
+     {
+      "activity": "Writing, zines & letters",
+      "count": 1
+     },
+     {
+      "activity": "Teach-ins & workshops",
+      "count": 1
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Crafts, repair & making",
+      "count": 2
+     },
+     {
+      "activity": "Writing, zines & letters",
+      "count": 1
+     },
+     {
+      "activity": "Teach-ins & workshops",
+      "count": 1
+     }
+    ],
+    "signatureEvents": [
+     "Event Organizer Meetup",
+     "Break Up with Google Again",
+     "Requiem for the Home Computer Zine Release"
+    ],
+    "topHost": "NYC Event Organizers Meetup (tied, 2 hosts)"
+   }
+  },
+  {
+   "id": "crystal-lake",
+   "name": "Crystal Lake",
+   "type": "Bar / cafe / restaurant",
+   "address": null,
+   "neighborhood": "Williamsburg",
+   "borough": "Brooklyn",
+   "lat": 40.7114,
+   "lng": -73.9447,
+   "precision": "exact",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 5,
+    "issues": 5,
+    "firstIssue": "Jun 1, 2026",
+    "latestIssue": "Oct 1, 2026",
+    "latestEvent": "News & Brews #2: Prediction Markets",
+    "topActivities": [
+     {
+      "activity": "Book launches & talks",
+      "count": 4
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Book launches & talks",
+      "count": 4
+     }
+    ],
+    "signatureEvents": [
+     "News & Brews #2: Prediction Markets",
+     "When the Data Disappears",
+     "Covering the Environment When the Data Disappears"
+    ],
+    "topHost": "News and Brews"
+   }
+  },
+  {
+   "id": "la-plaza-cultural",
+   "name": "La Plaza Cultural",
+   "type": "Park / public space",
+   "address": null,
+   "neighborhood": "East Village",
+   "borough": "Manhattan",
+   "lat": 40.724,
+   "lng": -73.9773,
+   "precision": "exact",
+   "indoorOutdoor": "Outdoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": "Free",
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": "Public park: check NYC Parks special event permit rules for larger groups, tables or structures, and NYPD sound permit for amplified sound.",
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 5,
+    "issues": 3,
+    "firstIssue": "Jun 1, 2026",
+    "latestIssue": "Jun 20, 2026",
+    "latestEvent": "The Card Catalog of Potential",
+    "topActivities": [
+     {
+      "activity": "Teach-ins & workshops",
+      "count": 3
+     },
+     {
+      "activity": "Parties & socials",
+      "count": 1
+     },
+     {
+      "activity": "Crafts, repair & making",
+      "count": 1
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Teach-ins & workshops",
+      "count": 3
+     },
+     {
+      "activity": "Parties & socials",
+      "count": 1
+     },
+     {
+      "activity": "Crafts, repair & making",
+      "count": 1
+     }
+    ],
+    "signatureEvents": [
+     "The Card Catalog of Potential",
+     "Live Texting",
+     "What Are You Doing Tonight? Start Your Own Events Calendar"
+    ],
+    "topHost": "Summer of Ludd (tied, 2 hosts)"
+   }
+  },
+  {
+   "id": "national-academy-of-design",
+   "name": "National Academy of Design",
+   "type": "Gallery / museum",
+   "address": "519 W 26th St, 2nd Fl, New York, NY 10001",
+   "neighborhood": "Chelsea",
+   "borough": "Manhattan",
+   "lat": 40.7502,
+   "lng": -74.0048,
+   "precision": "exact",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 5,
+    "issues": 3,
+    "firstIssue": "Apr 2, 2026",
+    "latestIssue": "Aug 1, 2026",
+    "latestEvent": "Handmade Datasets",
+    "topActivities": [
+     {
+      "activity": "Teach-ins & workshops",
+      "count": 2
+     },
+     {
+      "activity": "Attention Labs (SoRA)",
+      "count": 1
+     },
+     {
+      "activity": "Crafts, repair & making",
+      "count": 1
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Teach-ins & workshops",
+      "count": 2
+     },
+     {
+      "activity": "Attention Labs (SoRA)",
+      "count": 1
+     },
+     {
+      "activity": "Crafts, repair & making",
+      "count": 1
+     }
+    ],
+    "signatureEvents": [
+     "Handmade Datasets",
+     "ATTENTION IS A SCHOOL: SoRA Workshops",
+     "Attention Activism 101 IN PERSON"
+    ],
+    "topHost": "School of Radical Attention (SoRA)"
+   }
+  },
+  {
+   "id": "petes-candy-store",
+   "name": "Pete's Candy Store",
+   "type": "Bar / cafe / restaurant",
+   "address": null,
+   "neighborhood": "Williamsburg",
+   "borough": "Brooklyn",
+   "lat": 40.7182,
+   "lng": -73.9507,
+   "precision": "exact",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 5,
+    "issues": 2,
+    "firstIssue": "Oct 1, 2026",
+    "latestIssue": "Oct 16, 2026",
+    "latestEvent": "\"BRIGHT FIVE\" Presentation Party",
+    "topActivities": [
+     {
+      "activity": "Art & performance",
+      "count": 3
+     },
+     {
+      "activity": "Parties & socials",
+      "count": 1
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Art & performance",
+      "count": 3
+     },
+     {
+      "activity": "Parties & socials",
+      "count": 1
+     }
+    ],
+    "signatureEvents": [
+     "BRIGHT FIVE Presentation Party",
+     "Phone Free Comedy w/ Dan Fox",
+     "Ihatemyphoneilovemyphone"
+    ],
+    "topHost": "Dan Fox (Phone-Free Adelphi)"
+   }
+  },
+  {
+   "id": "53-bridge-st",
+   "name": "53 Bridge St. (NYC Mesh)",
+   "type": "Community tech space",
+   "address": "53 Bridge St, Brooklyn, NY 11201",
+   "neighborhood": "DUMBO",
+   "borough": "Brooklyn",
+   "lat": 40.7032,
+   "lng": -73.9845,
+   "precision": "exact",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 4,
+    "issues": 4,
+    "firstIssue": "May 1, 2026",
+    "latestIssue": "Jun 14, 2026",
+    "latestEvent": "NYC Mesh Open Mesh Night (weekly)",
+    "topActivities": [
+     {
+      "activity": "Crafts, repair & making",
+      "count": 2
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Crafts, repair & making",
+      "count": 2
+     }
+    ],
+    "signatureEvents": [
+     "NYC Mesh Open Mesh Night"
+    ],
+    "topHost": "NYC Mesh"
+   }
+  },
+  {
+   "id": "brooklyn-bridge-park",
+   "name": "Brooklyn Bridge Park",
+   "type": "Park / public space",
+   "address": null,
+   "neighborhood": "DUMBO / Brooklyn Heights",
+   "borough": "Brooklyn",
+   "lat": 40.7003,
+   "lng": -73.9967,
+   "precision": "exact",
+   "indoorOutdoor": "Outdoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": "Free",
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": "Public park: check NYC Parks special event permit rules for larger groups, tables or structures, and NYPD sound permit for amplified sound.",
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 4,
+    "issues": 4,
+    "firstIssue": "Apr 17, 2026",
+    "latestIssue": "Oct 1, 2026",
+    "latestEvent": "Jungle Games",
+    "topActivities": [
+     {
+      "activity": "Moon rituals & meditation",
+      "count": 1
+     },
+     {
+      "activity": "Walks, hikes & nature",
+      "count": 1
+     },
+     {
+      "activity": "Art & performance",
+      "count": 1
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Moon rituals & meditation",
+      "count": 1
+     },
+     {
+      "activity": "Walks, hikes & nature",
+      "count": 1
+     },
+     {
+      "activity": "Art & performance",
+      "count": 1
+     },
+     {
+      "activity": "Games & play",
+      "count": 1
+     }
+    ],
+    "signatureEvents": [
+     "Jungle Games",
+     "Weave nyc",
+     "BrooklynHike"
+    ],
+    "topHost": "Samvit Sengupta"
+   }
+  },
+  {
+   "id": "producers-club",
+   "name": "Producers Club",
+   "type": "Club / event venue",
+   "address": null,
+   "neighborhood": "Midtown",
+   "borough": "Manhattan",
+   "lat": 40.7593,
+   "lng": -73.9921,
+   "precision": "exact",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 4,
+    "issues": 4,
+    "firstIssue": "Aug 1, 2026",
+    "latestIssue": "Oct 1, 2026",
+    "latestEvent": "Singles Dating Matching Using Palantir Data",
+    "topActivities": [
+     {
+      "activity": "Games & play",
+      "count": 2
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Games & play",
+      "count": 2
+     }
+    ],
+    "signatureEvents": [
+     "Singles Dating Matching Using Palantir Data",
+     "Singles Dating Using Palantir Data"
+    ],
+    "topHost": null
+   }
+  },
+  {
+   "id": "the-sultan-room",
+   "name": "The Sultan Room",
+   "type": "Club / event venue",
+   "address": null,
+   "neighborhood": "Bushwick",
+   "borough": "Brooklyn",
+   "lat": 40.7046,
+   "lng": -73.9216,
+   "precision": "exact",
+   "indoorOutdoor": "Both",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 4,
+    "issues": 4,
+    "firstIssue": "Aug 1, 2026",
+    "latestIssue": "Sep 14, 2026",
+    "latestEvent": "Burner Phone MISS WORLD Launch Party",
+    "topActivities": [
+     {
+      "activity": "Music & dance",
+      "count": 1
+     },
+     {
+      "activity": "Art & performance",
+      "count": 1
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Music & dance",
+      "count": 1
+     },
+     {
+      "activity": "Art & performance",
+      "count": 1
+     }
+    ],
+    "signatureEvents": [
+     "Burner Phone MISS WORLD Launch Party",
+     "Vainglory Record Release Show"
+    ],
+    "topHost": "Burner Phone (tied, 2 hosts)"
+   }
+  },
+  {
+   "id": "underland-gallery",
+   "name": "Underland Gallery",
+   "type": "Gallery / museum",
+   "address": null,
+   "neighborhood": "Bay Ridge",
+   "borough": "Brooklyn",
+   "lat": 40.63,
+   "lng": -74.027,
+   "precision": "approx",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 4,
+    "issues": 4,
+    "firstIssue": "Feb 2, 2026",
+    "latestIssue": "May 19, 2026",
+    "latestEvent": "Bay Ridge Figure Drawing",
+    "topActivities": [
+     {
+      "activity": "Art & performance",
+      "count": 3
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Art & performance",
+      "count": 3
+     }
+    ],
+    "signatureEvents": [
+     "Bay Ridge Figure Drawing"
+    ],
+    "topHost": "Amanda Hanna-McLeer"
+   }
+  },
+  {
+   "id": "bric",
+   "name": "BRIC",
+   "type": "Arts / community space",
+   "address": null,
+   "neighborhood": "Fort Greene",
+   "borough": "Brooklyn",
+   "lat": 40.6871,
+   "lng": -73.978,
+   "precision": "exact",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 3,
+    "issues": 3,
+    "firstIssue": "May 19, 2026",
+    "latestIssue": "Jun 14, 2026",
+    "latestEvent": "'Your Attention Please' NYC Premiere",
+    "topActivities": [
+     {
+      "activity": "Film & screenings",
+      "count": 2
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Film & screenings",
+      "count": 2
+     }
+    ],
+    "signatureEvents": [
+     "Your Attention Please' NYC Premiere",
+     "Your Attention Please NY Premiere"
+    ],
+    "topHost": null
+   }
+  },
+  {
+   "id": "brooklyn-brewery",
+   "name": "Brooklyn Brewery",
+   "type": "Bar / cafe / restaurant",
+   "address": null,
+   "neighborhood": "Williamsburg",
+   "borough": "Brooklyn",
+   "lat": 40.7216,
+   "lng": -73.9573,
+   "precision": "exact",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 3,
+    "issues": 2,
+    "firstIssue": "May 1, 2026",
+    "latestIssue": "May 19, 2026",
+    "latestEvent": "Global Endurance Collective Launch",
+    "topActivities": [
+     {
+      "activity": "Book launches & talks",
+      "count": 2
+     },
+     {
+      "activity": "Parties & socials",
+      "count": 1
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Book launches & talks",
+      "count": 2
+     },
+     {
+      "activity": "Parties & socials",
+      "count": 1
+     }
+    ],
+    "signatureEvents": [
+     "Global Endurance Collective Launch",
+     "Newsreel: Feed Is Cooked",
+     "Newsreel Launch: The Feed Is Cooked"
+    ],
+    "topHost": "Global Endurance Collective (tied, 2 hosts)"
+   }
+  },
+  {
+   "id": "caveat",
+   "name": "Caveat",
+   "type": "Club / event venue",
+   "address": null,
+   "neighborhood": "Lower East Side",
+   "borough": "Manhattan",
+   "lat": 40.7208,
+   "lng": -73.9842,
+   "precision": "exact",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 3,
+    "issues": 2,
+    "firstIssue": "Oct 1, 2026",
+    "latestIssue": "Oct 16, 2026",
+    "latestEvent": "REAL LIFE TONIGHT",
+    "topActivities": [
+     {
+      "activity": "Parties & socials",
+      "count": 1
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Parties & socials",
+      "count": 1
+     }
+    ],
+    "signatureEvents": [
+     "Real life tonight",
+     "We're Ready tobelieve You"
+    ],
+    "topHost": "Ian & Amelia"
+   }
+  },
+  {
+   "id": "church-of-the-village",
+   "name": "Church of the Village",
+   "type": "Church / meeting house",
+   "address": null,
+   "neighborhood": "West Village",
+   "borough": "Manhattan",
+   "lat": 40.7377,
+   "lng": -74.0015,
+   "precision": "exact",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 3,
+    "issues": 3,
+    "firstIssue": "Sep 14, 2026",
+    "latestIssue": "Oct 16, 2026",
+    "latestEvent": "CDNY English Country Dance & Contra (twice weekly)",
+    "topActivities": [
+     {
+      "activity": "Music & dance",
+      "count": 2
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Music & dance",
+      "count": 2
+     }
+    ],
+    "signatureEvents": [
+     "CDNY English Country Dance & Contra",
+     "Cdny"
+    ],
+    "topHost": "CDNY"
+   }
+  },
+  {
+   "id": "index-chinatown",
+   "name": "Index Chinatown",
+   "type": "Arts / community space",
+   "address": null,
+   "neighborhood": "Chinatown",
+   "borough": "Manhattan",
+   "lat": 40.7155,
+   "lng": -73.997,
+   "precision": "approx",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 3,
+    "issues": 3,
+    "firstIssue": "Feb 17, 2026",
+    "latestIssue": "Sep 14, 2026",
+    "latestEvent": "Does Expertise Matter?",
+    "topActivities": [
+     {
+      "activity": "Book launches & talks",
+      "count": 2
+     },
+     {
+      "activity": "Parties & socials",
+      "count": 1
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Book launches & talks",
+      "count": 2
+     },
+     {
+      "activity": "Parties & socials",
+      "count": 1
+     }
+    ],
+    "signatureEvents": [
+     "Does Expertise Matter?",
+     "Evening with Alex Bores",
+     "Teaching Creative Tech in the Age of AI"
+    ],
+    "topHost": null
+   }
+  },
+  {
+   "id": "interference-archive",
+   "name": "Interference Archive",
+   "type": "Arts / community space",
+   "address": null,
+   "neighborhood": "Gowanus",
+   "borough": "Brooklyn",
+   "lat": 40.6712,
+   "lng": -73.9835,
+   "precision": "exact",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 3,
+    "issues": 3,
+    "firstIssue": "Mar 2, 2026",
+    "latestIssue": "May 19, 2026",
+    "latestEvent": "Intro to Linux Workshop",
+    "topActivities": [
+     {
+      "activity": "Music & dance",
+      "count": 1
+     },
+     {
+      "activity": "Teach-ins & workshops",
+      "count": 1
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Music & dance",
+      "count": 1
+     },
+     {
+      "activity": "Teach-ins & workshops",
+      "count": 1
+     }
+    ],
+    "signatureEvents": [
+     "Intro to Linux Workshop",
+     "Ditch Spotify' Mix Tape Swap"
+    ],
+    "topHost": "IWW NYC"
+   }
+  },
+  {
+   "id": "jade",
+   "name": "JADE",
+   "type": "Club / event venue",
+   "address": "4 Stuyvesant Ave, Brooklyn, NY 11221",
+   "neighborhood": "Bushwick",
+   "borough": "Brooklyn",
+   "lat": 40.6977,
+   "lng": -73.9366,
+   "precision": "exact",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 3,
+    "issues": 3,
+    "firstIssue": "Feb 17, 2026",
+    "latestIssue": "Apr 17, 2026",
+    "latestEvent": "Break Up with Spotify Again",
+    "topActivities": [
+     {
+      "activity": "Music & dance",
+      "count": 2
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Music & dance",
+      "count": 2
+     }
+    ],
+    "signatureEvents": [
+     "Break Up with Spotify Again",
+     "Break Up with Spotify"
+    ],
+    "topHost": null
+   }
+  },
+  {
+   "id": "madison-square-park",
+   "name": "Madison Square Park",
+   "type": "Park / public space",
+   "address": null,
+   "neighborhood": "Flatiron",
+   "borough": "Manhattan",
+   "lat": 40.742,
+   "lng": -73.9875,
+   "precision": "exact",
+   "indoorOutdoor": "Outdoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": "Free",
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": "Public park: check NYC Parks special event permit rules for larger groups, tables or structures, and NYPD sound permit for amplified sound.",
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 3,
+    "issues": 3,
+    "firstIssue": "Oct 17, 2025",
+    "latestIssue": "Jul 11, 2026",
+    "latestEvent": "Sidewalk Study \"Ensouled Beauty\"",
+    "topActivities": [
+     {
+      "activity": "Protests & actions",
+      "count": 1
+     },
+     {
+      "activity": "Attention Labs (SoRA)",
+      "count": 1
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Protests & actions",
+      "count": 1
+     },
+     {
+      "activity": "Attention Labs (SoRA)",
+      "count": 1
+     }
+    ],
+    "signatureEvents": [
+     "Sidewalk Study Ensouled Beauty",
+     "Retooling"
+    ],
+    "topHost": "SoRA Study Corps"
+   }
+  },
+  {
+   "id": "mcgolrick-park",
+   "name": "McGolrick Park",
+   "type": "Park / public space",
+   "address": null,
+   "neighborhood": "Greenpoint",
+   "borough": "Brooklyn",
+   "lat": 40.7246,
+   "lng": -73.9434,
+   "precision": "exact",
+   "indoorOutdoor": "Outdoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": "Free",
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": "Public park: check NYC Parks special event permit rules for larger groups, tables or structures, and NYPD sound permit for amplified sound.",
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 3,
+    "issues": 3,
+    "firstIssue": "Oct 2, 2025",
+    "latestIssue": "Dec 1, 2025",
+    "latestEvent": "McGolrick Park Bird Club",
+    "topActivities": [
+     {
+      "activity": "Walks, hikes & nature",
+      "count": 3
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Walks, hikes & nature",
+      "count": 3
+     }
+    ],
+    "signatureEvents": [
+     "McGolrick Park Bird Club"
+    ],
+    "topHost": null
+   }
+  },
+  {
+   "id": "metrorock-bushwick",
+   "name": "MetroRock Bushwick",
+   "type": "Club / event venue",
+   "address": null,
+   "neighborhood": "Bushwick",
+   "borough": "Brooklyn",
+   "lat": 40.7059,
+   "lng": -73.9196,
+   "precision": "exact",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 3,
+    "issues": 3,
+    "firstIssue": "Apr 17, 2026",
+    "latestIssue": "May 19, 2026",
+    "latestEvent": "Skin in the Game",
+    "topActivities": [
+     {
+      "activity": "Games & play",
+      "count": 3
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Games & play",
+      "count": 3
+     }
+    ],
+    "signatureEvents": [
+     "Skin in the Game: Experiments in PlayDating",
+     "Skin in the Game"
+    ],
+    "topHost": "How Do We Play"
+   }
+  },
+  {
+   "id": "museum-of-the-moving-image",
+   "name": "Museum of the Moving Image",
+   "type": "Gallery / museum",
+   "address": null,
+   "neighborhood": "Astoria",
+   "borough": "Queens",
+   "lat": 40.7563,
+   "lng": -73.9239,
+   "precision": "exact",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 3,
+    "issues": 3,
+    "firstIssue": "May 19, 2026",
+    "latestIssue": "Oct 16, 2026",
+    "latestEvent": "Phone Free Fridays (weekly)",
+    "topActivities": [
+     {
+      "activity": "Parties & socials",
+      "count": 2
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Parties & socials",
+      "count": 2
+     }
+    ],
+    "signatureEvents": [
+     "Phone Free Fridays",
+     "Phone Free Fridays Launch",
+     "Escape the Internet"
+    ],
+    "topHost": "MoMI, Light Phone & Dan Fox (tied, 3 hosts)"
+   }
+  },
+  {
+   "id": "nightclub-101",
+   "name": "Nightclub 101",
+   "type": "Club / event venue",
+   "address": "101 Avenue A, New York, NY 10009",
+   "neighborhood": "East Village",
+   "borough": "Manhattan",
+   "lat": 40.7262,
+   "lng": -73.9839,
+   "precision": "exact",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 3,
+    "issues": 3,
+    "firstIssue": "Feb 2, 2026",
+    "latestIssue": "Aug 1, 2026",
+    "latestEvent": "Moving offline in an online age",
+    "topActivities": [
+     {
+      "activity": "Art & performance",
+      "count": 1
+     },
+     {
+      "activity": "Film & screenings",
+      "count": 1
+     },
+     {
+      "activity": "Book launches & talks",
+      "count": 1
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Art & performance",
+      "count": 1
+     },
+     {
+      "activity": "Film & screenings",
+      "count": 1
+     },
+     {
+      "activity": "Book launches & talks",
+      "count": 1
+     }
+    ],
+    "signatureEvents": [
+     "Moving offline in an online age",
+     "Special Screening: 'It Came From the Basement",
+     "Month Offline Exhibition"
+    ],
+    "topHost": "August Lamm (tied, 3 hosts)"
+   }
+  },
+  {
+   "id": "nyu-school-of-law-vanderbilt-hall",
+   "name": "NYU School of Law – Vanderbilt Hall",
+   "type": "University",
+   "address": null,
+   "neighborhood": "Greenwich Village",
+   "borough": "Manhattan",
+   "lat": 40.7302,
+   "lng": -73.9993,
+   "precision": "exact",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 3,
+    "issues": 3,
+    "firstIssue": "Feb 2, 2026",
+    "latestIssue": "Sep 1, 2026",
+    "latestEvent": "The Trial of Jeff Bezos",
+    "topActivities": [
+     {
+      "activity": "Book launches & talks",
+      "count": 2
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Book launches & talks",
+      "count": 2
+     }
+    ],
+    "signatureEvents": [
+     "The Trial of Jeff Bezos",
+     "Who Should Decide AI's Future?"
+    ],
+    "topHost": "Authors of Against Tech Oligarchy"
+   }
+  },
+  {
+   "id": "peace-cafe",
+   "name": "Peace Cafe",
+   "type": "Bar / cafe / restaurant",
+   "address": "23 Marcus Garvey Blvd, Brooklyn, NY",
+   "neighborhood": "Bed-Stuy",
+   "borough": "Brooklyn",
+   "lat": 40.6993,
+   "lng": -73.9406,
+   "precision": "exact",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 3,
+    "issues": 3,
+    "firstIssue": "Apr 17, 2026",
+    "latestIssue": "May 19, 2026",
+    "latestEvent": "Digital Security",
+    "topActivities": [
+     {
+      "activity": "Teach-ins & workshops",
+      "count": 1
+     },
+     {
+      "activity": "Crafts, repair & making",
+      "count": 1
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Teach-ins & workshops",
+      "count": 1
+     },
+     {
+      "activity": "Crafts, repair & making",
+      "count": 1
+     }
+    ],
+    "signatureEvents": [
+     "Digital Security",
+     "Digital Security Workshop"
+    ],
+    "topHost": null
+   }
+  },
+  {
+   "id": "secret-riso-club",
+   "name": "Secret Riso Club",
+   "type": "Arts / community space",
+   "address": "122 Central Ave, Brooklyn, NY",
+   "neighborhood": "Bushwick",
+   "borough": "Brooklyn",
+   "lat": 40.6985,
+   "lng": -73.9298,
+   "precision": "exact",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 3,
+    "issues": 3,
+    "firstIssue": "Mar 2, 2026",
+    "latestIssue": "Aug 15, 2026",
+    "latestEvent": "GUNK's Third Birthday Party",
+    "topActivities": [
+     {
+      "activity": "Music & dance",
+      "count": 1
+     },
+     {
+      "activity": "Art & performance",
+      "count": 1
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Music & dance",
+      "count": 1
+     },
+     {
+      "activity": "Art & performance",
+      "count": 1
+     }
+    ],
+    "signatureEvents": [
+     "GUNK's Third Birthday Party",
+     "Break Up with Spotify"
+    ],
+    "topHost": "GUNK"
+   }
+  },
+  {
+   "id": "177-prince-st",
+   "name": "177 Prince St. (Museum of Interesting Things)",
+   "type": "Gallery / museum",
+   "address": "177 Prince St, New York, NY 10012",
+   "neighborhood": "SoHo",
+   "borough": "Manhattan",
+   "lat": 40.7263,
+   "lng": -74.0018,
+   "precision": "exact",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 2,
+    "issues": 1,
+    "firstIssue": "Jun 20, 2026",
+    "latestIssue": "Jun 20, 2026",
+    "latestEvent": "Secret Film Speakeasy",
+    "topActivities": [
+     {
+      "activity": "Film & screenings",
+      "count": 2
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Film & screenings",
+      "count": 2
+     }
+    ],
+    "signatureEvents": [
+     "Secret Film Speakeasy",
+     "Museum of Interesting Things: 16mm Speakeasy"
+    ],
+    "topHost": "Museum of Interesting Things"
+   }
+  },
+  {
+   "id": "520-8th-ave-3rd-fl",
+   "name": "520 8th Ave., 3rd Fl. (CDNY)",
+   "type": "Arts / community space",
+   "address": "520 8th Ave, 3rd Fl, New York, NY 10018",
+   "neighborhood": "Midtown",
+   "borough": "Manhattan",
+   "lat": 40.7536,
+   "lng": -73.994,
+   "precision": "exact",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 2,
+    "issues": 2,
+    "firstIssue": "Jul 11, 2026",
+    "latestIssue": "Aug 1, 2026",
+    "latestEvent": "CDNY Dance Lab",
+    "topActivities": [
+     {
+      "activity": "Music & dance",
+      "count": 2
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Music & dance",
+      "count": 2
+     }
+    ],
+    "signatureEvents": [
+     "CDNY Dance Lab"
+    ],
+    "topHost": "CDNY"
+   }
+  },
+  {
+   "id": "maria-hernandez-park",
+   "name": "Maria Hernandez Park",
+   "type": "Park / public space",
+   "address": null,
+   "neighborhood": "Bushwick",
+   "borough": "Brooklyn",
+   "lat": 40.703,
+   "lng": -73.9235,
+   "precision": "exact",
+   "indoorOutdoor": "Outdoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": "Free",
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": "Public park: check NYC Parks special event permit rules for larger groups, tables or structures, and NYPD sound permit for amplified sound.",
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 2,
+    "issues": 2,
+    "firstIssue": "Jun 20, 2026",
+    "latestIssue": "Sep 1, 2026",
+    "latestEvent": "Public Service",
+    "topActivities": [
+     {
+      "activity": "Teach-ins & workshops",
+      "count": 1
+     },
+     {
+      "activity": "Parties & socials",
+      "count": 1
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Teach-ins & workshops",
+      "count": 1
+     },
+     {
+      "activity": "Parties & socials",
+      "count": 1
+     }
+    ],
+    "signatureEvents": [
+     "Public Service",
+     "Intro to Self-Defense"
+    ],
+    "topHost": "Public Service (tied, 2 hosts)"
+   }
+  },
+  {
+   "id": "mccarren-park",
+   "name": "McCarren Park",
+   "type": "Park / public space",
+   "address": null,
+   "neighborhood": "Williamsburg/Greenpoint",
+   "borough": "Brooklyn",
+   "lat": 40.7206,
+   "lng": -73.9516,
+   "precision": "exact",
+   "indoorOutdoor": "Outdoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": "Free",
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": "Public park: check NYC Parks special event permit rules for larger groups, tables or structures, and NYPD sound permit for amplified sound.",
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 2,
+    "issues": 1,
+    "firstIssue": "Sep 14, 2026",
+    "latestIssue": "Sep 14, 2026",
+    "latestEvent": "WEAVE NYC [postponed]",
+    "topActivities": [
+     {
+      "activity": "Art & performance",
+      "count": 1
+     },
+     {
+      "activity": "Reading, poetry & book clubs",
+      "count": 1
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Art & performance",
+      "count": 1
+     },
+     {
+      "activity": "Reading, poetry & book clubs",
+      "count": 1
+     }
+    ],
+    "signatureEvents": [
+     "Weave nyc",
+     "Speed Book Clubbing"
+    ],
+    "topHost": "Jasmine Zimmerman (tied, 2 hosts)"
+   }
+  },
+  {
+   "id": "newtown-radio",
+   "name": "Newtown Radio",
+   "type": "Radio station / studio",
+   "address": "262 Meserole St, Brooklyn, NY",
+   "neighborhood": "East Williamsburg",
+   "borough": "Brooklyn",
+   "lat": 40.7079,
+   "lng": -73.933,
+   "precision": "exact",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 2,
+    "issues": 2,
+    "firstIssue": "Jul 11, 2026",
+    "latestIssue": "Sep 14, 2026",
+    "latestEvent": "DISORIENTATION",
+    "topActivities": [
+     {
+      "activity": "Music & dance",
+      "count": 2
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Music & dance",
+      "count": 2
+     }
+    ],
+    "signatureEvents": [
+     "Disorientation",
+     "Quazar Radio"
+    ],
+    "topHost": "Friendly Stranger Studios & Quazar (tied, 2 hosts)"
+   }
+  },
+  {
+   "id": "pioneer-works",
+   "name": "Pioneer Works",
+   "type": "Arts / community space",
+   "address": null,
+   "neighborhood": "Red Hook",
+   "borough": "Brooklyn",
+   "lat": 40.6788,
+   "lng": -74.012,
+   "precision": "exact",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 2,
+    "issues": 2,
+    "firstIssue": "Dec 1, 2025",
+    "latestIssue": "Dec 13, 2025",
+    "latestEvent": "Press Play",
+    "topActivities": [
+     {
+      "activity": "Art & performance",
+      "count": 2
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Art & performance",
+      "count": 2
+     }
+    ],
+    "signatureEvents": [
+     "Press Play Fair",
+     "Press Play"
+    ],
+    "topHost": "Micaela Durand"
+   }
+  },
+  {
+   "id": "tane-poetry-library",
+   "name": "Tane Poetry Library",
+   "type": "Library",
+   "address": "91 South St, New York, NY",
+   "neighborhood": "South Street Seaport",
+   "borough": "Manhattan",
+   "lat": 40.7063,
+   "lng": -74.0033,
+   "precision": "exact",
+   "indoorOutdoor": "Indoor",
+   "capacityStanding": null,
+   "capacitySeated": null,
+   "seating": null,
+   "tables": null,
+   "privateRoom": null,
+   "weatherBackup": null,
+   "noise": null,
+   "amplifiedSound": null,
+   "phoneFree": null,
+   "cost": null,
+   "costNotes": null,
+   "howToBook": null,
+   "permitNotes": null,
+   "leadTime": null,
+   "bestTimes": null,
+   "food": null,
+   "alcohol": null,
+   "allAges": null,
+   "restrooms": null,
+   "stepFree": null,
+   "accessibleRestroom": null,
+   "accessibilityNotes": null,
+   "power": null,
+   "soundSystem": null,
+   "projector": null,
+   "transit": null,
+   "website": null,
+   "instagram": null,
+   "bookingLink": null,
+   "notes": null,
+   "lastVerified": null,
+   "history": {
+    "listings": 2,
+    "issues": 2,
+    "firstIssue": "Sep 14, 2026",
+    "latestIssue": "Oct 16, 2026",
+    "latestEvent": "Dear Dear: An Afternoon with Reuben Gelley Newman",
+    "topActivities": [
+     {
+      "activity": "Reading, poetry & book clubs",
+      "count": 1
+     }
+    ],
+    "activities": [
+     {
+      "activity": "Reading, poetry & book clubs",
+      "count": 1
+     }
+    ],
+    "signatureEvents": [
+     "Dear Dear: An Afternoon with Reuben Gelley Newman",
+     "Song of Myself Marathon"
+    ],
+    "topHost": "Walt Whitman Initiative"
+   }
+  }
+ ]
+}

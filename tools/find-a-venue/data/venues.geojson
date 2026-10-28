@@ -1,0 +1,1305 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9817,
+     40.7265
+    ]
+   },
+   "properties": {
+    "id": "tompkins-square-park",
+    "name": "Tompkins Square Park",
+    "type": "Park / public space",
+    "area": "East Village, Manhattan",
+    "listings": 106,
+    "issues": 18,
+    "first_issue": "Oct 2, 2025",
+    "latest_issue": "Oct 16, 2026",
+    "latest_event": "Tompkins Distro (weekly)",
+    "top_host": "Summer of Ludd",
+    "top_activities": "Art & performance (13), Teach-ins & workshops (12), Parties & socials (12)",
+    "signature_events": "Luddite Club, New Rat City, Tompkins Distro",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9897,
+     40.7024
+    ]
+   },
+   "properties": {
+    "id": "strother-school-of-radical-attention",
+    "name": "Strother School of Radical Attention",
+    "type": "Arts / community space",
+    "area": "DUMBO, Brooklyn",
+    "listings": 67,
+    "issues": 24,
+    "first_issue": "Oct 2, 2025",
+    "latest_issue": "Oct 16, 2026",
+    "latest_event": "The Dance of an Open Mind: Toni Morrison's Radical Attentions",
+    "top_host": "School of Radical Attention (SoRA)",
+    "top_activities": "Attention Labs (SoRA) (36), Book launches & talks (3), Teach-ins & workshops (1)",
+    "signature_events": "Attention Lab COALITION, Attention Lab SANCTUARY, Attention Lab STUDY",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9814,
+     40.752
+    ]
+   },
+   "properties": {
+    "id": "stavros-niarchos-foundation-library",
+    "name": "Stavros Niarchos Foundation Library",
+    "type": "Library",
+    "area": "Midtown, Manhattan",
+    "listings": 44,
+    "issues": 24,
+    "first_issue": "Oct 2, 2025",
+    "latest_issue": "Oct 16, 2026",
+    "latest_event": "Crafternoon (weekly)",
+    "top_host": "NYPL Offline Book Club",
+    "top_activities": "Reading, poetry & book clubs (12), Crafts, repair & making (10), Book launches & talks (2)",
+    "signature_events": "Offline Book Club, Crafternoon, Who Gets to Decide How AI Enters Our Schools?",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.969,
+     40.6602
+    ]
+   },
+   "properties": {
+    "id": "prospect-park",
+    "name": "Prospect Park",
+    "type": "Park / public space",
+    "area": "Prospect Park, Brooklyn",
+    "listings": 31,
+    "issues": 14,
+    "first_issue": "Oct 2, 2025",
+    "latest_issue": "Oct 16, 2026",
+    "latest_event": "Pirates of Prospect Park Annual Treasure Hunt",
+    "top_host": "Kyle Barnes / Chimeras Collective",
+    "top_activities": "Walks, hikes & nature (6), Teach-ins & workshops (3), Games & play (3)",
+    "signature_events": "Trephelobia Poetry Circle, Druid School, Monthly Molting' Ecology Workshop",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9844,
+     40.7343
+    ]
+   },
+   "properties": {
+    "id": "15th-street-quaker-meeting-house",
+    "name": "15th Street Quaker Meeting House",
+    "type": "Church / meeting house",
+    "area": "Stuyvesant Square, Manhattan",
+    "listings": 24,
+    "issues": 12,
+    "first_issue": "Mar 2, 2026",
+    "latest_issue": "Oct 1, 2026",
+    "latest_event": "The Art of Leonard Peltier Comes to NYC",
+    "top_host": "Summer of Ludd",
+    "top_activities": "Teach-ins & workshops (7), Art & performance (5), Parties & socials (2)",
+    "signature_events": "Earth Chxrch, Hat Making & Teach-in, The Art of Leonard Peltier Comes to NYC",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9381,
+     40.7087
+    ]
+   },
+   "properties": {
+    "id": "telos-haus",
+    "name": "telos.haus",
+    "type": "Arts / community space",
+    "area": "East Williamsburg, Brooklyn",
+    "listings": 22,
+    "issues": 16,
+    "first_issue": "Nov 14, 2025",
+    "latest_issue": "Aug 1, 2026",
+    "latest_event": "MO Gallery Exhibition (Free Offline Expo)",
+    "top_host": "NYC offline community (Let's Get Off Together)",
+    "top_activities": "Parties & socials (5), Art & performance (4), Reading, poetry & book clubs (2)",
+    "signature_events": "Let's get off together, Consumption Book Club: Land of Milk and Honey, Month Offline Gallery Exhibition",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9973,
+     40.7308
+    ]
+   },
+   "properties": {
+    "id": "washington-square-park",
+    "name": "Washington Square Park",
+    "type": "Park / public space",
+    "area": "Greenwich Village, Manhattan",
+    "listings": 22,
+    "issues": 17,
+    "first_issue": "Oct 2, 2025",
+    "latest_issue": "Sep 14, 2026",
+    "latest_event": "Washington Square Mass Read-in",
+    "top_host": "Young People's Alliance & friends (tied, 5 hosts)",
+    "top_activities": "Reading, poetry & book clubs (4), Art & performance (3), Outreach & tabling (2)",
+    "signature_events": "Washington Square Mass Read-in, OPT OUT OF UTOPIA: an art pop-up, Mass for the magnetic field",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9757,
+     40.6914
+    ]
+   },
+   "properties": {
+    "id": "fort-greene-park",
+    "name": "Fort Greene Park",
+    "type": "Park / public space",
+    "area": "Fort Greene, Brooklyn",
+    "listings": 19,
+    "issues": 10,
+    "first_issue": "Oct 2, 2025",
+    "latest_issue": "Oct 16, 2026",
+    "latest_event": "Falling Leaves Moon",
+    "top_host": "Kyle Barnes / Chimeras Collective",
+    "top_activities": "Moon rituals & meditation (5), Reading, poetry & book clubs (3), Teach-ins & workshops (2)",
+    "signature_events": "Falling Leaves Moon, LUDD LOVERS Zine Party, October New Moon Study Circle: Technopoly",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9682,
+     40.6724
+    ]
+   },
+   "properties": {
+    "id": "brooklyn-public-library-central-library",
+    "name": "Brooklyn Public Library – Central Library",
+    "type": "Library",
+    "area": "Grand Army Plaza, Brooklyn",
+    "listings": 14,
+    "issues": 11,
+    "first_issue": "Oct 2, 2025",
+    "latest_issue": "Sep 14, 2026",
+    "latest_event": "AI and You",
+    "top_host": "Brooklyn Luddite Club",
+    "top_activities": "Teach-ins & workshops (3), Luddite Club meetups (3), Crafts, repair & making (2)",
+    "signature_events": "Luddite Club, Unplatform Creatives Workshop, AI and You",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9318,
+     40.8571
+    ]
+   },
+   "properties": {
+    "id": "cornerstone-makerspace",
+    "name": "Cornerstone Makerspace",
+    "type": "Makerspace",
+    "area": "Washington Heights, Manhattan",
+    "listings": 12,
+    "issues": 6,
+    "first_issue": "Jul 11, 2026",
+    "latest_issue": "Oct 16, 2026",
+    "latest_event": "Sewing Repair Café",
+    "top_host": "Cornerstone Makerspace",
+    "top_activities": "Crafts, repair & making (7), Teach-ins & workshops (1)",
+    "signature_events": "Sewing Repair Café, Spooky Synthesizer Show and Tell, Makerspace Open House",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.97,
+     40.7566
+    ]
+   },
+   "properties": {
+    "id": "875-third-ave",
+    "name": "875 Third Ave. (POPS, Lower Level)",
+    "type": "Privately owned public space (POPS)",
+    "area": "Midtown East, Manhattan",
+    "listings": 10,
+    "issues": 10,
+    "first_issue": "Nov 14, 2025",
+    "latest_issue": "Aug 15, 2026",
+    "latest_event": "Unplatform ORGANIZER MEETUP",
+    "top_host": "Unplatform",
+    "top_activities": "Teach-ins & workshops (4), Protests & actions (2), Book launches & talks (1)",
+    "signature_events": "Unplatform Creatives Workshop, Unplatform ORGANIZER MEETUP, ChatGTFO!",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9626,
+     40.8075
+    ]
+   },
+   "properties": {
+    "id": "columbia-university",
+    "name": "Columbia University",
+    "type": "University",
+    "area": "Morningside Heights, Manhattan",
+    "listings": 10,
+    "issues": 9,
+    "first_issue": "Nov 1, 2025",
+    "latest_issue": "May 19, 2026",
+    "latest_event": "Brown Institute Media Party",
+    "top_host": "Brown Institute",
+    "top_activities": "Book launches & talks (5), Writing, zines & letters (1), Art & performance (1)",
+    "signature_events": "Brown Institute Media Party, Devotion and Distraction Talk, Evening with Alex Bores",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.999,
+     40.7344
+    ]
+   },
+   "properties": {
+    "id": "jefferson-market-library",
+    "name": "Jefferson Market Library",
+    "type": "Library",
+    "area": "Greenwich Village, Manhattan",
+    "listings": 9,
+    "issues": 9,
+    "first_issue": "Feb 2, 2026",
+    "latest_issue": "Jun 14, 2026",
+    "latest_event": "Technocritical Writers Room",
+    "top_host": "Amalia Mayorga",
+    "top_activities": "Writing, zines & letters (5)",
+    "signature_events": "Technocritical Writers Room",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -74.001,
+     40.7381
+    ]
+   },
+   "properties": {
+    "id": "208-w-13th-st",
+    "name": "208 W 13th St. (ITAA meeting)",
+    "type": "Arts / community space",
+    "area": "West Village, Manhattan",
+    "listings": 7,
+    "issues": 7,
+    "first_issue": "Jul 11, 2026",
+    "latest_issue": "Oct 16, 2026",
+    "latest_event": "Internet & Tech Addicts Anonymous (weekly)",
+    "top_host": "Internet & Tech Addicts Anonymous",
+    "top_activities": "Support groups (5)",
+    "signature_events": "Internet & Tech Addicts Anonymous",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9933,
+     40.7224
+    ]
+   },
+   "properties": {
+    "id": "222-bowery",
+    "name": "222 Bowery (Giorno Poetry Systems)",
+    "type": "Arts / community space",
+    "area": "Bowery, Manhattan",
+    "listings": 7,
+    "issues": 5,
+    "first_issue": "Jan 2, 2026",
+    "latest_issue": "Mar 2, 2026",
+    "latest_event": "Event Facilitator Workshop (weekly)",
+    "top_host": "NYC Off Tech organizers",
+    "top_activities": "Teach-ins & workshops (3), Reading, poetry & book clubs (1)",
+    "signature_events": "Event Facilitator Workshop, Giorno Poetry Systems Live Programming Resumes, Event Facilitator Training",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.933,
+     40.711
+    ]
+   },
+   "properties": {
+    "id": "boshis-place",
+    "name": "boshi's place",
+    "type": "Arts / community space",
+    "area": "East Williamsburg, Brooklyn",
+    "listings": 7,
+    "issues": 5,
+    "first_issue": "Nov 1, 2025",
+    "latest_issue": "Sep 1, 2026",
+    "latest_event": "\"Can Games Change the World?\" Showcase",
+    "top_host": "boshi's place",
+    "top_activities": "Music & dance (5), Book launches & talks (1), Art & performance (1)",
+    "signature_events": "boshi's spontaneous orchestra, Can Games Change the World? Showcase, boshi's lecture series: C. Thi Nguyen",
+    "location_precision": "approx"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -74.004,
+     40.7085
+    ]
+   },
+   "properties": {
+    "id": "t-j-byrnes",
+    "name": "T.J. Byrnes",
+    "type": "Bar / cafe / restaurant",
+    "area": "Financial District, Manhattan",
+    "listings": 7,
+    "issues": 7,
+    "first_issue": "Dec 1, 2025",
+    "latest_issue": "Apr 2, 2026",
+    "latest_event": "An Evening of Music (Screen-Free)",
+    "top_host": "August Lamm & Andy Henley",
+    "top_activities": "Music & dance (3), Parties & socials (1)",
+    "signature_events": "An Evening of Music, Christmas Presence w/ August Lamm & Andy Henley",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.8856,
+     40.5625
+    ]
+   },
+   "properties": {
+    "id": "fort-tilden",
+    "name": "Fort Tilden",
+    "type": "Park / public space",
+    "area": "Rockaway, Queens",
+    "listings": 6,
+    "issues": 6,
+    "first_issue": "Aug 1, 2026",
+    "latest_issue": "Oct 16, 2026",
+    "latest_event": "Fort Tilden & Breezy Point Beach Cleanup (weekly)",
+    "top_host": null,
+    "top_activities": "Walks, hikes & nature (4)",
+    "signature_events": "Fort Tilden & Breezy Point Beach Cleanup",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9293,
+     40.6942
+    ]
+   },
+   "properties": {
+    "id": "lalins",
+    "name": "Lalin's",
+    "type": "Bar / cafe / restaurant",
+    "area": "Bushwick, Brooklyn",
+    "listings": 6,
+    "issues": 6,
+    "first_issue": "Jun 1, 2026",
+    "latest_issue": "Sep 14, 2026",
+    "latest_event": "Burner Phone Writing Group",
+    "top_host": "Burner Phone",
+    "top_activities": "Writing, zines & letters (4)",
+    "signature_events": "Burner Phone Writing Group",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9971,
+     40.7355
+    ]
+   },
+   "properties": {
+    "id": "the-new-school",
+    "name": "The New School",
+    "type": "University",
+    "area": "Greenwich Village, Manhattan",
+    "listings": 6,
+    "issues": 6,
+    "first_issue": "Mar 2, 2026",
+    "latest_issue": "Jun 20, 2026",
+    "latest_event": "The Luddite Conference on Participatory Futures",
+    "top_host": "Tech Workers Coalition",
+    "top_activities": "Film & screenings (2), Book launches & talks (2), Art & performance (1)",
+    "signature_events": "The Luddite Conference on Participatory Futures, Luddite Conference on Participatory Futures, TWC: Ghost in the Machine Screening",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9306,
+     40.6936
+    ]
+   },
+   "properties": {
+    "id": "wonderville",
+    "name": "Wonderville",
+    "type": "Bar / cafe / restaurant",
+    "area": "Bushwick, Brooklyn",
+    "listings": 6,
+    "issues": 5,
+    "first_issue": "Jan 16, 2026",
+    "latest_issue": "May 19, 2026",
+    "latest_event": "Event Organizer Meetup",
+    "top_host": "NYC Event Organizers Meetup (tied, 2 hosts)",
+    "top_activities": "Crafts, repair & making (2), Writing, zines & letters (1), Teach-ins & workshops (1)",
+    "signature_events": "Event Organizer Meetup, Break Up with Google Again, Requiem for the Home Computer Zine Release",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9447,
+     40.7114
+    ]
+   },
+   "properties": {
+    "id": "crystal-lake",
+    "name": "Crystal Lake",
+    "type": "Bar / cafe / restaurant",
+    "area": "Williamsburg, Brooklyn",
+    "listings": 5,
+    "issues": 5,
+    "first_issue": "Jun 1, 2026",
+    "latest_issue": "Oct 1, 2026",
+    "latest_event": "News & Brews #2: Prediction Markets",
+    "top_host": "News and Brews",
+    "top_activities": "Book launches & talks (4)",
+    "signature_events": "News & Brews #2: Prediction Markets, When the Data Disappears, Covering the Environment When the Data Disappears",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9773,
+     40.724
+    ]
+   },
+   "properties": {
+    "id": "la-plaza-cultural",
+    "name": "La Plaza Cultural",
+    "type": "Park / public space",
+    "area": "East Village, Manhattan",
+    "listings": 5,
+    "issues": 3,
+    "first_issue": "Jun 1, 2026",
+    "latest_issue": "Jun 20, 2026",
+    "latest_event": "The Card Catalog of Potential",
+    "top_host": "Summer of Ludd (tied, 2 hosts)",
+    "top_activities": "Teach-ins & workshops (3), Parties & socials (1), Crafts, repair & making (1)",
+    "signature_events": "The Card Catalog of Potential, Live Texting, What Are You Doing Tonight? Start Your Own Events Calendar",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -74.0048,
+     40.7502
+    ]
+   },
+   "properties": {
+    "id": "national-academy-of-design",
+    "name": "National Academy of Design",
+    "type": "Gallery / museum",
+    "area": "Chelsea, Manhattan",
+    "listings": 5,
+    "issues": 3,
+    "first_issue": "Apr 2, 2026",
+    "latest_issue": "Aug 1, 2026",
+    "latest_event": "Handmade Datasets",
+    "top_host": "School of Radical Attention (SoRA)",
+    "top_activities": "Teach-ins & workshops (2), Attention Labs (SoRA) (1), Crafts, repair & making (1)",
+    "signature_events": "Handmade Datasets, ATTENTION IS A SCHOOL: SoRA Workshops, Attention Activism 101 IN PERSON",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9507,
+     40.7182
+    ]
+   },
+   "properties": {
+    "id": "petes-candy-store",
+    "name": "Pete's Candy Store",
+    "type": "Bar / cafe / restaurant",
+    "area": "Williamsburg, Brooklyn",
+    "listings": 5,
+    "issues": 2,
+    "first_issue": "Oct 1, 2026",
+    "latest_issue": "Oct 16, 2026",
+    "latest_event": "\"BRIGHT FIVE\" Presentation Party",
+    "top_host": "Dan Fox (Phone-Free Adelphi)",
+    "top_activities": "Art & performance (3), Parties & socials (1)",
+    "signature_events": "BRIGHT FIVE Presentation Party, Phone Free Comedy w/ Dan Fox, Ihatemyphoneilovemyphone",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9845,
+     40.7032
+    ]
+   },
+   "properties": {
+    "id": "53-bridge-st",
+    "name": "53 Bridge St. (NYC Mesh)",
+    "type": "Community tech space",
+    "area": "DUMBO, Brooklyn",
+    "listings": 4,
+    "issues": 4,
+    "first_issue": "May 1, 2026",
+    "latest_issue": "Jun 14, 2026",
+    "latest_event": "NYC Mesh Open Mesh Night (weekly)",
+    "top_host": "NYC Mesh",
+    "top_activities": "Crafts, repair & making (2)",
+    "signature_events": "NYC Mesh Open Mesh Night",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9967,
+     40.7003
+    ]
+   },
+   "properties": {
+    "id": "brooklyn-bridge-park",
+    "name": "Brooklyn Bridge Park",
+    "type": "Park / public space",
+    "area": "DUMBO / Brooklyn Heights, Brooklyn",
+    "listings": 4,
+    "issues": 4,
+    "first_issue": "Apr 17, 2026",
+    "latest_issue": "Oct 1, 2026",
+    "latest_event": "Jungle Games",
+    "top_host": "Samvit Sengupta",
+    "top_activities": "Moon rituals & meditation (1), Walks, hikes & nature (1), Art & performance (1)",
+    "signature_events": "Jungle Games, Weave nyc, BrooklynHike",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9921,
+     40.7593
+    ]
+   },
+   "properties": {
+    "id": "producers-club",
+    "name": "Producers Club",
+    "type": "Club / event venue",
+    "area": "Midtown, Manhattan",
+    "listings": 4,
+    "issues": 4,
+    "first_issue": "Aug 1, 2026",
+    "latest_issue": "Oct 1, 2026",
+    "latest_event": "Singles Dating Matching Using Palantir Data",
+    "top_host": null,
+    "top_activities": "Games & play (2)",
+    "signature_events": "Singles Dating Matching Using Palantir Data, Singles Dating Using Palantir Data",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9216,
+     40.7046
+    ]
+   },
+   "properties": {
+    "id": "the-sultan-room",
+    "name": "The Sultan Room",
+    "type": "Club / event venue",
+    "area": "Bushwick, Brooklyn",
+    "listings": 4,
+    "issues": 4,
+    "first_issue": "Aug 1, 2026",
+    "latest_issue": "Sep 14, 2026",
+    "latest_event": "Burner Phone MISS WORLD Launch Party",
+    "top_host": "Burner Phone (tied, 2 hosts)",
+    "top_activities": "Music & dance (1), Art & performance (1)",
+    "signature_events": "Burner Phone MISS WORLD Launch Party, Vainglory Record Release Show",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -74.027,
+     40.63
+    ]
+   },
+   "properties": {
+    "id": "underland-gallery",
+    "name": "Underland Gallery",
+    "type": "Gallery / museum",
+    "area": "Bay Ridge, Brooklyn",
+    "listings": 4,
+    "issues": 4,
+    "first_issue": "Feb 2, 2026",
+    "latest_issue": "May 19, 2026",
+    "latest_event": "Bay Ridge Figure Drawing",
+    "top_host": "Amanda Hanna-McLeer",
+    "top_activities": "Art & performance (3)",
+    "signature_events": "Bay Ridge Figure Drawing",
+    "location_precision": "approx"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.978,
+     40.6871
+    ]
+   },
+   "properties": {
+    "id": "bric",
+    "name": "BRIC",
+    "type": "Arts / community space",
+    "area": "Fort Greene, Brooklyn",
+    "listings": 3,
+    "issues": 3,
+    "first_issue": "May 19, 2026",
+    "latest_issue": "Jun 14, 2026",
+    "latest_event": "'Your Attention Please' NYC Premiere",
+    "top_host": null,
+    "top_activities": "Film & screenings (2)",
+    "signature_events": "Your Attention Please' NYC Premiere, Your Attention Please NY Premiere",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9573,
+     40.7216
+    ]
+   },
+   "properties": {
+    "id": "brooklyn-brewery",
+    "name": "Brooklyn Brewery",
+    "type": "Bar / cafe / restaurant",
+    "area": "Williamsburg, Brooklyn",
+    "listings": 3,
+    "issues": 2,
+    "first_issue": "May 1, 2026",
+    "latest_issue": "May 19, 2026",
+    "latest_event": "Global Endurance Collective Launch",
+    "top_host": "Global Endurance Collective (tied, 2 hosts)",
+    "top_activities": "Book launches & talks (2), Parties & socials (1)",
+    "signature_events": "Global Endurance Collective Launch, Newsreel: Feed Is Cooked, Newsreel Launch: The Feed Is Cooked",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9842,
+     40.7208
+    ]
+   },
+   "properties": {
+    "id": "caveat",
+    "name": "Caveat",
+    "type": "Club / event venue",
+    "area": "Lower East Side, Manhattan",
+    "listings": 3,
+    "issues": 2,
+    "first_issue": "Oct 1, 2026",
+    "latest_issue": "Oct 16, 2026",
+    "latest_event": "REAL LIFE TONIGHT",
+    "top_host": "Ian & Amelia",
+    "top_activities": "Parties & socials (1)",
+    "signature_events": "Real life tonight, We're Ready tobelieve You",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -74.0015,
+     40.7377
+    ]
+   },
+   "properties": {
+    "id": "church-of-the-village",
+    "name": "Church of the Village",
+    "type": "Church / meeting house",
+    "area": "West Village, Manhattan",
+    "listings": 3,
+    "issues": 3,
+    "first_issue": "Sep 14, 2026",
+    "latest_issue": "Oct 16, 2026",
+    "latest_event": "CDNY English Country Dance & Contra (twice weekly)",
+    "top_host": "CDNY",
+    "top_activities": "Music & dance (2)",
+    "signature_events": "CDNY English Country Dance & Contra, Cdny",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.997,
+     40.7155
+    ]
+   },
+   "properties": {
+    "id": "index-chinatown",
+    "name": "Index Chinatown",
+    "type": "Arts / community space",
+    "area": "Chinatown, Manhattan",
+    "listings": 3,
+    "issues": 3,
+    "first_issue": "Feb 17, 2026",
+    "latest_issue": "Sep 14, 2026",
+    "latest_event": "Does Expertise Matter?",
+    "top_host": null,
+    "top_activities": "Book launches & talks (2), Parties & socials (1)",
+    "signature_events": "Does Expertise Matter?, Evening with Alex Bores, Teaching Creative Tech in the Age of AI",
+    "location_precision": "approx"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9835,
+     40.6712
+    ]
+   },
+   "properties": {
+    "id": "interference-archive",
+    "name": "Interference Archive",
+    "type": "Arts / community space",
+    "area": "Gowanus, Brooklyn",
+    "listings": 3,
+    "issues": 3,
+    "first_issue": "Mar 2, 2026",
+    "latest_issue": "May 19, 2026",
+    "latest_event": "Intro to Linux Workshop",
+    "top_host": "IWW NYC",
+    "top_activities": "Music & dance (1), Teach-ins & workshops (1)",
+    "signature_events": "Intro to Linux Workshop, Ditch Spotify' Mix Tape Swap",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9366,
+     40.6977
+    ]
+   },
+   "properties": {
+    "id": "jade",
+    "name": "JADE",
+    "type": "Club / event venue",
+    "area": "Bushwick, Brooklyn",
+    "listings": 3,
+    "issues": 3,
+    "first_issue": "Feb 17, 2026",
+    "latest_issue": "Apr 17, 2026",
+    "latest_event": "Break Up with Spotify Again",
+    "top_host": null,
+    "top_activities": "Music & dance (2)",
+    "signature_events": "Break Up with Spotify Again, Break Up with Spotify",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9875,
+     40.742
+    ]
+   },
+   "properties": {
+    "id": "madison-square-park",
+    "name": "Madison Square Park",
+    "type": "Park / public space",
+    "area": "Flatiron, Manhattan",
+    "listings": 3,
+    "issues": 3,
+    "first_issue": "Oct 17, 2025",
+    "latest_issue": "Jul 11, 2026",
+    "latest_event": "Sidewalk Study \"Ensouled Beauty\"",
+    "top_host": "SoRA Study Corps",
+    "top_activities": "Protests & actions (1), Attention Labs (SoRA) (1)",
+    "signature_events": "Sidewalk Study Ensouled Beauty, Retooling",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9434,
+     40.7246
+    ]
+   },
+   "properties": {
+    "id": "mcgolrick-park",
+    "name": "McGolrick Park",
+    "type": "Park / public space",
+    "area": "Greenpoint, Brooklyn",
+    "listings": 3,
+    "issues": 3,
+    "first_issue": "Oct 2, 2025",
+    "latest_issue": "Dec 1, 2025",
+    "latest_event": "McGolrick Park Bird Club",
+    "top_host": null,
+    "top_activities": "Walks, hikes & nature (3)",
+    "signature_events": "McGolrick Park Bird Club",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9196,
+     40.7059
+    ]
+   },
+   "properties": {
+    "id": "metrorock-bushwick",
+    "name": "MetroRock Bushwick",
+    "type": "Club / event venue",
+    "area": "Bushwick, Brooklyn",
+    "listings": 3,
+    "issues": 3,
+    "first_issue": "Apr 17, 2026",
+    "latest_issue": "May 19, 2026",
+    "latest_event": "Skin in the Game",
+    "top_host": "How Do We Play",
+    "top_activities": "Games & play (3)",
+    "signature_events": "Skin in the Game: Experiments in PlayDating, Skin in the Game",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9239,
+     40.7563
+    ]
+   },
+   "properties": {
+    "id": "museum-of-the-moving-image",
+    "name": "Museum of the Moving Image",
+    "type": "Gallery / museum",
+    "area": "Astoria, Queens",
+    "listings": 3,
+    "issues": 3,
+    "first_issue": "May 19, 2026",
+    "latest_issue": "Oct 16, 2026",
+    "latest_event": "Phone Free Fridays (weekly)",
+    "top_host": "MoMI, Light Phone & Dan Fox (tied, 3 hosts)",
+    "top_activities": "Parties & socials (2)",
+    "signature_events": "Phone Free Fridays, Phone Free Fridays Launch, Escape the Internet",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9839,
+     40.7262
+    ]
+   },
+   "properties": {
+    "id": "nightclub-101",
+    "name": "Nightclub 101",
+    "type": "Club / event venue",
+    "area": "East Village, Manhattan",
+    "listings": 3,
+    "issues": 3,
+    "first_issue": "Feb 2, 2026",
+    "latest_issue": "Aug 1, 2026",
+    "latest_event": "Moving offline in an online age",
+    "top_host": "August Lamm (tied, 3 hosts)",
+    "top_activities": "Art & performance (1), Film & screenings (1), Book launches & talks (1)",
+    "signature_events": "Moving offline in an online age, Special Screening: 'It Came From the Basement, Month Offline Exhibition",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9993,
+     40.7302
+    ]
+   },
+   "properties": {
+    "id": "nyu-school-of-law-vanderbilt-hall",
+    "name": "NYU School of Law – Vanderbilt Hall",
+    "type": "University",
+    "area": "Greenwich Village, Manhattan",
+    "listings": 3,
+    "issues": 3,
+    "first_issue": "Feb 2, 2026",
+    "latest_issue": "Sep 1, 2026",
+    "latest_event": "The Trial of Jeff Bezos",
+    "top_host": "Authors of Against Tech Oligarchy",
+    "top_activities": "Book launches & talks (2)",
+    "signature_events": "The Trial of Jeff Bezos, Who Should Decide AI's Future?",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9406,
+     40.6993
+    ]
+   },
+   "properties": {
+    "id": "peace-cafe",
+    "name": "Peace Cafe",
+    "type": "Bar / cafe / restaurant",
+    "area": "Bed-Stuy, Brooklyn",
+    "listings": 3,
+    "issues": 3,
+    "first_issue": "Apr 17, 2026",
+    "latest_issue": "May 19, 2026",
+    "latest_event": "Digital Security",
+    "top_host": null,
+    "top_activities": "Teach-ins & workshops (1), Crafts, repair & making (1)",
+    "signature_events": "Digital Security, Digital Security Workshop",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9298,
+     40.6985
+    ]
+   },
+   "properties": {
+    "id": "secret-riso-club",
+    "name": "Secret Riso Club",
+    "type": "Arts / community space",
+    "area": "Bushwick, Brooklyn",
+    "listings": 3,
+    "issues": 3,
+    "first_issue": "Mar 2, 2026",
+    "latest_issue": "Aug 15, 2026",
+    "latest_event": "GUNK's Third Birthday Party",
+    "top_host": "GUNK",
+    "top_activities": "Music & dance (1), Art & performance (1)",
+    "signature_events": "GUNK's Third Birthday Party, Break Up with Spotify",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -74.0018,
+     40.7263
+    ]
+   },
+   "properties": {
+    "id": "177-prince-st",
+    "name": "177 Prince St. (Museum of Interesting Things)",
+    "type": "Gallery / museum",
+    "area": "SoHo, Manhattan",
+    "listings": 2,
+    "issues": 1,
+    "first_issue": "Jun 20, 2026",
+    "latest_issue": "Jun 20, 2026",
+    "latest_event": "Secret Film Speakeasy",
+    "top_host": "Museum of Interesting Things",
+    "top_activities": "Film & screenings (2)",
+    "signature_events": "Secret Film Speakeasy, Museum of Interesting Things: 16mm Speakeasy",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.994,
+     40.7536
+    ]
+   },
+   "properties": {
+    "id": "520-8th-ave-3rd-fl",
+    "name": "520 8th Ave., 3rd Fl. (CDNY)",
+    "type": "Arts / community space",
+    "area": "Midtown, Manhattan",
+    "listings": 2,
+    "issues": 2,
+    "first_issue": "Jul 11, 2026",
+    "latest_issue": "Aug 1, 2026",
+    "latest_event": "CDNY Dance Lab",
+    "top_host": "CDNY",
+    "top_activities": "Music & dance (2)",
+    "signature_events": "CDNY Dance Lab",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9235,
+     40.703
+    ]
+   },
+   "properties": {
+    "id": "maria-hernandez-park",
+    "name": "Maria Hernandez Park",
+    "type": "Park / public space",
+    "area": "Bushwick, Brooklyn",
+    "listings": 2,
+    "issues": 2,
+    "first_issue": "Jun 20, 2026",
+    "latest_issue": "Sep 1, 2026",
+    "latest_event": "Public Service",
+    "top_host": "Public Service (tied, 2 hosts)",
+    "top_activities": "Teach-ins & workshops (1), Parties & socials (1)",
+    "signature_events": "Public Service, Intro to Self-Defense",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9516,
+     40.7206
+    ]
+   },
+   "properties": {
+    "id": "mccarren-park",
+    "name": "McCarren Park",
+    "type": "Park / public space",
+    "area": "Williamsburg/Greenpoint, Brooklyn",
+    "listings": 2,
+    "issues": 1,
+    "first_issue": "Sep 14, 2026",
+    "latest_issue": "Sep 14, 2026",
+    "latest_event": "WEAVE NYC [postponed]",
+    "top_host": "Jasmine Zimmerman (tied, 2 hosts)",
+    "top_activities": "Art & performance (1), Reading, poetry & book clubs (1)",
+    "signature_events": "Weave nyc, Speed Book Clubbing",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.933,
+     40.7079
+    ]
+   },
+   "properties": {
+    "id": "newtown-radio",
+    "name": "Newtown Radio",
+    "type": "Radio station / studio",
+    "area": "East Williamsburg, Brooklyn",
+    "listings": 2,
+    "issues": 2,
+    "first_issue": "Jul 11, 2026",
+    "latest_issue": "Sep 14, 2026",
+    "latest_event": "DISORIENTATION",
+    "top_host": "Friendly Stranger Studios & Quazar (tied, 2 hosts)",
+    "top_activities": "Music & dance (2)",
+    "signature_events": "Disorientation, Quazar Radio",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -74.012,
+     40.6788
+    ]
+   },
+   "properties": {
+    "id": "pioneer-works",
+    "name": "Pioneer Works",
+    "type": "Arts / community space",
+    "area": "Red Hook, Brooklyn",
+    "listings": 2,
+    "issues": 2,
+    "first_issue": "Dec 1, 2025",
+    "latest_issue": "Dec 13, 2025",
+    "latest_event": "Press Play",
+    "top_host": "Micaela Durand",
+    "top_activities": "Art & performance (2)",
+    "signature_events": "Press Play Fair, Press Play",
+    "location_precision": "exact"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -74.0033,
+     40.7063
+    ]
+   },
+   "properties": {
+    "id": "tane-poetry-library",
+    "name": "Tane Poetry Library",
+    "type": "Library",
+    "area": "South Street Seaport, Manhattan",
+    "listings": 2,
+    "issues": 2,
+    "first_issue": "Sep 14, 2026",
+    "latest_issue": "Oct 16, 2026",
+    "latest_event": "Dear Dear: An Afternoon with Reuben Gelley Newman",
+    "top_host": "Walt Whitman Initiative",
+    "top_activities": "Reading, poetry & book clubs (1)",
+    "signature_events": "Dear Dear: An Afternoon with Reuben Gelley Newman, Song of Myself Marathon",
+    "location_precision": "exact"
+   }
+  }
+ ]
+}

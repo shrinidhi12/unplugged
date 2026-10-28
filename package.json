@@ -2,13 +2,17 @@
   "name": "unplugged",
   "version": "0.1.0",
   "private": true,
-  "description": "A forever-free, phone-free events platform — host and find events for your friends and the public.",
+  "description": "A forever-free, phone-free events platform \u2014 host and find events for your friends and the public.",
   "license": "AGPL-3.0-or-later",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "venues:sync": "python tools/find-a-venue/sync.py",
+    "venues:history": "python tools/find-a-venue/pipeline/history.py --check",
+    "venues:test": "python tools/find-a-venue/test_privacy.py",
+    "venues:tabs": "python tools/find-a-venue/pipeline/sheet_tabs.py"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.1.0",

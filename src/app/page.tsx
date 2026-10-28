@@ -9,6 +9,12 @@ export default function Home() {
           Unplugg Me
         </span>
         <div className="flex flex-col-reverse items-end gap-2 sm:flex-row sm:items-center sm:gap-4">
+          <Link
+            href="/find-a-venue"
+            className="whitespace-nowrap text-sm text-ink-soft underline-offset-4 hover:text-ink hover:underline"
+          >
+            Find a venue
+          </Link>
           <SuggestionBoxButton />
           <Link href="/create" className="btn btn-sm">
             Create an event

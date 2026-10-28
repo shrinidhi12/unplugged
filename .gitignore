@@ -46,3 +46,7 @@ next-env.d.ts
 
 # Local dev image uploads (prod uses Netlify Blobs)
 /.blobs
+
+# Find a venue: raw sheet exports can hold collaborator contact details
+/tools/find-a-venue/sheet-export/
+__pycache__/
