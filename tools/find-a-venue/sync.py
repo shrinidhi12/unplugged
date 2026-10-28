@@ -1,7 +1,8 @@
-"""Turn an export of the collaborator sheet into the site's venue data.
+"""Turn the collaborator sheet into the site's venue data.
 
-    npm run venues:sync                       # newest .xlsx in sheet-export/
-    npm run venues:sync -- --input FILE.xlsx  # a specific export
+    npm run venues:sync -- --grist            # read the Grist doc (GRIST_DOC_ID, GRIST_API_KEY)
+    npm run venues:sync                       # or: newest .xlsx in sheet-export/
+    npm run venues:sync -- --input FILE.xlsx  # or: a specific export
     npm run venues:sync -- --no-geocode       # skip address lookups
 
 Steps: validate every row against the Field guide tab, create missing Venue
@@ -13,7 +14,7 @@ Contact columns are dropped unless the row says "OK to show contact publicly?"
 """
 from __future__ import annotations
 
-import argparse, datetime, json, math, re, sys, time, unicodedata, urllib.parse, urllib.request
+import argparse, datetime, json, math, re, sys, time, unicodedata, urllib.error, urllib.parse, urllib.request
 from pathlib import Path
 
 import openpyxl
@@ -106,6 +107,71 @@ class Problems:
 
 
 # ---- Reading the sheet -------------------------------------------------------
+#
+# A source hands back each tab as rows, header first. `first_row` is the row
+# number people see for the first data row, so problems point at the right row.
+
+class XlsxSource:
+    first_row = 2
+
+    def __init__(self, path):
+        self.path = Path(path)
+        self.name = self.path.name
+        self.wb = openpyxl.load_workbook(self.path, data_only=True, read_only=True)
+
+    def tab(self, title):
+        return list(self.wb[title].iter_rows(values_only=True))
+
+
+class GristSource:
+    """Reads tables from a Grist doc over its REST API, keyed by column label.
+
+    Grist turns tab names into table IDs ("Field guide" -> "Field_guide") and
+    keeps the original headers as column labels, which is what we match on.
+    """
+    first_row = 1
+
+    def __init__(self, doc_id, api_key, server):
+        self.doc, self.key, self.server = doc_id, api_key, server.rstrip("/")
+        self.name = f"Grist doc {doc_id}"
+
+    def _get(self, path, **params):
+        url = f"{self.server}/api/docs/{self.doc}/{path}"
+        if params:
+            url += "?" + urllib.parse.urlencode(params)
+        req = urllib.request.Request(url, headers={"Authorization": f"Bearer {self.key}"})
+        try:
+            with urllib.request.urlopen(req, timeout=30) as r:
+                return json.load(r)
+        except urllib.error.HTTPError as e:
+            hint = {401: "check GRIST_API_KEY", 403: "the API key's account can't open this doc",
+                    404: "check GRIST_DOC_ID and the table names"}.get(e.code, "")
+            sys.exit(f"Grist API {e.code} for {path}. {hint}".strip())
+
+    def tab(self, title):
+        table = re.sub(r"\W", "_", title)
+        cols = [c for c in self._get(f"tables/{table}/columns")["columns"]
+                if not c["fields"].get("isFormula") or c["fields"].get("formula")]
+        types = {c["id"]: c["fields"].get("type", "") for c in cols}
+        header = [c["fields"].get("label") or c["id"] for c in cols]
+        recs = self._get(f"tables/{table}/records", sort="manualSort")["records"]
+        return [tuple(header)] + [tuple(cell(r["fields"].get(c["id"]), types[c["id"]]) for c in cols)
+                                  for r in recs]
+
+
+def cell(v, col_type):
+    """Grist cell -> the value an XLSX export would give."""
+    if v is None or v == "":
+        return None
+    if col_type == "Date" and isinstance(v, (int, float)):
+        return datetime.datetime.fromtimestamp(v, datetime.timezone.utc).date()
+    if col_type == "Bool" or isinstance(v, bool):
+        # Grist can't tell "No" from blank in a toggle, so false reads as blank.
+        return "Yes" if v else None
+    if isinstance(v, list):  # ChoiceList / RefList: ["L", a, b]
+        return ", ".join(str(x) for x in v[1:]) or None
+    return v
+
 
 def clean(v):
     if isinstance(v, str):
@@ -114,9 +180,8 @@ def clean(v):
     return v
 
 
-def read_field_guide(wb):
-    ws = wb["Field guide"]
-    it = ws.iter_rows(values_only=True)
+def read_field_guide(src):
+    it = iter(src.tab("Field guide"))
     header = [clean(c) for c in next(it)]
     guide = {}
     for r in it:
@@ -132,9 +197,8 @@ def read_field_guide(wb):
     return guide
 
 
-def read_venues(wb, guide, problems):
-    ws = wb["Venues"]
-    it = ws.iter_rows(values_only=True)
+def read_venues(src, guide, problems):
+    it = iter(src.tab("Venues"))
     header = [clean(c) for c in next(it)]
     missing = [c for c in guide if c not in header]
     extra = [c for c in header if c and c not in guide]
@@ -143,7 +207,7 @@ def read_venues(wb, guide, problems):
     if extra:
         problems.add(1, None, f"Venues tab has column(s) the Field guide doesn't describe: {', '.join(extra)}")
     rows = []
-    for i, r in enumerate(it, start=2):
+    for i, r in enumerate(it, start=src.first_row):
         d = {h: clean(v) for h, v in zip(header, r) if h}
         if any(v is not None for v in d.values()):
             d["_row"] = i
@@ -417,13 +481,21 @@ def pick_input(arg):
     return exports[-1]
 
 
-def run(path, geocode_on=True, out_path=OUT, quiet=False):
-    """Build the site data from one export. Returns (ok, venues)."""
+def grist_source():
+    import os
+    doc, key = os.environ.get("GRIST_DOC_ID"), os.environ.get("GRIST_API_KEY")
+    if not doc or not key:
+        sys.exit("Set GRIST_DOC_ID and GRIST_API_KEY (see tools/find-a-venue/README.md).")
+    return GristSource(doc, key, os.environ.get("GRIST_SERVER", "https://docs.getgrist.com"))
+
+
+def run(source, geocode_on=True, out_path=OUT, quiet=False):
+    """Build the site data from a source (or an .xlsx path). Returns (ok, venues)."""
     say = (lambda *a: None) if quiet else print
-    wb = openpyxl.load_workbook(path, data_only=True, read_only=True)
+    src = source if hasattr(source, "tab") else XlsxSource(source)
     problems = Problems()
-    guide = read_field_guide(wb)
-    rows = read_venues(wb, guide, problems)
+    guide = read_field_guide(src)
+    rows = read_venues(src, guide, problems)
     seen = validate(rows, guide, problems)
     created = assign_ids(rows, seen)
     looked_up = geocode(rows, problems, geocode_on) if not problems.errors else []
@@ -440,16 +512,21 @@ def run(path, geocode_on=True, out_path=OUT, quiet=False):
     history, candidates = load_history()
     venues = publish(rows, guide, history)
 
-    old = json.loads(out_path.read_text("utf-8"))["venues"] if out_path.exists() else []
+    prev = json.loads(out_path.read_text("utf-8")) if out_path.exists() else {}
+    old = prev.get("venues", [])
     changes, moved = summarize_changes(old, venues)
+    options = {PUBLIC_KEYS[c]: guide[c]["allowed"] for c in FILTER_COLS}
+    # Keep the old date when nothing changed, so a scheduled sync with no
+    # edits leaves the file untouched (no commit, no deploy).
+    unchanged = old == venues and prev.get("options") == options
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(json.dumps({
-        "syncedAt": datetime.date.today().isoformat(),
-        "options": {PUBLIC_KEYS[c]: guide[c]["allowed"] for c in FILTER_COLS},
+        "syncedAt": prev["syncedAt"] if unchanged else datetime.date.today().isoformat(),
+        "options": options,
         "venues": venues,
     }, indent=1, ensure_ascii=False) + "\n", "utf-8")
 
-    say(f"Read {len(rows)} rows from {path.name}; published {len(venues)} Approved venues "
+    say(f"Read {len(rows)} rows from {src.name}; published {len(venues)} Approved venues "
         f"to {out_path.relative_to(ROOT) if out_path.is_relative_to(ROOT) else out_path}.")
     if created:
         say("\nNew Venue IDs. Paste these into the sheet so they stay the same:")
@@ -474,8 +551,10 @@ def run(path, geocode_on=True, out_path=OUT, quiet=False):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
+    ap.add_argument("--grist", action="store_true", help="read the Grist doc instead of an export")
     ap.add_argument("--input", help="exported .xlsx (default: newest in sheet-export/)")
     ap.add_argument("--no-geocode", action="store_true", help="don't look up missing coordinates")
     a = ap.parse_args()
-    ok, _ = run(pick_input(a.input), geocode_on=not a.no_geocode)
+    src = grist_source() if a.grist else pick_input(a.input)
+    ok, _ = run(src, geocode_on=not a.no_geocode)
     sys.exit(0 if ok else 1)
