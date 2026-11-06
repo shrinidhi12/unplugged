@@ -1,11 +1,10 @@
 # Unplugg Me
 
 **A forever-free, phone-free events platform.** Host and find events for your friends
-and the public — a dead-simple way to invite people to real-life things. No accounts,
-no feeds, no follower counts. The event is the medium.
+and the public — a simple way to invite people to real-life things. No accounts required! The event is the medium.
 
-> Free forever, independent of private equity, and dedicated to actually bringing
-> people together. Licensed AGPL-3.0 so it can never be taken private and closed.
+> Free, independent of PE/VC, and dedicated to actually bringing
+> people together. 
 
 ## What it does
 
